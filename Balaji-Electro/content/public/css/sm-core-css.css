@@ -1,0 +1,333 @@
+/*@import url(https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700);*/
+
+
+.sm-blue a span.sub-arrow {
+    position: absolute;
+    top: 50%;
+    margin-top: -17px;
+    left: auto;
+    right: 4px;
+    width: 34px;
+    height: 34px;
+    overflow: hidden;
+    font: bold 24px/34px monospace !important;
+    text-align: center;
+    /*color: #11572d;*/
+    text-shadow: none;
+    background: transparent;
+}
+.sm-blue a.highlighted span.sub-arrow:before {
+    display: block;
+    content: '-';
+}
+.sm-blue ul {
+    background: white;
+}
+.sm-blue ul ul {
+    background: rgba(102, 102, 102, 0.1);
+}
+.sm-blue ul a  {
+    background: #fff;
+    color: #333;
+    margin-top:1px;
+    letter-spacing: 0.03em;
+    font-size: 15px;
+    text-shadow: none;
+    /*border-left: 8px solid transparent;
+    border-right: 8px solid transparent;*/
+}
+
+.sm-blue ul a:hover, .sm-blue ul a:focus, .sm-blue ul a:active{
+    background:#fff;
+    color: #237a37;
+    font-size: 15px;
+    letter-spacing: 0.03em;
+    text-shadow: none;
+   /* border-right: 8px solid transparent;
+    border-left: 8px solid transparent;*/
+}
+.sm-blue ul a.current {
+    background:#fff;
+    color: #f16725;
+}
+.sm-blue ul a.disabled {
+    color: #b3b3b3;
+}
+.sm-blue ul ul a,
+.sm-blue ul ul a:hover,
+.sm-blue ul ul a:focus,
+.sm-blue ul ul a:active {
+    border-left: 16px solid transparent;
+}
+.sm-blue ul ul ul a,
+.sm-blue ul ul ul a:hover,
+.sm-blue ul ul ul a:focus,
+.sm-blue ul ul ul a:active {
+    border-left: 24px solid transparent;
+}
+.sm-blue ul ul ul ul a,
+.sm-blue ul ul ul ul a:hover,
+.sm-blue ul ul ul ul a:focus,
+.sm-blue ul ul ul ul a:active {
+    border-left: 32px solid transparent;
+}
+.sm-blue ul ul ul ul ul a,
+.sm-blue ul ul ul ul ul a:hover,
+.sm-blue ul ul ul ul ul a:focus,
+.sm-blue ul ul ul ul ul a:active {
+    border-left: 40px solid transparent;
+}
+
+
+
+
+@media (min-width: 768px) {
+    /* Switch to desktop layout
+    -----------------------------------------------
+       These transform the menu tree from
+       collapsible to desktop (navbar + dropdowns)
+    -----------------------------------------------*/
+    /* start... (it's not recommended editing these rules) */
+    .sm-blue ul {
+        position: absolute;
+        /*background:#000;*/
+        padding-top: 0px;
+        /*margin-top:18px !important;*/
+        padding-bottom: 0px !important;
+        /*border: 1px solid rgba(0,0,0,.15);*/
+        z-index:999 ! important;
+        /*box-shadow: 0 6px 12px rgba(0,0,0,.175);*/
+        /*border-radius: 8px;*/
+    }
+
+    .sm-blue ul a {
+    border-bottom:1px solid #95e0f7a1;
+    }
+
+    .sm-blue ul ul{
+        position: absolute;
+        background:#fff;
+        padding-top: 5px;
+        margin-top:20px;
+        padding-bottom: 6px;
+        border: 1px solid rgba(0,0,0,.15);
+        border-radius: 8px;
+        box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    }
+
+    .sm-blue li {
+        float: left;
+    }
+
+    .sm-blue.sm-rtl li {
+        float: right;
+    }
+
+    .sm-blue ul li, .sm-blue.sm-rtl ul li, .sm-blue.sm-vertical li {
+        float: none;
+    }
+
+    .sm-blue ul a, .sm-blue.sm-vertical a {
+        white-space: normal;
+    }
+
+    .sm-blue .sm-nowrap > li > a, .sm-blue .sm-nowrap > li > :not(ul) a {
+        white-space: nowrap;
+    }
+
+
+    /* ...end */
+
+    .sm-blue a.current {
+        background: #006892;
+        color: white;
+    }
+    .sm-blue a.disabled {
+        background: #3092c0;
+        color: #a1d1e8;
+    }
+    .sm-blue a span.sub-arrow {
+        top: auto;
+        margin-top: 0;
+        bottom: 2px;
+        left: 50%;
+        margin-left: -5px;
+        right: auto;
+        width: 0;
+        height: 0;
+        border-width: 0px ! important;
+        border-style: solid dashed dashed dashed;
+        border-color: #a1d1e8 transparent transparent transparent;
+        background: transparent;
+        
+    }
+    .sm-blue a.highlighted span.sub-arrow:before {
+        display: none;
+    }
+    .sm-blue > li:first-child > a, .sm-blue > li:first-child > :not(ul) a {
+       
+    }
+    .sm-blue > li:last-child > a, .sm-blue > li:last-child > :not(ul) a {
+        
+    }
+    .sm-blue > li {
+        
+    }
+    .sm-blue > li:first-child {
+        border-left: 0;
+    }
+    .sm-blue ul a {
+        padding: 7px 15px;
+        font-size:15px;
+        font-family: Futura Book;
+        letter-spacing: 0.05em;
+        background: #2b2969;
+        color: #fff;
+        /*border-radius: 10px;*/
+        
+    }
+
+    .sm-blue ul a:hover, .sm-blue ul a:focus, 
+    .sm-blue ul a:active, .sm-blue ul a.highlighted {
+        padding: 7px 15px;
+        letter-spacing: 0.05em;
+        background:#fff;
+        font-size:15px !important;
+        color:#2b2969;
+        transition: 1s ease-in-out;
+    }
+    .sm-blue ul a.current {
+        background: #006892;
+        color: white;
+    }
+    .sm-blue ul a.disabled {
+        background: white;
+        color: #b3b3b3;
+        letter-spacing: 0.03em;
+    }
+    .sm-blue ul a span.sub-arrow {
+        top: 50%;
+        margin-top: -5px;
+        bottom: auto;
+        left: auto;
+        margin-left: 0;
+        right: 10px;
+        border-style: dashed dashed dashed solid;
+        border-color: transparent transparent transparent #ffffff;
+    }
+    .sm-blue ul li {
+        border: 0;
+    }
+    /*.sm-blue ul li :hover{
+        border-left: 5px solid #0d4f97;
+    }*/
+
+    .sm-blue span.scroll-up,
+    .sm-blue span.scroll-down {
+        position: absolute;
+        display: none;
+        visibility: hidden;
+        overflow: hidden;
+        background: white;
+        height: 20px;
+    }
+    .sm-blue span.scroll-up-arrow,
+    .sm-blue span.scroll-down-arrow {
+        position: absolute;
+        top: -2px;
+        left: 50%;
+        margin-left: -8px;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+        border-width: 8px;
+        border-style: dashed dashed solid dashed;
+        border-color: transparent transparent #2b82ac transparent;
+    }
+    .sm-blue span.scroll-down-arrow {
+        top: 6px;
+        border-style: solid dashed dashed dashed;
+        border-color: #2b82ac transparent transparent transparent;
+    }
+    .sm-blue.sm-rtl.sm-vertical a span.sub-arrow {
+        right: auto;
+        left: 10px;
+        border-style: dashed solid dashed dashed;
+        border-color: transparent #ffffff transparent transparent;
+    }
+    .sm-blue.sm-rtl > li:first-child > a,
+    .sm-blue.sm-rtl > li:first-child > :not(ul) a {
+        -webkit-border-radius: 0 8px 8px 0;
+        -moz-border-radius: 0 8px 8px 0;
+        -ms-border-radius: 0 8px 8px 0;
+        -o-border-radius: 0 8px 8px 0;
+        border-radius: 0 8px 8px 0;
+    }
+    .sm-blue.sm-rtl > li:last-child > a,
+    .sm-blue.sm-rtl > li:last-child > :not(ul) a {
+        -webkit-border-radius: 8px 0 0 8px !important;
+        -moz-border-radius: 8px 0 0 8px !important;
+        -ms-border-radius: 8px 0 0 8px !important;
+        -o-border-radius: 8px 0 0 8px !important;
+        border-radius: 8px 0 0 8px !important;
+    }
+    .sm-blue.sm-rtl > li:first-child {
+        border-left: 1px solid #2b82ac;
+    }
+    .sm-blue.sm-rtl > li:last-child {
+        border-left: 0;
+    }
+    .sm-blue.sm-rtl ul a span.sub-arrow {
+        right: auto;
+        left: 10px;
+        border-style: dashed solid dashed dashed;
+        border-color: transparent #ffffff transparent transparent;
+    }
+    .sm-blue.sm-vertical {
+        -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    }
+    .sm-blue.sm-vertical a {
+        padding: 9px 23px;
+    }
+    .sm-blue.sm-vertical a span.sub-arrow {
+        top: 50%;
+        margin-top: -5px;
+        bottom: auto;
+        left: auto;
+        margin-left: 0;
+        right: 10px;
+        border-style: dashed dashed dashed solid;
+        border-color: transparent transparent transparent #a1d1e8;
+    }
+    .sm-blue.sm-vertical > li:first-child > a,
+    .sm-blue.sm-vertical > li:first-child > :not(ul) a {
+        -webkit-border-radius: 8px 8px 0 0;
+        -moz-border-radius: 8px 8px 0 0;
+        -ms-border-radius: 8px 8px 0 0;
+        -o-border-radius: 8px 8px 0 0;
+        border-radius: 8px 8px 0 0;
+    }
+    .sm-blue.sm-vertical > li:last-child > a,
+    .sm-blue.sm-vertical > li:last-child > :not(ul) a {
+        -webkit-border-radius: 0 0 8px 8px !important;
+        -moz-border-radius: 0 0 8px 8px !important;
+        -ms-border-radius: 0 0 8px 8px !important;
+        -o-border-radius: 0 0 8px 8px !important;
+        border-radius: 0 0 8px 8px !important;
+    }
+    .sm-blue.sm-vertical > li {
+        border-left: 0 !important;
+    }
+    .sm-blue.sm-vertical ul {
+        -webkit-border-radius: 4px !important;
+        -moz-border-radius: 4px !important;
+        -ms-border-radius: 4px !important;
+        -o-border-radius: 4px !important;
+        border-radius: 4px !important;
+    }
+    .sm-blue.sm-vertical ul a {
+        padding: 9px 23px;
+    }
+}
