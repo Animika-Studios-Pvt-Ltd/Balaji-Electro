@@ -11,10 +11,10 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" media="screen">
     <link rel="stylesheet" href="https://vadikom.github.io/smartmenus/src/css/sm-core-css.css">
 	<link rel="stylesheet" type="text/css" href="content/public/css/animate.css">
-    <link rel="stylesheet" href="Content/Public/css/sm-core-css.css">
+    <link rel="stylesheet" href="content/public/css/sm-core-css.css">
     <link rel="stylesheet" type="text/css" href="content/public/css/custom.css">
 </head>
-<body>
+<body onload="generateCaptcha();">
 
 <div class="container-fluid fixed-onscroll m-0 p-0">
 	<div class="row">
@@ -22,11 +22,11 @@
 			<div class="row">
 				<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
 					<div class="logo">
-						<a href="index.html"><img src="Content/Public/images/BEC_Logo.webp" class="img-responsive" alt=""/></a>
+						<a href="index.html"><img src="content/public/images/BEC_Logo.webp" class="img-responsive" alt=""/></a>
 					</div>
 				</div>
 				<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
-					<div class="head-text">
+					<div class="head-text-inner">
 						<h1>Trusted source for all types of electrical Control panels and solutions across all the segments since 1986.</h1>
 					</div>
 				</div>  
@@ -246,34 +246,49 @@
 
 <div class="outer-container">
 	<div id="contactFormContainer">
-		<form id="contactForm" method="post" action="mail.php">
-			<h1>Enquire Now</h1>
-			<div class="close-btn">
-				<img src="content/public/images/Close.png" class="img-responsive" alt="Close" onclick="closeForm2()">
-			</div>
-			<div class="enq-field">
-				<input type="text" name="Name" id="Name" placeholder="Your Name" value="" required/>
-			</div>
-			<div class="enq-field">
-				<input type="email" name="Email" id="Email" placeholder="email ID" value="" required/>
-			</div>
-			<div class="enq-field">
-				<input type="tel" name="Phone" id="Phone" placeholder=" Mobile Phone Number" value="" required/>
-			</div>
-			<div class="enq-field">
-				<input type="text" name="Name" id="Name" placeholder="Your Company Name" value="">
-			</div>
-			<div class="enq-field">
-				<input type="text" name="Name" id="Name" placeholder="Your City" value="" >
-			</div>
-			<div class="enq-field">
-				<input type="text" name="Name" id="Name" placeholder="Your Country" value="">
-			</div>
-			<div class="req-field">
-				<textarea cols="20" id="Message" name="Message" placeholder="Your Requirement" rows="2"></textarea>
-			</div>
-			<input type="submit" value="Submit">
-		</form>
+		<form id="contactForm" method="post" action="mail.php" onsubmit="return checkForm(this);">
+            <h1>Enquire Now</h1>
+            <div class="close-btn">
+                <img src="content/public/images/Close.png" class="img-responsive" alt="Close" onclick="closeForm2()">
+            </div>
+            <div class="enq-field">
+                <input type="text" name="Name" id="Name" placeholder="Your Name" value="" required/>
+            </div>
+            <div class="enq-field">
+                <input type="email" name="Email" id="Email" placeholder="email ID" value="" required/>
+            </div>
+            <div class="enq-field">
+                <input type="tel" name="Phone" id="Phone" placeholder=" Mobile Phone Number" value="" required/>
+            </div>
+            <div class="enq-field">
+                <input type="text" name="Name" id="Name" placeholder="Your Company Name" value="">
+            </div>
+            <div class="enq-field">
+                <input type="text" name="Name" id="Name" placeholder="Your City" value="" >
+            </div>
+            <div class="enq-field">
+                <input type="text" name="Name" id="Name" placeholder="Your Country" value="">
+            </div>
+            <div class="req-field">
+                <textarea cols="20" id="Message" name="Message" placeholder="Your Requirement" rows="2"></textarea>
+            </div>
+            <div class="enq-field">
+                <input type="text" id="mainCaptcha"readonly="readonly"/>
+                <input type="button" id="refresh" value="Refresh" onclick="generateCaptcha();" />
+            </div>
+            <div class="enq-field">
+                <input type="text" id="txtInput"/>    
+            </div>
+            
+            <input  id="Button1" type="button" value="Check"  onclick="CheckValidCaptcha();"/>
+            <div class="enq-field">
+                <span id="error" style="color:red"></span>
+            </div>
+            <div class="enq-field">
+                <span id="success" style="color:green"></span>
+            </div>
+            <input type="submit" value="Submit" onclick="CheckValidCaptcha();"/>
+        </form>
 	</div>
 </div>
 <div id="contactLink">Enquire Now</div>
@@ -301,7 +316,7 @@
 			<div class="col-lg-12">
 		        <a href="javascript:" id="return-to-top" class="return-to-top">
 		          <h2>Back To Top</h2>
-		          <img src="content/Public/images/arrow.webp" class="img-fluid" alt="Arrow_Footer">
+		          <img src="content/public/images/arrow.webp" class="img-fluid" alt="Arrow_Footer">
 		        </a>
 			</div>
 		</div>

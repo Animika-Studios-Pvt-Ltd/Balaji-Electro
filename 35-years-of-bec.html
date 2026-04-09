@@ -10,11 +10,11 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" media="screen">
     <link rel="stylesheet" href="https://vadikom.github.io/smartmenus/src/css/sm-core-css.css">
-    <link rel="stylesheet" href="Content/Public/css/sm-core-css.css">
+    <link rel="stylesheet" href="content/public/css/sm-core-css.css">
     <link rel="stylesheet" type="text/css" href="content/public/css/animate.css">
     <link rel="stylesheet" type="text/css" href="content/public/css/custom.css">
 </head>
-<body>
+<body onload="generateCaptcha();">
 
 <div class="container-fluid fixed-onscroll m-0 p-0">
 	<div class="row">
@@ -22,11 +22,11 @@
 			<div class="row">
 				<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
 					<div class="logo">
-						<a href="index.html"><img src="Content/Public/images/BEC_Logo.webp" class="img-responsive" alt=""/></a>
+						<a href="index.html"><img src="content/public/images/BEC_Logo.webp" class="img-responsive" alt=""/></a>
 					</div>
 				</div>
 				<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
-					<div class="head-text">
+					<div class="head-text-inner">
 						<h1>Trusted source for all types of electrical Control panels and solutions across all the segments since 1986.</h1>
 					</div>
 				</div>  
@@ -136,6 +136,28 @@
 	</div>
 </div>
 
+
+<div class="book-wrapper">
+  <div class="book-container">
+    <div class="book" id="book">
+      <div  class="page hard p1"><h1>Hello</h1></div>
+      <div class="page hard"><h1>Image will go here</h1></div>
+      <div class="page"><img src="https://raw.github.com/blasten/turn.js/master/demos/magazine/pages/03.jpg" alt=""/></div>
+      <div class="page"><img src="https://raw.github.com/blasten/turn.js/master/demos/magazine/pages/04.jpg" alt=""/></div>
+      <div class="page hard"><img src="https://raw.github.com/blasten/turn.js/master/demos/magazine/pages/05.jpg" alt=""/></div>
+      <div class="page hard"><img src="https://raw.github.com/blasten/turn.js/master/demos/magazine/pages/06.jpg" alt=""/></div>
+    </div>
+  </div>
+</div>
+
+<div class="outer-container">
+	<iframe style='width:100%;height:80vh' src='https://online.pubhtml5.com/oyaqw/zaut/'  seamless='seamless' scrolling='no' frameborder='0' allowtransparency='true' allowfullscreen='true' ></iframe>
+</div>
+
+<div class="outer-container">
+	<a href="https://online.flippingbook.com/view/182872160/" class="fbo-embed" data-fbo-id="1eea228bcb" data-fbo-ratio="3:2" data-fbo-lightbox="yes" data-fbo-width="100%" data-fbo-height="auto" data-fbo-version="1" style="max-width: 100%">15-5-24_BEC_Corporate_Presentation</a><script async defer src="https://online.flippingbook.com/EmbedScriptUrl.aspx?m=redir&hid=182872160"></script>
+</div>
+
 <div class="container-fluid">
 	<div class="container">
 		<div class="inner-head" data-aos="zoom-in">
@@ -176,6 +198,16 @@
 	</div>
 </div>
 
+    <div class="book">
+        <div class="page">
+            <h2>Page 1</h2>
+        </div>
+        <div class="page">
+            <h2>Page 2</h2>
+        </div>
+    </div>
+
+
 <div class="outer-container">
 	<div class="container">
 		<div class="row">
@@ -193,7 +225,7 @@
 
 <div class="outer-container">
 	<div id="contactFormContainer">
-		<form id="contactForm" method="post" action="mail.php">
+		<form id="contactForm" method="post" action="mail.php" onsubmit="return checkForm(this);">
 			<h1>Enquire Now</h1>
 			<div class="close-btn">
 				<img src="content/public/images/Close.png" class="img-responsive" alt="Close" onclick="closeForm2()">
@@ -219,14 +251,22 @@
 			<div class="req-field">
 				<textarea cols="20" id="Message" name="Message" placeholder="Your Requirement" rows="2"></textarea>
 			</div>
-			<div class="editor-field">
-		 		<canvas id="valicode"></canvas>
-  				<button id="toggle">refresh</button>
+			<div class="enq-field">
+				<input type="text" id="mainCaptcha"readonly="readonly"/>
+                <input type="button" id="refresh" value="Refresh" onclick="generateCaptcha();" />
   			</div>
-		 	<div class="editor-field">
-            	<input id="Captcha" name="Captcha" placeholder="Enter the Captcha?" type="text" value="" required/>
-        	</div>
-			<input id="submit" type="submit" value="Submit">
+  			<div class="enq-field">
+        		<input type="text" id="txtInput"/>    
+    		</div>
+			
+			<input  id="Button1" type="button" value="Check"  onclick="CheckValidCaptcha();"/>
+			<div class="enq-field">
+        		<span id="error" style="color:red"></span>
+    		</div>
+			<div class="enq-field">
+        		<span id="success" style="color:green"></span>
+    		</div>
+			<input type="submit" value="Submit" onclick="CheckValidCaptcha();"/>
 		</form>
 	</div>
 </div>
@@ -322,7 +362,7 @@
 			<div class="col-lg-12">
 		        <a href="javascript:" id="return-to-top" class="return-to-top">
 		          <h2>Back To Top</h2>
-		          <img src="content/Public/images/arrow.webp" class="img-fluid" alt="Arrow_Footer">
+		          <img src="content/public/images/arrow.webp" class="img-fluid" alt="Arrow_Footer">
 		        </a>
 			</div>
 		</div>

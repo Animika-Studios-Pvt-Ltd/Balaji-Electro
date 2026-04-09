@@ -161,8 +161,7 @@
 <div class="container-fluid">
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-1"></div>
-			<div class="col-lg-5" data-aos="zoom-in">
+			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" data-aos="zoom-in">
 				<a href="content/public/pdf/ISO-9001-2015-CERTIFICATE.pdf" target="_blank" class="certificate-link">
 					<div class="crtificate ics-cert"> 
 						<div class="overlay">
@@ -177,8 +176,23 @@
 					</div>
 				</a>
 			</div>
-			<div class="col-lg-5" data-aos="zoom-in" data-aos-offset="500" data-aos-duration="500">
-				<a href="content/public/pdf/Balaji Stall Profile3d8a.pdf" target="_blank" class="certificate-link">
+			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" data-aos="zoom-in">
+				<a href="content/public/pdf/Balaji Electro Controls Catalogue.pdf" target="_blank" class="certificate-link">
+					<div class="crtificate bec-pro"> 
+						<div class="overlay">
+							<div class="crtificate-text">
+							  <h3>BEC Catalogue</h3>
+							</div>
+							<div class="download">
+								<p>Download</p>
+								<a href="content/public/pdf/Balaji Electro Controls Catalogue.pdf" target="_blank"><img src="content/public/images/BEC - Company Profile Download.webp" class="img-fluid" alt="BEC - Company Profile Download"></a>
+							</div>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" data-aos="zoom-in">
+				<a href="content/public/pdf/BEC company profile.pdf" target="_blank" class="certificate-link">
 					<div class="crtificate bec-pro"> 
 						<div class="overlay">
 							<div class="crtificate-text">
@@ -186,13 +200,12 @@
 							</div>
 							<div class="download">
 								<p>Download</p>
-								<a href="content/public/pdf/Balaji Stall Profile3d8a.pdf" target="_blank"><img src="content/public/images/BEC - Company Profile Download.webp" class="img-fluid" alt="BEC - Company Profile Download"></a>
+								<a href="content/public/pdf/BEC company profile.pdf" target="_blank"><img src="content/public/images/BEC - Company Profile Download.webp" class="img-fluid" alt="BEC - Company Profile Download"></a>
 							</div>
 						</div>
 					</div>
 				</a>
 			</div>
-			<div class="col-lg-1"></div>
 		</div>
 	</div>
 </div>
@@ -266,7 +279,7 @@
 
 <div class="outer-container">
 	<div id="contactFormContainer">
-		<form id="contactForm" method="post" action="mail.php" onsubmit="return checkForm(this);">
+		<form id="contactForm" method="post" action="mail.php">
 			<h1>Enquire Now</h1>
 			<div class="close-btn">
 				<img src="content/public/images/Close.png" class="img-responsive" alt="Close" onclick="closeForm2()">
@@ -292,22 +305,13 @@
 			<div class="req-field">
 				<textarea cols="20" id="Message" name="Message" placeholder="Your Requirement" rows="2"></textarea>
 			</div>
-			<div class="enq-field">
-				<input type="text" id="mainCaptcha"readonly="readonly"/>
-                <input type="button" id="refresh" value="Refresh" onclick="generateCaptcha();" />
-  			</div>
-  			<div class="enq-field">
-        		<input type="text" id="txtInput"/>    
-    		</div>
-			
-			<input  id="Button1" type="button" value="Check"  onclick="CheckValidCaptcha();"/>
-			<div class="enq-field">
-        		<span id="error" style="color:red"></span>
-    		</div>
-			<div class="enq-field">
-        		<span id="success" style="color:green"></span>
-    		</div>
-			<input type="submit" value="Submit">
+			<div class="req-field">
+			    <label for="captcha">Please Enter the Captcha Text</label>
+			    <img src="captcha.php" alt="CAPTCHA" class="captcha-image"><i class="fas fa-redo refresh-captcha"></i>
+			    <br>
+			    <input type="text" id="captcha" name="captcha_challenge" pattern="[A-Z]{6}">
+			</div>
+			<input type="submit" value="Submit"/>
 		</form>
 	</div>
 </div>
@@ -349,6 +353,13 @@
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script src="content/public/js/jquery.smartmenus.js"></script>
 <script src="content/public/js/custom.js"></script>	
+
+<<script>
+	var refreshButton = document.querySelector(".refresh-captcha");
+refreshButton.onclick = function() {
+  document.querySelector(".captcha-image").src = 'captcha.php?' + Date.now();
+}
+</script>
 
 </body>
 </html>

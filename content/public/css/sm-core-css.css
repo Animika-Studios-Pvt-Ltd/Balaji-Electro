@@ -39,7 +39,7 @@
 
 .sm-blue ul a:hover, .sm-blue ul a:focus, .sm-blue ul a:active{
     background:#fff;
-    color: #237a37;
+    color: #2b2771;
     font-size: 15px;
     letter-spacing: 0.03em;
     text-shadow: none;
@@ -179,7 +179,7 @@
     .sm-blue ul a {
         padding: 7px 15px;
         font-size:15px;
-        font-family: Futura Book;
+        font-family: Industry-Book;
         letter-spacing: 0.05em;
         background: #2b2969;
         color: #fff;

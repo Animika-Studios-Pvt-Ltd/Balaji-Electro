@@ -11,10 +11,10 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" media="screen">
     <link rel="stylesheet" href="https://vadikom.github.io/smartmenus/src/css/sm-core-css.css">
 	<link rel="stylesheet" type="text/css" href="content/public/css/animate.css">
-    <link rel="stylesheet" href="Content/Public/css/sm-core-css.css">
+    <link rel="stylesheet" href="content/public/css/sm-core-css.css">
     <link rel="stylesheet" type="text/css" href="content/public/css/custom.css">
 </head>
-<body>
+<body onload="generateCaptcha();">
 
 
 <div class="container-fluid fixed-onscroll m-0 p-0">
@@ -23,11 +23,11 @@
 			<div class="row">
 				<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
 					<div class="logo">
-						<a href="index.html"><img src="Content/Public/images/BEC_Logo.webp" class="img-responsive" alt=""/></a>
+						<a href="index.html"><img src="content/public/images/BEC_Logo.webp" class="img-responsive" alt=""/></a>
 					</div>
 				</div>
 				<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
-					<div class="head-text">
+					<div class="head-text-inner">
 						<h1>Trusted source for all types of electrical Control panels and solutions across all the segments since 1986.</h1>
 					</div>
 				</div>  
@@ -146,40 +146,12 @@
 				<div class="inner-para" data-aos="zoom-in">
 					<h2><b>Vision</b></h2>
 					<p>To be the partner of choice for leading industries, brands gobally, for providing turnkey solutions of advanced, indigenous electrical control panels for safe, efficient energy management.</p>
-					<!-- <p>To be an admired brand in the electrical control panels industry, recognised for innovation and product excellence, creating customer delight, everytime!</p> -->
-					<!-- <ul style="margin-top: 30px;">
-						<li>Capacity Augmentation</li>
-						<li>Ultimate pleasure lies in making customers delighted by providing them excellent quality at their comfort. </li>
-						<li>Agressive marketing to enlarge the customer base</li>
-						<li>To be the fastest growing and profitable company</li>
-						<li>Re-orientation of the business operations to match the present scenario.</li>
-						<li>To establish a engineering team to take up turnkey assignments viz.,feasibility study, design, engineering, manufacturing, testing, supply and commissioning</li>
-						<li>To diversify product and grow</li>
-					</ul> -->
 					<h2><b>Mission</b></h2>
 					<p>Constantly strive to achieve product excellence and service excellence through innovation, process optimisation, and performance enhancements.</p>
 					<p>Partnership with leading brands to integrate advanced components into indigenous control panels.</p>
 					
 					<h2><b>Purpose</b></h2>
 					<p>Balaji Electro Controls is deeply rooted in the core purpose of manufacturing the most superior IEC 61439 compliant Electrical Control Panels that are Reliable, Safe, Energy Efficient, and reliable, at par with international standards.</p>
-					<!-- <p>To constantly raise the bar for superior quality products and services, through innovation, technology-adoption and stringent quality processes, for continued customer-satisfaction.</p> -->
-					<!-- <ul style="margin-top: 30px;">
-						<li>To be the leader in the power  distribution solutions domain   and  deliver  the   industries  best   customer experience through superior technology</li>
-						<li>To  be the most respected brand and most preferred Company for all the customers</li>
-						<li>To be the best team and the best work place</li>
-						<li>To improve responsiveness and complaint resolution Speed </li>
-						<li>To succeed with superior quality, competitive price, Delivery on-time and good after sales service.</li>
-					</ul>
-
-					<h2>Environmental, Health & Safety Policy</h2>
-					<ul style="margin-top: 30px;">
-						<li>Are committed to strive towards full engagement of all our employees, suppliers & clients, to ensure safe working conditions and safe behavior as well as take care of health and protect the environment in which we operate</li>
-						<li>Maintain safety standards, evoke enthusiasm in safe working practices, preventive ill health and minimize any deterioration to environment while controlling disposal of waste</li>
-						<li>Ensure that every employees uses his best efforts to ensure the safety of team members and he is responsible for protection of environment, Safety Management and best practices within the area of responsibility</li>
-						<li>Ensure that every accident are reported, analyzed and preventive measures are put in place</li>
-						<li>Excellence in health and safety drives excellent business results</li>
-						<li>Safety and Health is integrated in all our business management system and processes.</li>
-					</ul> -->
 				</div>
 			</div>
 		</div>
@@ -255,34 +227,49 @@
 
 <div class="outer-container">
 	<div id="contactFormContainer">
-		<form id="contactForm" method="post" action="mail.php">
-			<h1>Enquire Now</h1>
-			<div class="close-btn">
-				<img src="content/public/images/Close.png" class="img-responsive" alt="Close" onclick="closeForm2()">
-			</div>
-			<div class="enq-field">
-				<input type="text" name="Name" id="Name" placeholder="Your Name" value="" required/>
-			</div>
-			<div class="enq-field">
-				<input type="email" name="Email" id="Email" placeholder="email ID" value="" required/>
-			</div>
-			<div class="enq-field">
-				<input type="tel" name="Phone" id="Phone" placeholder=" Mobile Phone Number" value="" required/>
-			</div>
-			<div class="enq-field">
-				<input type="text" name="Name" id="Name" placeholder="Your Company Name" value="">
-			</div>
-			<div class="enq-field">
-				<input type="text" name="Name" id="Name" placeholder="Your City" value="" >
-			</div>
-			<div class="enq-field">
-				<input type="text" name="Name" id="Name" placeholder="Your Country" value="">
-			</div>
-			<div class="req-field">
-				<textarea cols="20" id="Message" name="Message" placeholder="Your Requirement" rows="2"></textarea>
-			</div>
-			<input type="submit" value="Submit">
-		</form>
+		<form id="contactForm" method="post" action="mail.php" onsubmit="return checkForm(this);">
+            <h1>Enquire Now</h1>
+            <div class="close-btn">
+                <img src="content/public/images/Close.png" class="img-responsive" alt="Close" onclick="closeForm2()">
+            </div>
+            <div class="enq-field">
+                <input type="text" name="Name" id="Name" placeholder="Your Name" value="" required/>
+            </div>
+            <div class="enq-field">
+                <input type="email" name="Email" id="Email" placeholder="email ID" value="" required/>
+            </div>
+            <div class="enq-field">
+                <input type="tel" name="Phone" id="Phone" placeholder=" Mobile Phone Number" value="" required/>
+            </div>
+            <div class="enq-field">
+                <input type="text" name="Name" id="Name" placeholder="Your Company Name" value="">
+            </div>
+            <div class="enq-field">
+                <input type="text" name="Name" id="Name" placeholder="Your City" value="" >
+            </div>
+            <div class="enq-field">
+                <input type="text" name="Name" id="Name" placeholder="Your Country" value="">
+            </div>
+            <div class="req-field">
+                <textarea cols="20" id="Message" name="Message" placeholder="Your Requirement" rows="2"></textarea>
+            </div>
+            <div class="enq-field">
+                <input type="text" id="mainCaptcha"readonly="readonly"/>
+                <input type="button" id="refresh" value="Refresh" onclick="generateCaptcha();" />
+            </div>
+            <div class="enq-field">
+                <input type="text" id="txtInput"/>    
+            </div>
+            
+            <input  id="Button1" type="button" value="Check"  onclick="CheckValidCaptcha();"/>
+            <div class="enq-field">
+                <span id="error" style="color:red"></span>
+            </div>
+            <div class="enq-field">
+                <span id="success" style="color:green"></span>
+            </div>
+            <input type="submit" value="Submit" onclick="CheckValidCaptcha();"/>
+        </form>
 	</div>
 </div>
 <div id="contactLink">Enquire Now</div>
@@ -310,7 +297,7 @@
 			<div class="col-lg-12">
 		        <a href="javascript:" id="return-to-top" class="return-to-top">
 		          <h2>Back To Top</h2>
-		          <img src="content/Public/images/arrow.webp" class="img-fluid" alt="Arrow_Footer">
+		          <img src="content/public/images/arrow.webp" class="img-fluid" alt="Arrow_Footer">
 		        </a>
 			</div>
 		</div>

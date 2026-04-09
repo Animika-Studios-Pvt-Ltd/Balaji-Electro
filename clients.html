@@ -10,11 +10,11 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" media="screen">
     <link rel="stylesheet" href="https://vadikom.github.io/smartmenus/src/css/sm-core-css.css">
-    <link rel="stylesheet" href="Content/Public/css/sm-core-css.css">
+    <link rel="stylesheet" href="content/public/css/sm-core-css.css">
     <link rel="stylesheet" type="text/css" href="content/public/css/animate.css">
     <link rel="stylesheet" type="text/css" href="content/public/css/custom.css">
 </head>
-<body>
+<body onload="generateCaptcha();">
 
 <div class="container-fluid fixed-onscroll m-0 p-0">
 	<div class="row">
@@ -22,11 +22,11 @@
 			<div class="row">
 				<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
 					<div class="logo">
-						<a href="index.html"><img src="Content/Public/images/BEC_Logo.webp" class="img-responsive" alt=""/></a>
+						<a href="index.html"><img src="content/public/images/BEC_Logo.webp" class="img-responsive" alt=""/></a>
 					</div>
 				</div>
 				<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
-					<div class="head-text">
+					<div class="head-text-inner">
 						<h1>Trusted source for all types of electrical Control panels and solutions across all the segments since 1986.</h1>
 					</div>
 				</div>  
@@ -149,7 +149,6 @@
 							<span>industries served</span>
 						</div>
 			        	<ul class="links presence">
-			        	
 			          		<li>
 			            		<a href="#section1" id="client-img">
 			              			<img src="content/public/images/AIRPORT.webp" class="img-fluid" alt="AIRPORT">
@@ -207,7 +206,7 @@
 			          		<li>
 			            		<a href="#section10" id="client-img">
 			              			<img src="content/public/images/METRO.webp" class="img-fluid" alt="METRO">
-									<p>Metro</p>
+									<p>Transportation</p>
 			            		</a>
 			          		</li>
 			          		<li>
@@ -251,16 +250,16 @@
 			              			<div class="hospitals-clients" id="client-1">
 			             			<div class="row">
 			              				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-			              					<p>Bangalore International Airport Ltd</p>
+			              					<p>Kempegowda International Airport Ltd</p>
 			              					<div class="each-clients" style="border-radius: 7px;">
-			              						<img src="content/public/images/Bangalore International Airport Ltd   .webp" class="img-fluid" alt="AIRPORT">
+			              						<img src="content/public/images/Kempegouda International Airport Ltd.webp" class="img-fluid" alt="AIRPORT">
 			              					</div>
 			              				</div>
 			              				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
 			              					<p>Biju Patnaik International Airport - Bhubaneswar</p>
 			              					<div class="each-clients">
-			              					<img src="content/public/images/BIJU PATNAIK  INTERNATIONAL AIRPORT  Bhubaneswar.webp" class="img-fluid" alt="AIRPORT">
-			              				</div>
+			              						<img src="content/public/images/BIJU PATNAIK  INTERNATIONAL AIRPORT  Bhubaneswar.webp" class="img-fluid" alt="AIRPORT">
+			              					</div>
 			              				</div>
 			              				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
 			              					<p>Chennai International Airport</p>
@@ -276,7 +275,6 @@
 			              				</div>
 			              			</div>
 			              			<div class="row">
-			              				
 			              				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
 			              					<p>Magellan Aerospace Corporation</p>
 			              					<div class="each-clients" style="border-radius: 7px;">
@@ -492,77 +490,74 @@
 									<div class="col-lg- col-md-3 col-sm-3 col-xs-123">
 										<p>Shivaganga Medical College</p>
 										<div class="each-clients" style="border-radius: 7px;">
-										<img src="content/public/images/Shivaganga Medical College .webp" class="img-fluid" alt="Shivaganga Medical College">
-										
-									</div>
+											<img src="content/public/images/Shivaganga Medical College .webp" class="img-fluid" alt="Shivaganga Medical College">
+										</div>
 									</div>
 									<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
 										<p>PES Medical College at Kuppam</p>
 										<div class="each-clients" style="border-radius: 7px;">
-										<img src="content/public/images/PES Medical College, Kuppam.webp" class="img-fluid" alt="PES Medical College, Kuppam">
-									</div>
+											<img src="content/public/images/PES Medical College, Kuppam.webp" class="img-fluid" alt="PES Medical College, Kuppam">
+										</div>
 									</div>
 									<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
 										<p>Sapthagiri Medical College at Bengaluru</p>
 										<div class="each-clients" style="border-radius: 7px;">
-										<img src="content/public/images/Sapthagiri Medical College .webp" class="img-fluid" alt="Sapthagiri Medical College">
-									</div>
+											<img src="content/public/images/Sapthagiri Medical College .webp" class="img-fluid" alt="Sapthagiri Medical College">
+										</div>
 									</div>
 								</div>
 								<div class="row">
 									<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
 										<p>Manipal University</p>
 										<div class="each-clients">
-										<img src="content/public/images/MANIPAL UNIVERSITY.webp" class="img-fluid" alt="MANIPAL UNIVERSITY">
-									</div>
+											<img src="content/public/images/MANIPAL UNIVERSITY.webp" class="img-fluid" alt="MANIPAL UNIVERSITY">
+										</div>
 									</div>
 									<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12"> 
 										<p>Fortis Hospital</p>
 										<div class="each-clients" style="border-radius: 7px;">
-										<img src="content/public/images/FORTIS HOSPITAL.webp" class="img-fluid" alt="Shivaganga Medical College">
-									</div>
+											<img src="content/public/images/FORTIS HOSPITAL.webp" class="img-fluid" alt="Shivaganga Medical College">
+										</div>
 									</div>
 									<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
 										<p>Vikram Hospital at Mysore</p>
 										<div class="each-clients" style="border-radius: 7px;">
-										<img src="content/public/images/Vikram Hospital, Mysore.webp" class="img-fluid" alt="Shivaganga Medical College">
-									</div>
+											<img src="content/public/images/Vikram Hospital, Mysore.webp" class="img-fluid" alt="Shivaganga Medical College">
+										</div>
 									</div>
 									<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
 										<p>Raghava Diagnostic centre</p>
 										<div class="each-clients" style="border-radius: 7px;">
-										<img src="content/public/images/Raghava Diagnostic centre.webp" class="img-fluid" alt="Shivaganga Medical College">
-									</div>
+											<img src="content/public/images/Raghava Diagnostic centre.webp" class="img-fluid" alt="Shivaganga Medical College">
+										</div>
 									</div>
 									<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
 										<p>Vegus Hospital at Bangalore</p>
 										<div class="each-clients" style="border-radius: 7px;">
-										<img src="content/public/images/Vegus Hospital, Bangalore.webp" class="img-fluid" alt="Shivaganga Medical College">
-									</div>
+											<img src="content/public/images/Vegus Hospital, Bangalore.webp" class="img-fluid" alt="Shivaganga Medical College">
+										</div>
 									</div>
 									<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
 										<p>Panacea Hospital at Rajajinagar</p>
 										<div class="each-clients" style="border-radius: 7px;">
-										<img src="content/public/images/Panacea Hospital At Rajajinagar.webp" class="img-fluid" alt="Shivaganga Medical College">
-									</div>
+											<img src="content/public/images/Panacea Hospital At Rajajinagar.webp" class="img-fluid" alt="Shivaganga Medical College">
+										</div>
 									</div>
 									<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
 										<p>Vydehi Multi Speciality Hospital at Bengaluru</p>
 										<div class="each-clients" style="border-radius: 7px;">
-										<img src="content/public/images/Vydehi Multi Speciality Hospital BENGALURU.webp" class="img-fluid" alt="Shivaganga Medical College">
-									</div>
+											<img src="content/public/images/Vydehi Multi Speciality Hospital BENGALURU.webp" class="img-fluid" alt="Shivaganga Medical College">
+										</div>
 									</div>
 									<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
 										<p>Siddaganga Super Speciality Hospital</p>
 										<div class="each-clients" style="border-radius: 7px;">
-										<img src="content/public/images/Siddaganga Super Speciality Hospital.webp" class="img-fluid" alt="Shivaganga Medical College">
-									</div>
-									</div>
+											<img src="content/public/images/Siddaganga Super Speciality Hospital.webp" class="img-fluid" alt="Shivaganga Medical College">
+										</div>
 									</div>
 								</div>
+								</div>
 			              			</div>
-			              
-			              		</div>
 			            	</div>
 			          	</article>
 			        </div>
@@ -582,7 +577,7 @@
 											<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
 												<p>Manipal University at Manipal</p>
 												<div class="each-clients" style="border-radius: 7px;">
-													<img src="content/public/images/Manipal University.webp" class="img-fluid" alt="Manipal University.webp">
+													<img src="content/public/images/BEC_Manipal University.webp" class="img-fluid" alt="Manipal University.webp">
 												</div>
 											</div>
 											<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
@@ -610,7 +605,6 @@
 			            	</div>
 			          	</article>
 			        </div>
-
 
 			        <div id="section6" class="expanding-container">
 			          <article class="hentry">
@@ -783,67 +777,73 @@
 									<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
 										<p>JSPL</p>
 										<div class="each-clients" style="border-radius: 7px;">
-										<img src="content/public/images/JSPL.webp" class="img-fluid" alt="STEEL & POWER">
+										<img src="content/public/images/BEC_JSPL.webp" class="img-fluid" alt="STEEL & POWER">
 										</div>
 									</div>
 									<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
 										<p>JSW Bhushan Power Steel</p>
 										<div class="each-clients" style="border-radius: 7px;">
-										<img src="content/public/images/JSW Bhushan Power Steel.webp" class="img-fluid" alt="STEEL & POWER">
+											<img src="content/public/images/JSW Bhushan Power Steel.webp" class="img-fluid" alt="STEEL & POWER">
 										</div>
 									</div>
 									<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
 										<p>Kalyani Steel</p>
 										<div class="each-clients" style="border-radius: 7px;">
-										<img src="content/public/images/Kalyani Steel.webp" class="img-fluid" alt="STEEL & POWER">
+											<img src="content/public/images/Kalyani Steel.webp" class="img-fluid" alt="STEEL & POWER">
 										</div>
 									</div>
 									<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
 										<p>MSPL</p>
 										<div class="each-clients" style="border-radius: 7px;">
-										<img src="content/public/images/MSPL.webp" class="img-fluid" alt="STEEL & POWER">
+											<img src="content/public/images/MSPL.webp" class="img-fluid" alt="STEEL & POWER">
 										</div>
 									</div>
 									<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
 										<p>NTPC</p>
 										<div class="each-clients" style="border-radius: 7px;">
-										<img src="content/public/images/NTPC.webp" class="img-fluid" alt="STEEL & POWER">
+											<img src="content/public/images/NTPC.webp" class="img-fluid" alt="STEEL & POWER">
 										</div>
 									</div>
 									<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
 										<p>SLR Metalics</p>
 										<div class="each-clients" style="border-radius: 7px;">
-										<img src="content/public/images/SLR METALICS.webp" class="img-fluid" alt="STEEL & POWER">
+											<img src="content/public/images/SLR METALICS.webp" class="img-fluid" alt="STEEL & POWER">
 										</div>
 									</div>
 									<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
 										<p>JSW Energy</p>
 										<div class="each-clients" style="border-radius: 7px;">
-										<img src="content/public/images/JSW ENERGY.webp" class="img-fluid" alt="STEEL & POWER">
-									</div>
+											<img src="content/public/images/JSW ENERGY.webp" class="img-fluid" alt="STEEL & POWER">
+										</div>
 									</div>
 									<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
 										<p>NALCO</p>
 										<div class="each-clients" style="border-radius: 7px;">
-										<img src="content/public/images/NALCO.webp" class="img-fluid" alt="STEEL & POWER">
-									</div>
+											<img src="content/public/images/NALCO.webp" class="img-fluid" alt="STEEL & POWER">
+										</div>
 									</div>
 									<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
 										<p>BHEL</p>
 										<div class="each-clients" style="border-radius: 7px;">
-										<img src="content/public/images/BHEL.webp" class="img-fluid" alt="STEEL & POWER">
-									</div>
+											<img src="content/public/images/BHEL.webp" class="img-fluid" alt="STEEL & POWER">
+										</div>
 									</div>
 									<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
 										<p>SAR ISPAT Pvt Ltd</p>
 										<div class="each-clients" style="border-radius: 7px;">
-										<img src="content/public/images/SAR ISPAT PVT LTD.webp" class="img-fluid" alt="STEEL & POWER">
-									</div>
+											<img src="content/public/images/SAR ISPAT PVT LTD.webp" class="img-fluid" alt="STEEL & POWER">
+										</div>
 									</div>
 									<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
 										<p>JSW Steel Ltd Ballery and Salem</p>
 										<div class="each-clients" style="border-radius: 7px;">
-										<img src="content/public/images/JSW Steel Limited Ballery and Salem.webp" class="img-fluid" alt="STEEL & POWER">
+											<img src="content/public/images/JSW Steel Limited Ballery and Salem.webp" class="img-fluid" alt="STEEL & POWER">
+										</div>
+									</div>
+									<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+										<p>Bhabha Atomic Research Centre</p>
+										<div class="each-clients" style="border-radius: 7px;">
+										<img src="content/public/images/BHABHA ATOMIC RESEARCH CENTRE.webp" class="img-fluid" alt="STEEL & POWER">
 									</div>
 									</div>
 								</div>
@@ -946,8 +946,8 @@
 			          </article>
 			        </div>
 
-			        <div id="section10" class="expanding-container" style="margin-left: 70%;">
-			          <article class="hentry" style="width: 30%;">
+			        <div id="section10" class="expanding-container client-10">
+			          <article class="hentry" id="client-10">
 			            <div class="entry-image">
 			              <div class="prod-details">
 			             	<div class="hospitals-clients" id="client-1">
@@ -955,10 +955,10 @@
 			              			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 										<p>Underground Substations- Majestic East West, Mejestic South North, Chikkapete, K R Market Station Bangalore</p>
 			              				<div class="each-clients" style="border-radius: 7px;">
-			              				<img src="content/public/images/Underground Substations- Majestic East West, Mejestic South North, Chikkapete, K R Market Station Bangalore.webp" class="img-fluid" alt="LARGE CAMPUS">
+			              					<img src="content/public/images/Underground Substations- Majestic East West, Mejestic South North, Chikkapete, K R Market Station Bangalore.webp" class="img-fluid" alt="LARGE CAMPUS">
+			              				</div>
 			              			</div>
 			              		</div>
-			              	</div>
 			             	</div>
 			              </div>
 			            </div>
@@ -1077,9 +1077,9 @@
 			              				</div>
 			              			</div>
 			              			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-										<p>Paramesu Biotech Private Limited</p>
-			              				<div class="each-clients" style="border-radius: 7px;">
-			              					<img src="content/public/images/Alpha Technology.webp" class="img-fluid" alt="STEEL & POWER" >
+										<p>Alpha Technology</p>
+			              				<div class="each-clients" style="border-radius: 7px; margin-top: 45px;">
+			              					<img src="content/public/images/ALPHA TECHNOLOGY.webp" class="img-fluid" alt="STEEL & POWER" >
 			              				</div>
 			              			</div>
 			              			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
@@ -1131,7 +1131,7 @@
 			              				</div>
 			              			</div>
 			              			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-										<p>WISTRON/p>
+										<p>WISTRON</p>
 			              				<div class="each-clients" style="border-radius: 7px;">
 			              					<img src="content/public/images/WISTRON.webp" class="img-fluid" alt="STEEL & POWER" >
 			              				</div>
@@ -1264,8 +1264,8 @@
 			          </article>
 			        </div>
 
-			        <div id="section14" class="expanding-container client-14" style="margin-left: 30%;">
-			          <article class="hentry"  style="width: 70%;">
+			        <div id="section14" class="expanding-container client-14">
+			          <article class="hentry" id="client-14">
 			            <div class="entry-image">
 			              <div class="prod-details">
 			              	<div class="hospitals-clients" id="client-1">
@@ -1295,867 +1295,35 @@
 			          </article>
 			        </div>
 
-			        <div id="section15" class="expanding-container client-15" style="margin-left: 30%;">
-			          <article class="hentry"  style="width: 70%;">
+			        <div id="section15" class="expanding-container client-15">
+			          <article class="hentry" id="client-15">
 			            <div class="entry-image">
 			              <div class="prod-details">
 			              	<div class="hospitals-clients" id="client-1">
 								<div class="row">
-									<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-										<p>Bhabha Atomic Research Centre</p>
-										<div class="each-clients" style="border-radius: 7px;">
-										<img src="content/public/images/BHABHA ATOMIC RESEARCH CENTRE.webp" class="img-fluid" alt="STEEL & POWER">
-									</div>
-									</div>
-									<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+									<div class="col-lg-1 col-md-1 col-sm-1 col-xs-12"></div>
+									<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
 										<p>Indian Space Research Organisation</p>
 										<div class="each-clients" style="border-radius: 7px;">
 										<img src="content/public/images/Indian Space Research Organisation.webp" class="img-fluid" alt="STEEL & POWER">
 									</div>
 									</div>
-									<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+									<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
 										<p>Master Control Facility Hassan</p>
 										<div class="each-clients" style="border-radius: 7px;">
 										<img src="content/public/images/MCF HASSAN.webp" class="img-fluid" alt="STEEL & POWER">
 									</div>
 									</div>
+									<div class="col-lg-1 col-md-1 col-sm-1 col-xs-12"></div>
 								</div>
 			              	</div>
 			              </div>
 			            </div>
 			          </article>
 			        </div>
+
 			      </div>
 			  </div>
-			</div>
-		</div>
-	</div>
-</div>
-
-
-
-<!-- <div class="outer-container">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12">
-				<div class="inner-head" data-aos="zoom-in">
-					<h1>Clients</h1>
-				</div>
-
-				<div class="expanding-grid">
-					<div class="inner-para" data-aos="zoom-in">
-					<div class="clients-head">
-						<span>industries served</span>
-					</div>
-			        <ul class="links presence">
-			        	
-			          <li>
-			            <a href="#section1" class="button">
-			              <img src="content/public/images/AIRPORT.webp" class="img-fluid" alt="AIRPORT">
-			              <p>Airport</p>
-			              <figure style="left: 15px;">
-			              	<div class="row">
-			              		<div class="col-lg-4">
-			              			<img src="content/public/images/Bangalore International Airport Ltd   .webp" class="img-fluid" alt="AIRPORT">
-			              		</div>
-			              		<div class="col-lg-4">
-			              			<img src="content/public/images/BIJU PATNAIK  INTERNATIONAL AIRPORT  Bhubaneswar.webp" class="img-fluid" alt="AIRPORT">
-			              		</div>
-			              		<div class="col-lg-4">
-			              			<img src="content/public/images/Hanger at Chennai Airport.webp" class="img-fluid" alt="AIRPORT">
-			              		</div>
-			              	</div>
-			              	<div class="row">
-			              		<div class="col-lg-4">
-			              			<img src="content/public/images/Hindustan Aeronautics Limited.webp" class="img-fluid" alt="AIRPORT">
-			              		</div>
-			              		<div class="col-lg-4">
-			              			<img src="content/public/images/Magellan Aerospace.webp" class="img-fluid" alt="AIRPORT">
-			              		</div>
-			              		<div class="col-lg-4">
-			              			<img src="content/public/images/Rajiv Ghandi International Airport.webp" class="img-fluid" alt="AIRPORT">
-			              		</div>
-			              	</div>
-			              </figure>
-			            </a>
-			          </li>
-			          
-			          <li>
-			            <a href="#section2" class="button">
-			             	<img src="content/public/images/CEMENT INDUSTRY.webp" class="img-fluid" alt="CEMENT INDUSTRY">
-							<p>Cement Industry</p>
-							<figure style="left: -215px;">
-								<div class="row">
-									<div class="col-lg-3">
-										<img src="content/public/images/ACC Cement.webp" class="img-fluid" alt="ACC Cement">
-									</div>
-									<div class="col-lg-3">
-										<img src="content/public/images/HK CEMENT.webp" class="img-fluid" alt="HK CEMENT">
-									</div>
-									<div class="col-lg-3">
-										<img src="content/public/images/JK Cement.webp" class="img-fluid" alt="JK Cement">
-									</div>
-									<div class="col-lg-3">
-										<img src="content/public/images/Orient Cement Limited.webp" class="img-fluid" alt="Orient Cement Limited">
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-lg-3">
-										<img src="content/public/images/Reliance Cement.webp" class="img-fluid" alt="Reliance Cement">
-									</div>
-									<div class="col-lg-3">
-										<img src="content/public/images/Sarbottam Cement Limit.webp" class="img-fluid" alt="Sarbottam Cement Limit">
-									</div>
-									<div class="col-lg-3">
-										<img src="content/public/images/Ultratech Cement Limited.webp" class="img-fluid" alt="Ultratech Cement Limited">
-									</div>
-									<div class="col-lg-3">
-										<img src="content/public/images/Zuwari cement.webp" class="img-fluid" alt="Zuwari cement">
-									</div>
-								</div>
-							</figure>
-			            </a>
-			          </li>
-			          <li>
-			            <a href="#section3" class="button">
-			              	<img src="content/public/images/FMCG.webp" class="img-fluid" alt="FMCG">
-							<p>FMCG</p>
-							<figure>
-								<div class="row">
-			              		<div class="col-lg-4">
-			              			<img src="content/public/images/KMF.webp" class="img-fluid" alt="KMF.webp">
-			              		</div>
-			              		<div class="col-lg-4">
-			              			<img src="content/public/images/Kurlon.webp" class="img-fluid" alt="Kurlon.webp">
-			              		</div>
-			              		<div class="col-lg-4">
-			              			<img src="content/public/images/MEGA FRUITS.webp" class="img-fluid" alt="MEGA FRUITS.webp">
-			              		</div>
-			              	</div>
-			              	<div class="row">
-			              		<div class="col-lg-4">
-			              			<img src="content/public/images/PS Electricals.webp" class="img-fluid" alt="PS Electricals.webp">
-			              		</div>
-			              		<div class="col-lg-4">
-			              			<img src="content/public/images/Steer Engineering.webp" class="img-fluid" alt="Steer Engineering.webp">
-			              		</div>
-			              		<div class="col-lg-4">
-			              			<img src="content/public/images/VISTA FOODS.webp" class="img-fluid" alt="VISTA FOODS.webp">
-			              		</div>
-			              	</div>
-							</figure>
-			            </a>
-			          </li>
-			          <li>
-			            <a href="#section4" class="button">
-			                <img src="content/public/images/HOSPITALS.webp" class="img-fluid" alt="HOSPITALS">
-							<p>Hospitals</p>
-							<figure>
-								<div class="row">
-									<div class="col-lg-3">
-										<img src="content/public/images/Cardiac Care Hospital, Odisha.webp" class="img-fluid" alt="Cardiac Care Hospital, Odisha">
-									</div>
-									<div class="col-lg-3">
-										<img src="content/public/images/MANIPAL UNIVERSITY.webp" class="img-fluid" alt="MANIPAL UNIVERSITY">
-									</div>
-									<div class="col-lg-3">
-										<img src="content/public/images/PES Medical College, Kuppam.webp" class="img-fluid" alt="PES Medical College, Kuppam">
-									</div>
-									<div class="col-lg-3">
-										<img src="content/public/images/Sapthagiri Medical College .webp" class="img-fluid" alt="Sapthagiri Medical College">
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-lg-3">
-										<img src="content/public/images/Shivaganga Medical College .webp" class="img-fluid" alt="Shivaganga Medical College">
-									</div>
-									<div class="col-lg-3">
-										<img src="content/public/images/Vegus Hospital, Bangalore.webp" class="img-fluid" alt="Shivaganga Medical College">
-									</div>
-									<div class="col-lg-3">
-										<img src="content/public/images/Vikram Hospital, Mysore.webp" class="img-fluid" alt="Shivaganga Medical College">
-									</div>
-									<div class="col-lg-3">
-										<img src="content/public/images/VydehiMedicalCollege-Logo.webp" class="img-fluid" alt="Shivaganga Medical College">
-									</div>
-								</div>
-			              </figure>
-			            </a>
-			          </li>
-			          <li>
-			            <a href="#section5" class="button">
-			                <img src="content/public/images/INSTITUTIONALS.webp" class="img-fluid" alt="INSTITUTIONALS">
-							<p>Institutional</p>
-							<figure style="left: -240px; width: 220%;">
-								<div class="row">
-									<div class="col-lg-6">
-										<img src="content/public/images/IIT Bhuvaneswar.webp" class="img-fluid" alt="IIT Bhuvaneswar.webp">
-									</div>
-									<div class="col-lg-6">
-										<img src="content/public/images/Manipal University.webp" class="img-fluid" alt="Manipal University.webp">
-									</div>
-								</div>
-							</figure>
-			            </a>
-			          </li>
-			          <li>
-			            <a href="#section6" class="button">
-			              <img src="content/public/images/LARGE CAMPUS.webp" class="img-fluid" alt="LARGE CAMPUS">
-							<p>Large Campus</p>
-							<figure style="left: 20px;">
-								<div class="row">
-									<div class="col-lg-3">
-										<img src="content/public/images/Bhagmane Techpark.webp" class="img-fluid" alt="LARGE CAMPUS">
-									</div>
-									<div class="col-lg-3">
-										<img src="content/public/images/Brigade Nalapad.webp" class="img-fluid" alt="LARGE CAMPUS">
-									</div>
-									<div class="col-lg-3">
-										<img src="content/public/images/Brigade World Trade Center Cochin.webp" class="img-fluid" alt="LARGE CAMPUS">
-									</div>
-									<div class="col-lg-3">
-										<img src="content/public/images/Brigade WTC Chennai.webp" class="img-fluid" alt="LARGE CAMPUS">
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-lg-3">
-										<img src="content/public/images/Eco Space.webp" class="img-fluid" alt="LARGE CAMPUS">
-									</div>
-									<div class="col-lg-3">
-										<img src="content/public/images/JP Morgan.webp" class="img-fluid" alt="LARGE CAMPUS">
-									</div>
-									<div class="col-lg-3">
-										<img src="content/public/images/Mantri Mall.webp" class="img-fluid" alt="LARGE CAMPUS">
-									</div>
-									<div class="col-lg-3">
-										<img src="content/public/images/Manyata Tech Park.webp" class="img-fluid" alt="LARGE CAMPUS">
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-lg-3">
-										<img src="content/public/images/Prestige Jindal City.webp" class="img-fluid" alt="LARGE CAMPUS">
-									</div>
-									<div class="col-lg-3">
-										<img src="content/public/images/Prestige Techpark.webp" class="img-fluid" alt="LARGE CAMPUS">
-									</div>
-									<div class="col-lg-6"></div>
-								</div>
-							</figure>
-			            </a>
-			          </li>
-			          <li>
-			            <a href="#section7" class="button">
-			                <img src="content/public/images/METRO.webp" class="img-fluid" alt="METRO">
-							<p>Metro</p>
-							<figure style="width: 150%; left: 0px;">
-								<img src="content/public/images/Underground Substations- Majestic East West, Mejestic South North, Chikkapete, K R Market Station Bangalore.webp" class="img-fluid" alt="LARGE CAMPUS" style="margin: 5px 0px 20px 55px;">
-							</figure>
-			            </a>
-			          </li>
-			          <li>
-			            <a href="#section8" class="button">
-			                <img src="content/public/images/PORTS.webp" class="img-fluid" alt="PORTS">
-							<p>Ports</p>
-							<figure>
-								<div class="row">
-									<div class="col-lg-3">
-										<img src="content/public/images/Gopalpur Port Limited.webp" class="img-fluid" alt="PORTS">
-									</div>
-									<div class="col-lg-3">
-										<img src="content/public/images/Karaikal Port Limited.webp" class="img-fluid" alt="PORTS">
-									</div>
-									<div class="col-lg-3">
-										<img src="content/public/images/Krishnapatnam Port Limited.webp" class="img-fluid" alt="PORTS">
-									</div>
-									<div class="col-lg-3">
-										<img src="content/public/images/The Dhamra Port Company Limited.webp" class="img-fluid" alt="PORTS">
-									</div>
-								</div>
-							</figure>
-			            </a>
-			          </li>
-			          <li>
-			            <a href="#section9" class="button">
-			              	<img src="content/public/images/RENEWABLE ENERGY.webp" class="img-fluid" alt="RENEWABLE ENERGY">
-							<p>Renewable Energy</p>
-							<figure style="left: 0px; width: 240px;">
-								<img src="content/public/images/First India Corporation.webp" class="img-fluid" alt="RENEWABLE ENERGY" style="margin: 5px 0px 20px 40px;">
-							</figure>
-			            </a>
-			          </li>
-			          
-			          <li>
-			            <a href="#section10" class="button">
-			              	<img src="content/public/images/STEEL & POWER.webp" class="img-fluid" alt="STEEL & POWER">
-							<p>Steel & Power</p>
-							<figure style="left: -520px;">
-								<div class="row">
-									<div class="col-lg-3">
-										<img src="content/public/images/ESSAR POWER LIMITED.webp" class="img-fluid" alt="STEEL & POWER">
-									</div>
-									<div class="col-lg-3">
-										<img src="content/public/images/ESSAR STEEL LIMITED.webp" class="img-fluid" alt="STEEL & POWER">
-									</div>
-									<div class="col-lg-3">
-										<img src="content/public/images/Gataprabha Power House.webp" class="img-fluid" alt="STEEL & POWER">
-									</div>
-									<div class="col-lg-3">
-										<img src="content/public/images/JSPL.webp" class="img-fluid" alt="STEEL & POWER">
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-lg-3">
-										<img src="content/public/images/JSW Bhushan Power Steel.webp" class="img-fluid" alt="STEEL & POWER">
-									</div>
-									<div class="col-lg-3">
-										<img src="content/public/images/JSW Steel Limited Ballery and Salem.webp" class="img-fluid" alt="STEEL & POWER">
-									</div>
-									<div class="col-lg-3">
-										<img src="content/public/images/Kalyani Steel.webp" class="img-fluid" alt="STEEL & POWER">
-									</div>
-									<div class="col-lg-3">
-										<img src="content/public/images/KPCL-Nagjari Power House.webp" class="img-fluid" alt="STEEL & POWER">
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-lg-3">
-										<img src="content/public/images/MSPL.webp" class="img-fluid" alt="STEEL & POWER">
-									</div>
-									<div class="col-lg-3">
-										<img src="content/public/images/SAR ISPAT PVT LTD.webp" class="img-fluid" alt="STEEL & POWER">
-									</div>
-									<div class="col-lg-3">
-										<img src="content/public/images/SLR METALICS.webp" class="img-fluid" alt="STEEL & POWER">
-									</div>
-									<div class="col-lg-3">
-										<img src="content/public/images/Supa Power House.webp" class="img-fluid" alt="STEEL & POWER">
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-lg-3">
-										<img src="content/public/images/TMEIC.webp" class="img-fluid" alt="STEEL & POWER">
-									</div>
-									<div class="col-lg-9"></div>
-								</div>
-							</figure>
-			            </a>
-			          </li>
-			          <li>
-			            <a href="#section11" class="button">
-			              	<img src="content/public/images/SUGAR INDUSTRY.webp" class="img-fluid" alt="SUGAR INDUSTRY">
-							<p>Sugar Industry</p>
-							<figure style="left: 20px;">
-								<div class="row">
-									<div class="col-lg-4">
-										<img src="content/public/images/Chamundi Sugars.webp" class="img-fluid" alt="SUGAR INDUSTRY">
-									</div>
-									<div class="col-lg-4">
-										<img src="content/public/images/KPN Sugars.webp" class="img-fluid" alt="SUGAR INDUSTRY">
-									</div>
-									<div class="col-lg-4">
-										<img src="content/public/images/Satish Sugars.webp" class="img-fluid" alt="SUGAR INDUSTRY">
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-lg-4">
-										<img src="content/public/images/Shamnur Sugars .webp" class="img-fluid" alt="SUGAR INDUSTRY">
-									</div>
-									<div class="col-lg-4">
-										<img src="content/public/images/Ugar Sugars.webp" class="img-fluid" alt="SUGAR INDUSTRY">
-									</div>
-									<div class="col-lg-4"></div>
-								</div>
-							</figure>
-			            </a>
-			          </li>
-			          <li>
-			            <a href="#section12" class="button">
-			              	<img src="content/public/images/MEDICAL INDUSTRY.webp" class="img-fluid" alt="STEEL & POWER">
-							<p>Medical Industry</p>
-							<figure style="left: 10px;">
-								<div class="row">
-									<div class="col-lg-4">
-										<img src="content/public/images/JUBLIENT.webp" class="img-fluid" alt="STEEL & POWER">
-									</div>
-									<div class="col-lg-4">
-										<img src="content/public/images/MICROLABS.webp" class="img-fluid" alt="STEEL & POWER">
-									</div>
-									<div class="col-lg-4">
-										<img src="content/public/images/SAI LIFE SCIENCE.webp" class="img-fluid" alt="STEEL & POWER">
-									</div>
-								</div>
-							</figure>
-			            </a>
-			          </li>
-			          <li>
-			            <a href="#section13" class="button">
-			              	<img src="content/public/images/SATELLITE INDUSTRY.webp" class="img-fluid" alt="STEEL & POWER">
-							<p>Satellite Industry</p>
-							<figure style="width: 540px; left: -13px;">
-								<div class="row">
-									<div class="col-lg-4">
-										<img src="content/public/images/BHABHA ATOMIC RESEARCH CENTRE.webp" class="img-fluid" alt="STEEL & POWER">
-									</div>
-									<div class="col-lg-4">
-										<img src="content/public/images/Indian Space Research Organisation.webp" class="img-fluid" alt="STEEL & POWER">
-									</div>
-									<div class="col-lg-4">
-										<img src="content/public/images/MCF HASSAN.webp" class="img-fluid" alt="STEEL & POWER">
-									</div>
-								</div>
-							</figure>
-			            </a>
-			          </li>
-			          <li>
-			            <a href="#section14" class="button">
-			              	<img src="content/public/images/PETROLEUM INDUSTRY.webp" class="img-fluid" alt="STEEL & POWER">
-							<p>Petroleum Industry</p>
-							<figure>
-								<div class="row">
-									<div class="col-lg-4">
-										<img src="content/public/images/HINDUSTAN PETROLEUM.webp" class="img-fluid" alt="STEEL & POWER">
-									</div>
-									<div class="col-lg-4">
-										<img src="content/public/images/Mangalore Refinery and Petrochemicals Limited.webp" class="img-fluid" alt="STEEL & POWER">
-									</div>
-									<div class="col-lg-4">
-										<img src="content/public/images/SHELL PETROL.webp" class="img-fluid" alt="STEEL & POWER">
-									</div>
-								</div>
-							</figure>
-			            </a>
-			          </li>
-			          <li>
-			            <a href="#section15" class="button">
-			              	<img src="content/public/images/PHARMA LAB.webp" class="img-fluid" alt="STEEL & POWER">
-							<p>Pharma Lab</p>
-							<figure style="left: -120px; width: 170%;">
-								<img src="content/public/images/Molbio Diagnostics Pvt Ltd.webp" class="img-fluid" alt="STEEL & POWER" style="margin: 5px 0px 20px 75px;">
-							</figure>
-			            </a>
-			          </li>
-			          <li>
-			            <a href="#section16" class="button">
-			              	<img src="content/public/images/PHARMA .webp" class="img-fluid" alt="STEEL & POWER">
-							<p>Pharma</p>
-							<figure style="left: 8px; width: 170%;">
-								<img src="content/public/images/Paramesu Biotech Private Limited.webp" class="img-fluid" alt="STEEL & POWER" style="margin: 5px 0px 20px 75px;">
-							</figure>
-			            </a>
-			          </li>
-			        </ul>
-
-			        <div id="section1" class="expanding-container">
-			          <article class="hentry">
-			            <div class="entry-image">
-			              <div class="prod-details">
-			              <ul>
-			              	<li>Bengaluru International Airport</li>
-			              	<li>Biju Patnaik International Airport Bhubaneswar</li>
-			              	<li>Hanger at Chennai Airport</li>
-			              	<li>Hindustan Aeronautics Limited</li>
-			              	<li>Magellan Aerospace</li>
-			              	<li>Rajiv Ghandi International Airport</li>
-			              </ul>
-			              </div>
-			            </div>
-			          </article>
-			        </div>
-
-			        <div id="section2" class="expanding-container">
-			          <article class="hentry">
-			            <div class="entry-image">
-			              <div class="prod-details">
-			               <ul>
-			              	<li>ACC Cement</li>
-			              	<li>HK Cement</li>
-			              	<li>JK Cement</li>
-			              	<li>Orient Cement Limited</li>
-			              	<li>Reliance Cement</li>
-			              	<li>Sarbottam Cement Limited</li>
-			              	<li>Ultratech Cement Limited</li>
-			              	<li>Zuwari Cement Limited</li>
-			              </ul>
-			              </div>
-			            </div>
-			          </article>
-			        </div>
-
-			        <div id="section3" class="expanding-container">
-			          <article class="hentry">
-			            <div class="entry-image">
-			              <div class="prod-details">
-			              <ul>
-			              	<li>KMF</li>
-			              	<li>Kurlon</li>
-			              	<li>Mega Fruits</li>
-			              	<li>PS Electricals</li>
-			              	<li>Steer Engineering</li>
-			              	<li>Vista Foods</li>
-			              </ul>
-			              </div>
-			            </div>
-			          </article>
-			        </div>
-
-			         <div id="section4" class="expanding-container">
-			          <article class="hentry">
-			            <div class="entry-image">
-			              <div class="prod-details">
-			              <ul>
-			              	<li>Cardiac Care Hospital, Odisha</li>
-			              	<li>Manipal Medical College & University, Manipal</li>
-			              	<li>PES Medical College, Kuppam</li>
-			              	<li>Sapthagiri Medical College </li>
-			              	<li>Shivaganga Medical College</li>
-			              	<li>Vegas Hospital, Bangalore</li>
-			              	<li>Vikram Hospital, Mysore </li>
-			              	<li>Vydehi Multispeciality Hospital, Bangalore</li>
-			              </ul>
-			              </div>
-			            </div>
-			          </article>
-			        </div>
-
-			        <div id="section5" class="expanding-container">
-			          <article class="hentry">
-			            <div class="entry-image">
-			              <div class="prod-details">
-			              <ul>
-			              	<li>IIT Bhuvaneswar</li>
-			              	<li>Manipal University</li>
-			              </ul>
-			              </div>
-			            </div>
-			          </article>
-			        </div>
-
-
-			        <div id="section6" class="expanding-container">
-			          <article class="hentry">
-			            <div class="entry-image">
-			              <div class="prod-details">
-			              <ul>
-			              	<li>Bhagmane Techpark</li>
-			              	<li>Brigade Nalapad</li>
-			              	<li>Brigade World Trade Center Cochin</li>
-			              	<li>Brigade WTC Chennai</li>
-			              	<li>Eco Space</li>
-			              	<li>JP Morgan</li>
-			              	<li>Mantri Mall</li>
-			              	<li>Manyata Tech Park</li>
-			              	<li>Prestige Jindal City</li>
-			              	<li>Prestige Techpark</li>
-			              </ul>
-			              </div>
-			            </div>
-			          </article>
-			        </div>
-
-			        <div id="section7" class="expanding-container">
-			          <article class="hentry">
-			            <div class="entry-image">
-			              <div class="prod-details">
-			              <p>Underground Substations- Majestic East West, Mejestic South North, Chikkapete, K R Market Station Bangalore</p>
-			              </div>
-			            </div>
-			          </article>
-			        </div>
-
-			         <div id="section8" class="expanding-container">
-			          <article class="hentry">
-			            <div class="entry-image">
-			              <div class="prod-details">
-			              	<ul>
-			              		<li>Gopalpur Port Limited</li>
-			              		<li>Karaikal Port Limited</li>
-			              		<li>Krishnapatnam Port Limited</li>
-				              	<li>The Dhamra Port Company Limited</li>
-			              	</ul>
-			              </div>
-			            </div>
-			          </article>
-			        </div>
-
-			         <div id="section9" class="expanding-container">
-			          <article class="hentry">
-			            <div class="entry-image">
-			              <div class="prod-details">
-			              <p>First India Corporation</p>
-			              </div>
-			            </div>
-			          </article>
-			        </div>
-
-			        <div id="section10" class="expanding-container">
-			          <article class="hentry">
-			            <div class="entry-image">
-			              <div class="prod-details">
-			             	<ul>
-				              
-				             <li>ESSAR Power Limited</li>
-				             <li>ESSAR Steel Limited</li>
-				             <li>Gataprabha Power House</li>
-				             <li>JSPL</li>
-				             <li>JSW Bhushan Power Steel</li>
-				             <li>JSW Steel Limited Ballery and Salem</li>
-				             <li>Kalyani Steel</li>
-				             <li>KPCL-Nagjari Power House</li>
-				             <li>MSPL</li>
-				             <li>SAR ISPAT PVT LTD</li>
-				             <li>SLR Metalics</li>
-				             <li>Supa Power House</li>
-				             <li>TMEIC</li>
-			              	</ul>
-			              </div>
-			            </div>
-			          </article>
-			        </div>
-
-			        <div id="section11" class="expanding-container">
-			          <article class="hentry">
-			            <div class="entry-image">
-			              <div class="prod-details">
-			              <ul>
-			              	<li>Chamundi Sugars</li>
-			              	<li>KPN Sugars</li>
-			              	<li>Satish Sugars</li>
-			              	<li>Shamnur Sugars</li>
-			              	<li>Ugar Sugars</li>
-			              </ul>
-			              </div>
-			            </div>
-			          </article>
-			        </div>
-
-			        <div id="section12" class="expanding-container">
-			          <article class="hentry">
-			            <div class="entry-image">
-			              <div class="prod-details">
-			              <ul>
-			              	<li>Jublient</li>
-			              	<li>Microlabs</li>
-			              	<li>Sai Life Science</li>
-			              </ul>
-			              </div>
-			            </div>
-			          </article>
-			        </div>
-
-			        <div id="section13" class="expanding-container">
-			          <article class="hentry">
-			            <div class="entry-image">
-			              <div class="prod-details">
-			              <ul>
-			              	<li>BHABHA Atomic Research Centre</li>
-			              	<li>Indian Space Research Organisation</li>
-			              	<li>MCF HASSAN</li>
-			              </ul>
-			              </div>
-			            </div>
-			          </article>
-			        </div>
-
-			        <div id="section14" class="expanding-container">
-			          <article class="hentry">
-			            <div class="entry-image">
-			              <div class="prod-details">
-			              <ul>
-			              	<li>Hindustan Petroleum</li>
-			              	<li>Mangalore Refinery and Petrochemicals Limited</li>
-			              	<li>SHELL Petrol</li>
-			              </ul>
-			              </div>
-			            </div>
-			          </article>
-			        </div>
-
-			        <div id="section15" class="expanding-container">
-			          <article class="hentry">
-			            <div class="entry-image">
-			              <div class="prod-details">
-			              <p>Molbio Diagnostics Pvt Ltd</p>
-			              </div>
-			            </div>
-			          </article>
-			        </div>
-
-			        <div id="section16" class="expanding-container">
-			          <article class="hentry">
-			            <div class="entry-image">
-			              <div class="prod-details">
-			              <p>Paramesu Biotech Private Limited</p>
-			              </div>
-			            </div>
-			          </article>
-			        </div>
-			      </div>
-			  </div>
- -->
-				<!-- <div class="inner-para" data-aos="zoom-in">
-					<div class="clients-head">
-						<span>Hospitals</span>
-					</div>
-						<div class="hospitals-clients" >
-							<div class="row">
-							<div class="col-lg-3">
-								<div class="each-clients" id="client-1">
-									<img src="content/public/images/Cardiac Care Hospital, Odisha.webp" class="img-fluid" alt="Cardiac Care Hospital, Odisha">
-								</div>
-							</div>
-							<div class="col-lg-3">
-								<div class="each-clients">
-									<img src="content/public/images/MANIPAL UNIVERSITY.webp" class="img-fluid" alt="MANIPAL UNIVERSITY">
-								</div>
-							</div>
-							<div class="col-lg-3">
-								<div class="each-clients">
-									<img src="content/public/images/PES Medical College, Kuppam.webp" class="img-fluid" alt="PES Medical College, Kuppam">
-								</div>
-							</div>
-							<div class="col-lg-3">
-								<div class="each-clients">
-									<img src="content/public/images/Sapthagiri Medical College .webp" class="img-fluid" alt="Sapthagiri Medical College">
-								</div>
-							</div>
-							<div class="col-lg-3">
-								<div class="each-clients">
-									<img src="content/public/images/Shivaganga Medical College .webp" class="img-fluid" alt="Shivaganga Medical College">
-								</div>
-							</div>
-							<div class="col-lg-3">
-								<div class="each-clients">
-									<img src="content/public/images/Vegus Hospital, Bangalore.webp" class="img-fluid" alt="Shivaganga Medical College">
-								</div>
-							</div>
-							<div class="col-lg-3">
-								<div class="each-clients">
-									<img src="content/public/images/Vikram Hospital, Mysore.webp" class="img-fluid" alt="Shivaganga Medical College">
-								</div>
-							</div>
-							<div class="col-lg-3">
-								<div class="each-clients">
-									<img src="content/public/images/VydehiMedicalCollege-Logo.webp" class="img-fluid" alt="Shivaganga Medical College">
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="inner-para" data-aos="zoom-in">
-					<div class="clients-head">
-						<span>Steel & Power</span>
-					</div>
-						<div class="hospitals-clients" id="client-1">
-							<div class="row">
-							<div class="col-lg-3">
-								<div class="each-clients">
-									<img src="content/public/images/ESSAR POWER LIMITED.webp" class="img-fluid" alt="ESSAR POWER LIMITED">
-								</div>
-							</div>
-							<div class="col-lg-3">
-								<div class="each-clients">
-									<img src="content/public/images/JSPL.webp" class="img-fluid" alt="MANIPAL UNIVERSITY">
-								</div>
-							</div>
-							<div class="col-lg-3">
-								<div class="each-clients">
-									<img src="content/public/images/JSW BPSL.webp" class="img-fluid" alt="PES Medical College, Kuppam">
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="inner-para" data-aos="zoom-in">
-					<div class="clients-head">
-						<span>Ports</span>
-					</div>
-						<div class="hospitals-clients" id="client-1">
-							<div class="row">
-							<div class="col-lg-3">
-								<div class="each-clients">
-									<img src="content/public/images/Gopalpur Port Limited.webp" class="img-fluid" alt="Gopalpur Port Limited">
-								</div>
-							</div>
-							<div class="col-lg-3">
-								<div class="each-clients">
-									<img src="content/public/images/Karaikal Port Limited.webp" class="img-fluid" alt="Karaikal Port Limited">
-								</div>
-							</div>
-							<div class="col-lg-3">
-								<div class="each-clients">
-									<img src="content/public/images/Krishnapatnam Port Limited.webp" class="img-fluid" alt="Krishnapatnam Port Limited">
-								</div>
-							</div>
-							<div class="col-lg-3">
-								<div class="each-clients">
-									<img src="content/public/images/The Dhamra Port Company Limited.webp" class="img-fluid" alt="Krishnapatnam Port Limited">
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="inner-para" data-aos="zoom-in">
-					<div class="clients-head">
-						<span>Cement industry</span>
-					</div>
-						<div class="hospitals-clients" >
-							<div class="row">
-							<div class="col-lg-3">
-								<div class="each-clients" id="client-1">
-									<img src="content/public/images/Orient Cement Limited.webp" class="img-fluid" alt="Orient Cement Limited">
-								</div>
-							</div>
-							<div class="col-lg-3">
-								<div class="each-clients">
-									<img src="content/public/images/Sarbottam Cement Limited.webp" class="img-fluid" alt="Sarbottam Cement Limited">
-								</div>
-							</div>
-							<div class="col-lg-3">
-								<div class="each-clients">
-									<img src="content/public/images/Ultratech Cement Limited.webp" class="img-fluid" alt="Ultratech Cement Limited">
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="inner-para" data-aos="zoom-in">
-					<div class="clients-head">
-						<span>Residential & Commercial Buildings</span>
-					</div>
-						<div class="hospitals-clients" id="client-1">
-							<div class="row">
-							<div class="col-lg-3">
-								<div class="each-clients">
-									<img src="content/public/images/Bagmane.webp" class="img-fluid" alt="Bagmane">
-								</div>
-							</div>
-							<div class="col-lg-3">
-								<div class="each-clients">
-									<img src="content/public/images/Brigade Nalapad.webp" class="img-fluid" alt="Brigade Nalapad">
-								</div>
-							</div>
-							<div class="col-lg-3">
-								<div class="each-clients">
-									<img src="content/public/images/Mantri Mall.webp" class="img-fluid" alt="Mantri Mall">
-								</div>
-							</div>
-							<div class="col-lg-3">
-								<div class="each-clients">
-									<img src="content/public/images/Prestige Jindal City.webp" class="img-fluid" alt="Prestige Jindal City">
-								</div>
-							</div>
-							<div class="col-lg-3">
-								<div class="each-clients">
-									<img src="content/public/images/World Trade Centre.webp" class="img-fluid" alt="World Trade Centre">
-								</div>
-							</div>
-						</div>
-					</div>
-				</div> -->
 			</div>
 		</div>
 	</div>
@@ -2163,34 +1331,49 @@
 
 <div class="outer-container">
 	<div id="contactFormContainer">
-		<form id="contactForm" method="post" action="mail.php">
-			<h1>Enquire Now</h1>
-			<div class="close-btn">
-				<img src="content/public/images/Close.png" class="img-responsive" alt="Close" onclick="closeForm2()">
-			</div>
-			<div class="enq-field">
-				<input type="text" name="Name" id="Name" placeholder="Your Name" value="" required/>
-			</div>
-			<div class="enq-field">
-				<input type="email" name="Email" id="Email" placeholder="email ID" value="" required/>
-			</div>
-			<div class="enq-field">
-				<input type="tel" name="Phone" id="Phone" placeholder=" Mobile Phone Number" value="" required/>
-			</div>
-			<div class="enq-field">
-				<input type="text" name="Name" id="Name" placeholder="Your Company Name" value="">
-			</div>
-			<div class="enq-field">
-				<input type="text" name="Name" id="Name" placeholder="Your City" value="" >
-			</div>
-			<div class="enq-field">
-				<input type="text" name="Name" id="Name" placeholder="Your Country" value="">
-			</div>
-			<div class="req-field">
-				<textarea cols="20" id="Message" name="Message" placeholder="Your Requirement" rows="2"></textarea>
-			</div>
-			<input type="submit" value="Submit">
-		</form>
+		<form id="contactForm" method="post" action="mail.php" onsubmit="return checkForm(this);">
+            <h1>Enquire Now</h1>
+            <div class="close-btn">
+                <img src="content/public/images/Close.png" class="img-responsive" alt="Close" onclick="closeForm2()">
+            </div>
+            <div class="enq-field">
+                <input type="text" name="Name" id="Name" placeholder="Your Name" value="" required/>
+            </div>
+            <div class="enq-field">
+                <input type="email" name="Email" id="Email" placeholder="email ID" value="" required/>
+            </div>
+            <div class="enq-field">
+                <input type="tel" name="Phone" id="Phone" placeholder=" Mobile Phone Number" value="" required/>
+            </div>
+            <div class="enq-field">
+                <input type="text" name="Name" id="Name" placeholder="Your Company Name" value="">
+            </div>
+            <div class="enq-field">
+                <input type="text" name="Name" id="Name" placeholder="Your City" value="" >
+            </div>
+            <div class="enq-field">
+                <input type="text" name="Name" id="Name" placeholder="Your Country" value="">
+            </div>
+            <div class="req-field">
+                <textarea cols="20" id="Message" name="Message" placeholder="Your Requirement" rows="2"></textarea>
+            </div>
+            <div class="enq-field">
+                <input type="text" id="mainCaptcha"readonly="readonly"/>
+                <input type="button" id="refresh" value="Refresh" onclick="generateCaptcha();" />
+            </div>
+            <div class="enq-field">
+                <input type="text" id="txtInput"/>    
+            </div>
+            
+            <input  id="Button1" type="button" value="Check"  onclick="CheckValidCaptcha();"/>
+            <div class="enq-field">
+                <span id="error" style="color:red"></span>
+            </div>
+            <div class="enq-field">
+                <span id="success" style="color:green"></span>
+            </div>
+            <input type="submit" value="Submit" onclick="CheckValidCaptcha();"/>
+        </form>
 	</div>
 </div>
 <div id="contactLink">Enquire Now</div>
@@ -2285,7 +1468,7 @@
 			<div class="col-lg-12">
 		        <a href="javascript:" id="return-to-top" class="return-to-top">
 		          <h2>Back To Top</h2>
-		          <img src="content/Public/images/arrow.webp" class="img-fluid" alt="Arrow_Footer">
+		          <img src="content/public/images/arrow.webp" class="img-fluid" alt="Arrow_Footer">
 		        </a>
 			</div>
 		</div>
@@ -2297,7 +1480,7 @@
 <script src="content/public/js/slick.min.js"></script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script src="content/public/js/jquery.smartmenus.js"></script>
-<script type="text/javascript" src="Content/Public/js/expanding.js"></script>
+<script type="text/javascript" src="content/public/js/expanding.js"></script>
 <script src="content/public/js/custom.js"></script>
 </body>
 </html>
