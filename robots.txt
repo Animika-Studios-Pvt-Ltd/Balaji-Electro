@@ -1,0 +1,4 @@
+User-agent:*
+Disalow:/wp-admin/
+Sitemap:https://balajielectrocontrols.com/sitemap.xml
+Sitemap:https://balajielectrocontrols.com/?sitemap.xml
