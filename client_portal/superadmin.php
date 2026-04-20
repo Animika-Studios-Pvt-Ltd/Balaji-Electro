@@ -160,8 +160,15 @@ if (isset($_SESSION['superadmin_logged_in'])) {
         if (isset($db['clients'][$client_email]) && isset($_FILES['document'])) {
             $folder_id = $db['clients'][$client_email]['folder'];
             $target_dir = $doc_dir . $folder_id . '/';
+            
+            $project_folder = trim($_POST['project_folder'] ?? '');
+            if (!empty($project_folder)) {
+                $project_folder = str_replace(['/', '\\', '..', '<', '>', '|', ':', '*', '?', '"'], '', $project_folder);
+                $target_dir .= $project_folder . '/';
+            }
+
             if (!is_dir($target_dir)) mkdir($target_dir, 0755, true);
-            $file_name = preg_replace("/[^a-zA-Z0-9\._-]/", "_", basename($_FILES["document"]["name"]));
+            $file_name = str_replace(['/', '\\', '..'], '_', basename($_FILES["document"]["name"]));
             $target_file = $target_dir . $file_name;
             
             if (move_uploaded_file($_FILES["document"]["tmp_name"], $target_file)) {
@@ -210,7 +217,7 @@ if (isset($_SESSION['superadmin_logged_in'])) {
         // Toggle Suspend File
         if ($_GET['action'] == 'toggle_suspend_file' && isset($_GET['client']) && isset($_GET['file'])) {
             $client = $_GET['client'];
-            $file = basename($_GET['file']);
+            $file = preg_replace('/(\.\.\/|\.\.\\\\)/', '', $_GET['file']);
             if (isset($db['clients'][$client])) {
                 if(!isset($db['clients'][$client]['suspended_files'])) $db['clients'][$client]['suspended_files'] = [];
                 if(in_array($file, $db['clients'][$client]['suspended_files'])) {
@@ -228,7 +235,7 @@ if (isset($_SESSION['superadmin_logged_in'])) {
         // Delete file
         if ($_GET['action'] == 'delete_file' && isset($_GET['client']) && isset($_GET['file'])) {
             $client = $_GET['client'];
-            $file = basename($_GET['file']);
+            $file = preg_replace('/(\.\.\/|\.\.\\\\)/', '', $_GET['file']);
             if (isset($db['clients'][$client])) {
                 $filepath = $doc_dir . $db['clients'][$client]['folder'] . '/' . $file;
                 if(file_exists($filepath) && !is_dir($filepath)) {
@@ -240,6 +247,57 @@ if (isset($_SESSION['superadmin_logged_in'])) {
                     $_SESSION['flash_success'] = "File {$file} deleted.";
                     log_action('DELETE_FILE', 'Superadmin', 'Client: ' . $client, "Deleted file globally: {$file}");
                 }
+            }
+            header('Location: superadmin.php'); exit;
+        }
+
+        // Delete folder
+        if ($_GET['action'] == 'delete_folder' && isset($_GET['client']) && isset($_GET['folder'])) {
+            $client = $_GET['client'];
+            $folder = preg_replace('/(\.\.\/|\.\.\\\\)/', '', $_GET['folder']);
+            if (isset($db['clients'][$client])) {
+                $folderpath = $doc_dir . $db['clients'][$client]['folder'] . '/' . $folder;
+                if (is_dir($folderpath)) {
+                    $fp = opendir($folderpath);
+                    while (false !== ($f = readdir($fp))) {
+                        if ($f == '.' || $f == '..') continue;
+                        if (!is_dir($folderpath . '/' . $f)) {
+                            unlink($folderpath . '/' . $f);
+                            $rel_path = $folder . '/' . $f;
+                            if (isset($db['clients'][$client]['suspended_files'])) {
+                                $db['clients'][$client]['suspended_files'] = array_values(array_diff($db['clients'][$client]['suspended_files'], [$rel_path]));
+                            }
+                        }
+                    }
+                    closedir($fp);
+                    rmdir($folderpath);
+                    
+                    if (isset($db['clients'][$client]['suspended_folders'])) {
+                        $db['clients'][$client]['suspended_folders'] = array_values(array_diff($db['clients'][$client]['suspended_folders'], [$folder]));
+                    }
+                    file_put_contents($db_file, json_encode($db, JSON_PRETTY_PRINT));
+                    $_SESSION['flash_success'] = "Folder {$folder} deleted.";
+                    log_action('DELETE_FOLDER', 'Superadmin', 'Client: ' . $client, "Deleted folder globally: {$folder}");
+                }
+            }
+            header('Location: superadmin.php'); exit;
+        }
+
+        // Toggle Suspend Folder
+        if ($_GET['action'] == 'toggle_suspend_folder' && isset($_GET['client']) && isset($_GET['folder'])) {
+            $client = $_GET['client'];
+            $folder = preg_replace('/(\.\.\/|\.\.\\\\)/', '', $_GET['folder']);
+            if (isset($db['clients'][$client])) {
+                if(!isset($db['clients'][$client]['suspended_folders'])) $db['clients'][$client]['suspended_folders'] = [];
+                if(in_array($folder, $db['clients'][$client]['suspended_folders'])) {
+                    $db['clients'][$client]['suspended_folders'] = array_values(array_diff($db['clients'][$client]['suspended_folders'], [$folder]));
+                    $_SESSION['flash_success'] = "Folder visibility toggled (Visible).";
+                } else {
+                    $db['clients'][$client]['suspended_folders'][] = $folder;
+                    $_SESSION['flash_success'] = "Folder visibility toggled (Hidden).";
+                }
+                file_put_contents($db_file, json_encode($db, JSON_PRETTY_PRINT));
+                log_action('SUSPEND_FOLDER', 'Superadmin', 'Client: ' . $client, "Folder visibility toggled.");
             }
             header('Location: superadmin.php'); exit;
         }
@@ -481,7 +539,7 @@ if (isset($_SESSION['superadmin_logged_in'])) {
                                 <form method="POST" enctype="multipart/form-data">
                                     <div class="form-group mb-2">
                                         <label class="text-sm font-weight-bold" style="color:#666;">Target Client</label>
-                                        <select name="client_email" class="super-input" required>
+                                        <select id="uploadClientSelect" name="client_email" class="super-input" required onchange="updateFoldersDatalist()">
                                             <option value="">-- Select Client --</option>
                                             <?php foreach($db['clients'] as $email => $clientData): ?>
                                                 <option value="<?php echo htmlspecialchars($email); ?>">
@@ -490,6 +548,38 @@ if (isset($_SESSION['superadmin_logged_in'])) {
                                             <?php endforeach; ?>
                                         </select>
                                     </div>
+                                    <div class="form-group mb-2">
+                                        <label class="text-sm font-weight-bold" style="color:#666;">Project Name / Folder</label>
+                                        <input type="text" name="project_folder" list="folderOptions" autocomplete="off" class="super-input" placeholder="Optional: Select or Type New...">
+                                        <datalist id="folderOptions"></datalist>
+                                    </div>
+                                    <script>
+                                        const clientFoldersMap = {
+                                            <?php foreach($db['clients'] as $email => $clientData): 
+                                                $c_path = $doc_dir . $clientData['folder'];
+                                                $f_arr = [];
+                                                if(is_dir($c_path)){
+                                                    $sc = array_diff(scandir($c_path), ['.','..']);
+                                                    foreach($sc as $i){
+                                                        if(is_dir($c_path.'/'.$i)) $f_arr[] = addslashes($i);
+                                                    }
+                                                }
+                                                echo "'" . addslashes($email) . "': [" . implode(',', array_map(function($f){return "'".$f."'";}, $f_arr)) . "],\n";
+                                            endforeach; ?>
+                                        };
+                                        function updateFoldersDatalist() {
+                                            const clientEmail = document.getElementById('uploadClientSelect').value;
+                                            const datalist = document.getElementById('folderOptions');
+                                            datalist.innerHTML = '';
+                                            if (clientEmail && clientFoldersMap[clientEmail]) {
+                                                clientFoldersMap[clientEmail].forEach(folder => {
+                                                    let opt = document.createElement('option');
+                                                    opt.value = folder;
+                                                    datalist.appendChild(opt);
+                                                });
+                                            }
+                                        }
+                                    </script>
                                     <div class="form-group mb-3">
                                         <label class="text-sm font-weight-bold" style="color:#666;">File</label>
                                         <input type="file" name="document" class="super-input" style="padding: 6px !important;" required>
@@ -514,18 +604,33 @@ if (isset($_SESSION['superadmin_logged_in'])) {
 
                                     <?php foreach($db['clients'] as $email => $clientData): 
                                         $client_files = [];
+                                        $client_folders = [];
                                         $client_path = $doc_dir . $clientData['folder'];
                                         if (is_dir($client_path)) {
                                             $scanned = array_diff(scandir($client_path), array('..', '.'));
-                                            foreach ($scanned as $item) if (!is_dir($client_path . '/' . $item)) $client_files[] = $item;
+                                            foreach ($scanned as $item) {
+                                                if (is_dir($client_path . '/' . $item)) {
+                                                    $subscanned = array_diff(scandir($client_path . '/' . $item), array('..', '.'));
+                                                    foreach($subscanned as $sub) {
+                                                        if (!is_dir($client_path . '/' . $item . '/' . $sub)) {
+                                                            $client_folders[$item][] = $sub;
+                                                        }
+                                                    }
+                                                    if (!isset($client_folders[$item])) $client_folders[$item] = [];
+                                                } else {
+                                                    $client_files[] = $item;
+                                                }
+                                            }
                                         }
                                         $is_suspended = isset($clientData['suspended']) && $clientData['suspended'] === true;
                                         $suspended_files = isset($clientData['suspended_files']) ? $clientData['suspended_files'] : [];
+                                        $suspended_folders = isset($clientData['suspended_folders']) ? $clientData['suspended_folders'] : [];
                                     ?>
                                         <div class="client-block">
-                                            <div class="client-header" style="<?php if($is_suspended) echo 'background:#ffeeba; border-color:#ffdf7e;'; ?>">
+                                            <div class="client-header" style="cursor: pointer; <?php if($is_suspended) echo 'background:#ffeeba; border-color:#ffdf7e;'; ?>" onclick="document.getElementById('client_body_<?php echo md5($email); ?>').classList.toggle('d-none'); document.getElementById('client_icon_<?php echo md5($email); ?>').classList.toggle('fa-chevron-down'); document.getElementById('client_icon_<?php echo md5($email); ?>').classList.toggle('fa-chevron-right');">
                                                 <div>
                                                     <h5 style="color:#252b65; font-size:16px;">
+                                                        <i id="client_icon_<?php echo md5($email); ?>" class="fas fa-chevron-right text-muted mr-2" style="font-size: 14px;"></i>
                                                         <?php echo htmlspecialchars($clientData['name']); ?>
                                                         <?php if($is_suspended): ?><span class="suspended-badge"><i class="fas fa-ban"></i> Suspended</span><?php endif; ?>
                                                     </h5>
@@ -533,12 +638,12 @@ if (isset($_SESSION['superadmin_logged_in'])) {
                                                         <i class="fas fa-envelope"></i> <?php echo htmlspecialchars($email); ?>
                                                     </div>
                                                 </div>
-                                                <div>
+                                                <div onclick="event.stopPropagation();">
                                                     <a href="?action=toggle_suspend_client&client=<?php echo urlencode($email); ?>" class="btn btn-sm btn-<?php echo $is_suspended ? 'success' : 'warning'; ?>" title="Toggle Suspension"><i class="fas fa-<?php echo $is_suspended ? 'check' : 'pause'; ?>"></i></a>
                                                     <a href="?action=delete_client&client=<?php echo urlencode($email); ?>" onclick="return confirm('Delete client forever?');" class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></a>
                                                 </div>
                                             </div>
-                                            <div class="client-content p-3">
+                                            <div id="client_body_<?php echo md5($email); ?>" class="client-content p-3 d-none">
                                                 
                                                 <!-- Transfer Control -->
                                                 <div class="p-2 mb-3" style="background:#f1f4f8; border-radius:4px; border:1px solid #e1e5eb;">
@@ -557,7 +662,7 @@ if (isset($_SESSION['superadmin_logged_in'])) {
                                                     </form>
                                                 </div>
 
-                                                <?php if (count($client_files) > 0): ?>
+                                                <?php if (count($client_files) > 0 || count($client_folders) > 0): ?>
                                                     <ul class="doc-list">
                                                         <?php foreach ($client_files as $file): 
                                                             $file_is_suspended = in_array($file, $suspended_files);
@@ -572,6 +677,41 @@ if (isset($_SESSION['superadmin_logged_in'])) {
                                                                     <a href="?action=delete_file&client=<?php echo urlencode($email); ?>&file=<?php echo urlencode($file); ?>" onclick="return confirm('Immediately delete this file permanently?');" class="btn btn-sm text-danger py-0"><i class="fas fa-times"></i></a>
                                                                 </div>
                                                             </li>
+                                                        <?php endforeach; ?>
+                                                        
+                                                        <?php foreach ($client_folders as $folder_name => $folder_files): 
+                                                            $folder_is_suspended = in_array($folder_name, $suspended_folders);
+                                                            $folder_id = md5($email . $folder_name);
+                                                        ?>
+                                                            <li style="background: #f8f9fa; font-weight: bold; border-left: 3px solid #ffcc00; cursor: pointer; <?php if($folder_is_suspended) echo 'opacity: 0.6;'; ?>" onclick="document.getElementById('folder_body_<?php echo $folder_id; ?>').classList.toggle('d-none'); document.getElementById('folder_icon_<?php echo $folder_id; ?>').classList.toggle('fa-chevron-down'); document.getElementById('folder_icon_<?php echo $folder_id; ?>').classList.toggle('fa-chevron-right');">
+                                                                <span class="text-sm">
+                                                                    <i id="folder_icon_<?php echo $folder_id; ?>" class="fas fa-chevron-right text-muted mr-2"></i>
+                                                                    <i class="fas fa-folder-open text-warning"></i> &nbsp; 
+                                                                    <strong style="color:#444;"><?php echo htmlspecialchars($folder_name); ?></strong>
+                                                                    <?php if($folder_is_suspended): ?> <span class="badge badge-warning bg-warning text-dark ml-2">Hidden</span> <?php endif; ?>
+                                                                </span>
+                                                                <div onclick="event.stopPropagation();">
+                                                                    <a href="?action=toggle_suspend_folder&client=<?php echo urlencode($email); ?>&folder=<?php echo urlencode($folder_name); ?>" class="btn btn-sm text-<?php echo $folder_is_suspended ? 'success' : 'warning'; ?> py-0" style="box-shadow:none;"><i class="fas fa-<?php echo $folder_is_suspended ? 'eye' : 'eye-slash'; ?>"></i></a>
+                                                                    <a href="?action=delete_folder&client=<?php echo urlencode($email); ?>&folder=<?php echo urlencode($folder_name); ?>" onclick="return confirm('Immediately delete this entire folder and all its contents?');" class="btn btn-sm text-danger py-0" title="Delete Folder"><i class="fas fa-trash"></i></a>
+                                                                </div>
+                                                            </li>
+                                                            <div id="folder_body_<?php echo $folder_id; ?>" class="d-none w-100 p-0 m-0">
+                                                                <?php foreach ($folder_files as $file): 
+                                                                    $file_path_relative = $folder_name . '/' . $file;
+                                                                    $file_is_suspended = in_array($file_path_relative, $suspended_files);
+                                                                ?>
+                                                                    <li class="<?php if($file_is_suspended) echo 'file-suspended'; ?>" style="padding-left: 35px; border-left: 1px dashed #ccc; margin-left: 10px;">
+                                                                        <span class="text-sm">
+                                                                            <i class="fas fa-file text-danger"></i> &nbsp; 
+                                                                            <strong style="color:#444;"><?php echo htmlspecialchars($file); ?></strong>
+                                                                        </span>
+                                                                        <div style="margin-left: auto;">
+                                                                            <a href="?action=toggle_suspend_file&client=<?php echo urlencode($email); ?>&file=<?php echo urlencode($file_path_relative); ?>" class="btn btn-sm text-<?php echo $file_is_suspended ? 'success' : 'warning'; ?> py-0"><i class="fas fa-<?php echo $file_is_suspended ? 'eye' : 'eye-slash'; ?>"></i></a>
+                                                                            <a href="?action=delete_file&client=<?php echo urlencode($email); ?>&file=<?php echo urlencode($file_path_relative); ?>" onclick="return confirm('Immediately delete this file permanently?');" class="btn btn-sm text-danger py-0"><i class="fas fa-times"></i></a>
+                                                                        </div>
+                                                                    </li>
+                                                                <?php endforeach; ?>
+                                                            </div>
                                                         <?php endforeach; ?>
                                                     </ul>
                                                 <?php else: ?>

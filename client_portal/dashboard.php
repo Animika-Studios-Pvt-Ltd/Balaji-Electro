@@ -34,7 +34,7 @@ $doc_dir = 'client_documents/' . $folder_name . '/';
 
 // Handle File Download securely
 if (isset($_GET['download'])) {
-    $file = basename($_GET['download']); 
+    $file = preg_replace('/(\.\.\/|\.\.\\\\)/', '', $_GET['download']); 
     $filepath = $doc_dir . $file;
     
     if (file_exists($filepath) && !is_dir($filepath)) {
@@ -57,25 +57,48 @@ if (isset($_GET['download'])) {
 
 // Fetch database info to check for suspended files
 $suspended_files = [];
+$suspended_folders = [];
 $db_file = 'database.json';
 if (file_exists($db_file)) {
     $db = json_decode(file_get_contents($db_file), true);
     if (isset($db['clients'][$_SESSION['client_email']]['suspended_files'])) {
         $suspended_files = $db['clients'][$_SESSION['client_email']]['suspended_files'];
     }
+    if (isset($db['clients'][$_SESSION['client_email']]['suspended_folders'])) {
+        $suspended_folders = $db['clients'][$_SESSION['client_email']]['suspended_folders'];
+    }
 }
 
 // Read contents of the client's folder
 $files = [];
+$folders = [];
 if (is_dir($doc_dir)) {
     $scanned = array_diff(scandir($doc_dir), array('..', '.'));
     foreach ($scanned as $item) {
-        if (!is_dir($doc_dir . $item) && !in_array($item, $suspended_files)) {
-            $files[] = [
-                'name' => $item,
-                'size' => round(filesize($doc_dir . $item) / 1024, 2) . ' KB',
-                'time' => date("Y-m-d H:i", filemtime($doc_dir . $item))
-            ];
+        if (is_dir($doc_dir . $item)) {
+            if (!in_array($item, $suspended_folders)) {
+                $subscanned = array_diff(scandir($doc_dir . $item), array('..', '.'));
+                foreach ($subscanned as $sub) {
+                    if (!is_dir($doc_dir . $item . '/' . $sub) && !in_array($item . '/' . $sub, $suspended_files)) {
+                        $folders[$item][] = [
+                            'name' => $sub,
+                            'path' => $item . '/' . $sub,
+                            'size' => round(filesize($doc_dir . $item . '/' . $sub) / 1024, 2) . ' KB',
+                            'time' => date("Y-m-d H:i", filemtime($doc_dir . $item . '/' . $sub))
+                        ];
+                    }
+                }
+                if(!isset($folders[$item])) $folders[$item] = [];
+            }
+        } else {
+            if (!in_array($item, $suspended_files)) {
+                $files[] = [
+                    'name' => $item,
+                    'path' => $item,
+                    'size' => round(filesize($doc_dir . $item) / 1024, 2) . ' KB',
+                    'time' => date("Y-m-d H:i", filemtime($doc_dir . $item))
+                ];
+            }
         }
     }
 }
@@ -197,17 +220,10 @@ if (isset($_GET['logout'])) {
             <div id="carousel" class="carousel carousel-fade" data-ride="carousel" data-interval="4000">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <div class="row">
-                            <div class="col-lg-5">
-                                <div class="inner-banner-left mb-0 mb-sm-3">
-                                    <h2 style="font-size:24px;"><b>CLIENT PORTAL</b></h2>
-                                    <img src="../content/public/images/BEC_35_years_inner.webp" class="img-fluid d-none d-sm-block" alt="35years">
-                                </div>
-                            </div>
-                            <div class="col-lg-7">
-                                <div class="inner-bannerimg animated fadeInRight">
-                                    <img src="../content/public/images/Contact Us.webp" class="img-fluid" alt="Banner-1">
-                                </div>
+                        <div class="row justify-content-center align-items-center" style="min-height: 120px;">
+                            <div class="col-12 text-center">
+                                <img src="../content/public/images/BEC_Logo.webp" alt="Logo" style="max-height: 60px; margin-bottom: 10px; filter: brightness(0) invert(1);">
+                                <h2 style="font-size:28px; color: #fff; margin: 0; text-transform: uppercase; letter-spacing: 2px;"><b>CLIENT PORTAL</b></h2>
                             </div>
                         </div>
                     </div>
@@ -220,11 +236,12 @@ if (isset($_GET['logout'])) {
                 <div class="row">
                     <div class="col-lg-12">
                         <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb">
+                            <ol class="breadcrumb" style="background: transparent; padding: 15px 0; margin-bottom: 0;">
                                 <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Client Portal</li>
                             </ol>
                         </nav>
+                        <hr style="margin: 0; border-top: 1px solid #dee2e6;">
                     </div>
                 </div>
             </div>
@@ -249,7 +266,7 @@ if (isset($_GET['logout'])) {
                                 <a href="?logout=1" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
                             </div>
                             <div class="card-body p-0">
-                                <?php if (count($files) > 0): ?>
+                                <?php if (count($files) > 0 || count($folders) > 0): ?>
                                 <div class="table-responsive">
                                     <table class="table table-hover">
                                         <thead>
@@ -270,11 +287,35 @@ if (isset($_GET['logout'])) {
                                                 <td><?php echo $file['time']; ?></td>
                                                 <td><?php echo $file['size']; ?></td>
                                                 <td class="text-right">
-                                                    <a href="?download=<?php echo urlencode($file['name']); ?>" class="download-btn">
+                                                    <a href="?download=<?php echo urlencode($file['path']); ?>" class="download-btn">
                                                         <i class="fas fa-download"></i> Download
                                                     </a>
                                                 </td>
                                             </tr>
+                                            <?php endforeach; ?>
+                                            
+                                            <?php foreach ($folders as $folder_name => $folder_files): ?>
+                                            <tr style="background: #fdfdfd; border-top: 2px solid #f1f1f1;">
+                                                <td colspan="4" style="font-weight: bold; color: #252b65;">
+                                                    <i class="fas fa-folder-open text-warning" style="font-size: 24px; margin-right: 15px; vertical-align: middle;"></i>
+                                                    <?php echo htmlspecialchars($folder_name); ?>
+                                                </td>
+                                            </tr>
+                                                <?php foreach ($folder_files as $file): ?>
+                                                <tr>
+                                                    <td style="padding-left: 55px; border-left: 3px solid #ffcc00;">
+                                                        <i class="fas fa-file-pdf file-icon" style="font-size: 20px;"></i>
+                                                        <strong><?php echo htmlspecialchars($file['name']); ?></strong>
+                                                    </td>
+                                                    <td><?php echo $file['time']; ?></td>
+                                                    <td><?php echo $file['size']; ?></td>
+                                                    <td class="text-right">
+                                                        <a href="?download=<?php echo urlencode($file['path']); ?>" class="download-btn">
+                                                            <i class="fas fa-download"></i> Download
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <?php endforeach; ?>
                                             <?php endforeach; ?>
                                         </tbody>
                                     </table>
