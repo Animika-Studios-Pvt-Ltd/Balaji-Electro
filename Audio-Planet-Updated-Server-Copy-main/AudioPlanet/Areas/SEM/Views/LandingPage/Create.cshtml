@@ -1,0 +1,84 @@
+﻿@model AudioPlanet.Areas.SEM.Models.LandingPage
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>
+    Create New Landing Page</h2>
+<div class="buttons">
+    <a href="@Url.Action("Index")" class = "button left"><span class="icon icon63"></span>
+        <span class="label">Landing Pages</span></a>
+</div>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Landing Page</legend>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Source)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Source)
+            @Html.ValidationMessageFor(model => model.Source)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Keywords)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Keywords)
+            @Html.ValidationMessageFor(model => model.Keywords)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Url)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Url, new Dictionary<string, object> { { "style", "width:90%" }, { "class", "replication" } })
+            @Html.ValidationMessageFor(model => model.Url)
+        </div>
+        <p class="ibuttons">
+            <input type="submit" value="Generate" name="BtnGenerate" class="ibutton" />
+            <input type="submit" value="Save" name="BtnSave" class="ibutton save" style="display: none" />
+        </p>
+    </fieldset>
+}
+<div class="buttons">
+    <a href="@Url.Action("Index")" class = "button left"><span class="icon icon63"></span>
+        <span class="label">Landing Pages</span></a>
+</div>
+@section script
+{
+    <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#Name").keyup(function () {
+                var dnameWithoutSpace = this.value.replace(/[^a-z0-9_&\s]/gi, '').replace(/[\s]/g, '-').replace(/[&]/g, 'and');
+                if (this.value != '') {
+                    $("input#Url").val('/Campaign/' + dnameWithoutSpace);
+                }
+                else {
+                    $("input#Url").val('');
+                }
+            });
+
+            $("#Source").keyup(function () {
+                var dnameWithoutSpace = this.value.replace(/[^a-z0-9_&\s]/gi, '').replace(/[\s]/g, '-').replace(/[&]/g, 'and');
+                $("input#Url").val("?source=" + dnameWithoutSpace);
+            });
+
+            $(".replication").change(function () { $(this).removeClass("replication"); });
+        });
+        $(document).keyup(function (e) {
+            if (e.keyCode == 27) {
+                $('.validation-summary-errors').remove();
+            }
+        });
+    </script>
+}

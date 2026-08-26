@@ -1,0 +1,44 @@
+﻿@using AudioPlanet.Models
+@{
+    ViewBag.Title = "Upload Files";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>
+    Upload Product Imge, PDF etc</h2>
+@using (Html.BeginForm("Upload", "Product", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <fieldset>
+        <legend>Upload PDF</legend>
+        <div class="editor-field">
+            <input type="file" name="file" /><br />
+            <input type="radio" name="mediaType" value="Image" />Image
+            <input type="radio" name="mediaType" value="Document" />Document
+            <input type="radio" name="mediaType" value="Video" />Video
+        </div>
+        <p>
+            <input type="submit" value="Upload" class="ibutton" />
+        </p>
+    </fieldset>
+}
+<fieldset>
+    <legend>Product Info</legend>
+    @{
+        var product = ViewBag.Product as Product;
+        if (product != null)
+        {
+        <p>
+            <strong>Product Name:</strong>&nbsp;@product.Name<br />
+            <strong>Image:</strong><br />
+            <img src="@Product.GetProductFiles(product.ID, "Image")" alt="@product.Name" height="250px" width="250px"/>
+        </p>
+            <p>
+                @{
+                    var path = Product.GetProductFiles(product.ID, "Document");
+                }
+                @if (!string.IsNullOrEmpty(path)){
+                    <strong>PDF Link:</strong><a href="@path" target="_blank">@(product.Name)-Brochure</a>
+                }
+            </p>
+        }
+    }
+</fieldset>

@@ -1,0 +1,38 @@
+﻿@using AudioPlanet.Helpers
+@model IEnumerable<AudioPlanet.Models.Review>
+<div id="LatestArticlesPanel" class="LatestArticlesPanel">
+    <h3>
+        Latest Product Reviews</h3>
+    <div id="Listarticles">
+        <ul>
+            @{
+            foreach (var review in Model)
+            {
+            <li>
+                @*<div class="LatestArticleImg">
+                    <a href="@(new AudioHelper().GetUrl("Article", article.Url))">
+                        <img src="/Content/Public/images/artcle1.jpg" width="66" height="68" alt="" /></a></div>*@
+                <div class="LatestArticleTitle">
+                    @review.Title<br />
+                    <span class="Morearticles"><a href="@(new AudioHelper().GetUrl("ProductReview", review.Url))">
+                        more >></a></span></div>
+                <div class="Menu">
+                    <span>Posted on @(review.PostedTime.ToString("dd / MM / yyyy"))
+                       @* | Views (@article.TotalViews)*@ </span>
+                </div>
+            </li>
+            }
+        }
+            </ul>
+    </div>
+    <div class="Navigation">
+        <div class="previous">
+            <a href="#">
+                <img src="/Content/Public/images/prev.jpg" alt="prev" /></a></div>
+        <div class="nav">
+        </div>
+        <div class="next">
+            <a href="#">
+                <img src="/Content/Public/images/next.jpg" alt="next" /></a></div>
+    </div>
+</div>

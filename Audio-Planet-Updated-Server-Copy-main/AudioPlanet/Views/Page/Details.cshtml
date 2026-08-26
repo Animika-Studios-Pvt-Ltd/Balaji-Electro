@@ -1,0 +1,230 @@
+﻿@using AudioPlanet.Helpers
+@using AudioPlanet.Models
+@model AudioPlanet.Models.Page
+@{
+    ViewBag.Title = "Details";
+}
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css" type="text/css" />
+<script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js" type="text/javascript"> </script>
+<script type="text/javascript">
+    $(function () {
+        $("#pageAndHistory").tabs();
+    });
+    $(document).ready(function () {
+        $("div#historyCount").before('<div class="nav" id="pagerHistory">').cycle({
+            fx: 'fade',
+            speed: 'slow',
+            timeout: 0,
+            pager: '#pagerHistory'
+        });
+        //Switch to history tab, here 1 is an Index of the Tab
+        $('a#switchTab').click(function () {
+            $("#pageAndHistory").tabs("option", "active", 1);
+        });
+        // Set Css for Fieldset
+        $('fieldset').css('position', 'relative').css('width', '90%');
+    });
+</script>
+<h2>
+    Details of the Page: "@Model.Name"</h2>
+<div class="buttons">
+    <a href="@Url.Action("SubPages", new { id = Model.ParentId })" class = "button left">
+        <span class="icon icon63"></span><span class="label">Sub Pages</span></a><a href="@Url.Action("Edit", new { id = Model.ID })" class = "button left"><span
+            class="icon icon145"></span><span class="label">Edit</span></a>
+</div>
+<div id="pageAndHistory">
+    <ul>
+        <li><a href="#tabs-1">Details</a></li>
+        <li><a href="#tabs-2">History</a></li>
+    </ul>
+    <div id="tabs-1">
+        <p>
+            This page has <strong><a href="#" id="switchTab">@(((IQueryable<PageHistory>)ViewBag.History).Count())</a>
+            </strong>history versions!</p>
+        <fieldset>
+            <legend>Page</legend>
+            <div class="display-label">
+                Parent Page</div>
+            <div class="display-field">
+                @(Model.ParentPage != null ? Html.DisplayFor(model => model.ParentPage.Name) : Html.DisplayFor(model => model.ParentId))
+            </div>
+            <div class="display-label">
+                Title</div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Title)
+            </div>
+            <div class="display-label">
+                Sub Title</div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.SubTitle)
+            </div>
+            <div class="display-label">
+                Name</div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Name)
+            </div>
+            <div class="display-label">
+                Description</div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Description)
+            </div>
+            <div class="display-label">
+                Content</div>
+            <div class="display-field">
+                @Html.Raw(Model.Content)
+            </div>
+            <div class="display-label">
+                Page Group</div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.PageGroup)
+            </div>
+            <div class="display-label">
+                Keyword</div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Keyword)
+            </div>
+            <div class="display-label">
+                Url</div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Url)
+            </div>
+            <div class="display-label">
+                Order</div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Order)
+            </div>
+            <div class="display-label">
+                Is Cms Page</div>
+            <div class="display-field">
+                @Utilities.DisplayBool(Model.IsCmsPage)
+            </div>
+            <div class="display-label">
+                Is Parent
+            </div>
+            <div class="display-field">
+                @Utilities.DisplayBool(Model.IsParent)
+            </div>
+            <div class="display-label">
+                Is Active
+            </div>
+            <div class="display-field">
+                @Utilities.DisplayBool(Model.IsActive)
+            </div>
+            <div class="display-label">
+                Show on Main Menu
+            </div>
+            <div class="display-field">
+                @Utilities.DisplayBool(Model.IsItShowInMenu)
+            </div>
+            <div class="display-label">
+                Created At</div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.CreatedAt)
+            </div>
+        </fieldset>
+    </div>
+    <div id="tabs-2" style="position: relative">
+        <div id="historyCount">
+            @foreach (PageHistory hp in (IQueryable<PageHistory>)ViewBag.History)
+            {
+                <fieldset>
+                    <legend>@hp.CreatedAt</legend>
+                    <div class="display-label">
+                        &nbsp;
+                    </div>
+                    <p class="ibuttons">
+                        @using (Html.BeginForm("UpdateToHistory", "Page", new { id = hp.ID }, FormMethod.Post))
+                        {
+                            <input type="submit" value="Revert back to This" class="ibutton" />
+                        }
+                        @using (Html.BeginForm("DeleteHistory", "Page", new { id = hp.ID}, FormMethod.Post))
+                        {
+                            <input type="submit" value="Delete" class="ibutton delete" />
+                        }
+                    </p>
+                    <div class="display-label">
+                        Title</div>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => hp.Title)
+                    </div>
+                    <div class="display-label">
+                        Name</div>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => hp.Name)
+                    </div>
+                    <div class="display-label">
+                        Description</div>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => hp.Description)
+                    </div>
+                    <div class="display-label">
+                        Content</div>
+                    <div class="display-field">
+                        @Html.Raw(Model.Content)
+                    </div>
+                    <div class="display-label">
+                        Keyword</div>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => hp.Keyword)
+                    </div>
+                    <div class="display-label">
+                        Url</div>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => hp.Url)
+                    </div>
+                    <div class="display-label">
+                        Order</div>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => hp.Order)
+                    </div>
+                    <div class="display-label">
+                        Is Cms Page</div>
+                    <div class="display-field">
+                        @Utilities.DisplayBool(hp.IsCmsPage)
+                    </div>
+                    <div class="display-label">
+                        Is Parent
+                    </div>
+                    <div class="display-field">
+                        @Utilities.DisplayBool(hp.IsParent)
+                    </div>
+                    <div class="display-label">
+                        Is Active
+                    </div>
+                    <div class="display-field">
+                        @Utilities.DisplayBool(hp.IsActive)
+                    </div>
+                    <div class="display-label">
+                        Show on Main Menu
+                    </div>
+                    <div class="display-field">
+                        @Utilities.DisplayBool(hp.IsItShowInMenu)
+                    </div>
+                    <div class="display-label">
+                        Created At</div>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => hp.CreatedAt)
+                    </div>
+                    <div class="display-label">
+                        &nbsp;
+                    </div>
+                    <p class="ibuttons">
+                        @using (Html.BeginForm("UpdateToHistory", "Page", new { id = hp.ID }, FormMethod.Post))
+                        {
+                            <input type="submit" value="Revert back to This" class="ibutton" />
+                        }
+                        @using (Html.BeginForm("DeleteHistory", "Page", new { id = hp.ID }, FormMethod.Post))
+                        {
+                            <input type="submit" value="Delete" class="ibutton delete" />
+                        }
+                    </p>
+                </fieldset>
+            }
+        </div>
+    </div>
+</div>
+<div class="buttons">
+    <a href="@Url.Action("SubPages", new { id = Model.ParentId })" class = "button left">
+        <span class="icon icon63"></span><span class="label">Sub Pages</span></a><a href="@Url.Action("Edit", new { id = Model.ID })" class = "button left"><span
+            class="icon icon145"></span><span class="label">Edit</span></a>
+</div>

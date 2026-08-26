@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "UploadCss";
+}
+<h2>
+    UploadCss</h2>
+@using (Html.BeginForm("UploadCss", "Admin", FormMethod.Post, new {enctype = "multipart/form-data"}))
+{
+    <fieldset>
+        <legend>Upload CSS</legend>
+        <div class="editor-field">
+            <input type="file" name="file" />
+            <p>
+                <strong>Note: </strong>CSS should follow the WCMS standards, Download sample CSS file <a href="/Content/Public/images/Default_style.css" target="_blank"><strong>here</strong></a>
+            </p>
+        </div>
+        <p>
+            <input type="submit" value="Upload" class="ibutton" />
+        </p>
+    </fieldset>
+}
+@using (Html.BeginForm("SelectCss", "Admin", FormMethod.Post))
+{
+    <fieldset>
+        <legend>Available Files</legend>
+        <div class="display-field">
+            @Html.DropDownList("Files", (SelectList) ViewBag.FileList)
+        </div>
+        @if (Request.Cookies["Style"] != null)
+        {
+            <p>
+                <strong>Note: </strong>Currently Applied style is <a href="/Content/Public/@Request.Cookies["Style"].Value" target="_blank"><strong>@Request.Cookies["Style"].Value</strong></a>
+            </p>
+        }
+        <p>
+            <input type="submit" value="Change" class="ibutton" />
+        </p>
+    </fieldset>
+}

@@ -1,0 +1,63 @@
+﻿@model AudioPlanet.Models.Review
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+<div class="buttons">
+    <a href="@Url.Action("Index")" class = "button left">
+        <span class="icon icon63"></span><span class="label">Articles</span></a>
+        <a href="@Url.Action("Edit", new { id = Model.ID })" class = "button left"><span
+            class="icon icon145"></span><span class="label">Edit</span></a>
+</div>
+<fieldset>
+    <legend>Article</legend>
+
+    <div class="display-label">Product</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.products.Name)
+    </div>
+
+    <div class="display-label">Content</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ProductName)
+    </div>
+
+    <div class="display-label">Category</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.categories.CategoryName)
+    </div>
+
+    <div class="display-label">Title</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Title)
+    </div>
+
+    <div class="display-label">Review</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ProductReview)
+    </div>
+
+    <div class="display-label">Url</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Url)
+    </div>
+
+    <div class="display-label">Keywords</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Keywords)
+    </div>
+
+    <div class="display-label">Description</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+</fieldset>
+<div class="buttons">
+    <a href="@Url.Action("Index")" class = "button left">
+        <span class="icon icon63"></span><span class="label">Articles</span></a>
+        <a href="@Url.Action("Edit", new { id = Model.ID })" class = "button left"><span
+            class="icon icon145"></span><span class="label">Edit</span></a>
+</div>

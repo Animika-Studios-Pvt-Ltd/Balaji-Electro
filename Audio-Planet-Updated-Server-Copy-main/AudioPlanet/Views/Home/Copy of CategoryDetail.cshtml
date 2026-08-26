@@ -1,0 +1,200 @@
+﻿@using AudioPlanet.Helpers
+
+@using Page = AudioPlanet.Models.Page
+
+@using AudioPlanet.Models
+
+
+@model IEnumerable<Product>
+
+
+@*@model AudioPlanet.ViewModels.ListCategoryViewModel
+*@
+@{
+    Layout = "~/Views/Shared/_CategoryBrand.cshtml";
+}
+
+
+@{
+    ViewBag.Title = "";
+}
+<div class="row toggleDivision">
+    @{
+        var db = new Audio();
+        var prods = db.Products;
+            
+        <div id="MainMenu">
+            @Html.Partial("../Home/_sideBar")
+        </div>
+            
+    }
+
+    @{
+        var cats = ViewBag.category;
+        var Akti = ViewBag.AktiMicro;
+        
+        <div id="AmplifierDetail" class="col-lg-9 col-md-9 col-sm-12 col-xs-12 amplifierDetail">
+            @if (Akti == null)
+            {
+                <div id="pageText">
+                    @if (cats == "Amplifiers")
+                    {
+                        <div class="inner_header_new" itemscope itemtype="http://schema.org/Product">
+                            <div class="row">
+                                <h1 itemprop="name">Bryston &amp; Cambridge Audio Amplifiers Dealers</h1>
+                            </div>
+                            <div class="row">
+                                <div class="product-page">
+                                    <span class="hText">Our disparate assortment of products with boundless options will leave little to the imagination of even an ardent sound fanatic. Our products comprise a conglomeration of Amplifiers, Source, and Systems. &nbsp;Bryston, Cambridge Audio, Musical Fidelity, ATC are some of the time-tested products Planet Audio showcases. If you are looking for an 13.2 auro 3D system or Dolby atmos 5.2.2,7.2.4 or DTS X surround sound system in Bangalore, Audio Planet is the place to visit.  We offer a consortium of brands/products based on your budget without compromising on the sound quality.</span>
+                                </div>
+                            </div>
+                        </div>
+                             
+                    }
+                    else if (cats == "Source")
+                    {
+                        <div class="inner_header_new" itemscope itemtype="http://schema.org/Product">
+                            <div class="row">
+                                <h1 itemprop="name">Source</h1>
+                            </div>
+                            <div class="row">
+                                <div class="product-page">
+                                    <span class="hText">Our disparate assortment of products with boundless options will leave little to the imagination of even an ardent sound fanatic. Our products comprise a conglomeration of Amplifiers, Source, and Systems. &nbsp;Bryston, Cambridge Audio, Musical Fidelity, ATC are some of the time-tested products Planet Audio showcases. If you are looking for an 13.2 auro 3D system or Dolby atmos 5.2.2,7.2.4 or DTS X surround sound system in Bangalore, Audio Planet is the place to visit.  We offer a consortium of brands/products based on your budget without compromising on the sound quality.</span>
+                                </div>
+                            </div>
+                        </div>
+                             
+                    }
+                    else if (cats == "Speakers")
+                    {
+                        <div class="inner_header_new" itemscope itemtype="http://schema.org/Product">
+                            <div class="row">
+                                <h1 itemprop="name">Cambridge Audio &amp; MK Sound System Speakers</h1>
+                            </div>
+                            <div class="row">
+                                <div class="product-page">
+                                    <span class="hText">Our disparate assortment of products with boundless options will leave little to the imagination of even an ardent sound fanatic. Our products comprise a conglomeration of Amplifiers, Source, and Systems. &nbsp;Bryston, Cambridge Audio, MK Sound System, Monito Audio System Speakers, Quadral, Thiel, Traingle, Musical Fidelity, ATC are some of the time-tested products Planet Audio showcases. If you are looking for an 13.2 auro 3D system or Dolby atmos 5.2.2,7.2.4 or DTS X surround sound system in Bangalore, Audio Planet is the place to visit.  We offer a consortium of brands/products based on your budget without compromising on the sound quality.</span>
+                                </div>
+                            </div>
+                        </div>                    }
+
+
+                    <ul>
+                        @foreach (var item in Model)
+                        {
+                           
+                            <li>
+
+                                <div class="Amplifier_topDivMiddleNew" itemscope itemtype="http://schema.org/Product">
+                                    <div class="Amplifier_innerdiv">
+                                       
+                                        
+                                        <div class="AmplifierDetailsNew_img">
+                                            @{
+                                                
+                                                ////<a style="color: #333333" data-fancybox-type="ajax" class="fancybox" title="@item.Name" href="@Url.Action("ProductDeatils", "Home", new { brand = @item.Brand.Replace(' ', '-'), name = @item.Name.Replace(' ', '-') })">
+                                                
+                                                //<a style="color: #333333" data-fancybox-type="ajax" class="fancybox" title="@item.Name" href="@Url.Action("CategoryAndBrandItem", "Home", new {category = @item.MainCategory.Replace(' ', '-'), brand = @item.Brand.Replace(' ', '-'), subCategory = @item.SubCategory.Replace(' ', '-'), name = @item.Name.Replace(' ', '-') })">
+                                                
+                                                    @*<a style="color: #333333" data-fancybox-type="ajax" class="fancybox" title="@item.Name" href="@item.Name/@item.ID">*@
+                                                
+                                                ////<a style="color: #333333" data-fancybox-type="ajax" class="fancybox" title="@item.Name" href="@Url.Action("ProductDeatils",new { name = @item.Name.Replace(' ', '-'), id = @item.ID })">
+                            
+                            var Categori = @item.MainCategory;
+                            if(Categori == null)
+                            {
+                                Categori = string.Empty;
+                            }
+                            else if(Categori != null || Categori != string.Empty)
+                            {
+                                Categori = @item.MainCategory.Replace(" ", "-");
+                            }
+                            var Brandd = @item.Brand;
+                            if (Brandd == null)
+                            {
+                                Brandd = string.Empty;
+                            }
+                            else if (Brandd != string.Empty || Brandd != null)
+                            {
+                                Brandd = @item.Brand.Replace(" ", "-");
+                            }
+                            
+                            var SubCategori = @item.SubCategory;
+                            if (SubCategori == null)
+                            {
+                                SubCategori = string.Empty;
+                            }
+                            else if(SubCategori != null)
+                            {
+                                SubCategori = SubCategori.Contains(" ") ? SubCategori.Replace(" ", "-") : SubCategori;
+                            }
+                            var Nname = @item.Name.Replace(" ", "-");
+                            
+                           
+                                                
+                                                <a style="color: #333333" data-fancybox-type="ajax" class="fancybox" title="@item.Name" href="/hi-fi?category=@Categori&brand=@Brandd&subCategory=@SubCategori&product=@Nname">
+                                                    <img itemprop="image" class="thumbImage" src="@(Product.GetProductFiles(item.ID, "Image"))" data-original="@(Product.GetProductFiles(item.ID, "Image"))"   alt="@item.Name"/>
+                                                </a>
+
+
+                                            }
+                                        </div>
+                                        <div>
+                                            <h2 itemprop="name">
+                                                @*<a style="color: #333333" title="@item.Name" data-fancybox-type="ajax" class="fancybox" href="/Home/ProductDeatils/@item.ID/@item.Name"></a>*@
+                                                <a style="color: #333333" href="/hi-fi?category=@Categori&brand=@Brandd&subCategory=@SubCategori&product=@Nname">@item.Name</a>
+                                                
+                                                @*@Html.ActionLink(@item.Name, "ProductDeatils", new { name = @item.Name.Replace(' ', '-'), id = @item.ID }, new { @class = "fancybox", @style = "color:#333333" })*@
+
+                                                @*@Html.ActionLink(@item.Name, "ProductDeatils", "Home", new { brand = @item.Brand.Replace(' ', '-'), name = @item.Name.Replace(' ', '-') }, new { @class = "fancybox", @style = "color:#333333" })*@
+
+                                                @*@Html.ActionLink(@item.Name, "CategoryAndBrandItem", "Home", new { category = @item.MainCategory.Replace(' ', '-'), brand = @item.Brand.Replace(' ', '-'), subCategory = @item.SubCategory.Replace(' ', '-'), name = @item.Name.Replace(' ', '-') }, new { @class = "fancybox", @style = "color:#333333" })*@
+                                            </h2>
+                                            <p itemprop="description">@Html.Raw(item.Description)</p>
+                                            @{
+                            var path = Product.GetProductFiles(item.ID, "Document");
+                                            }
+
+                                            <div class="pdfImg">
+                                                @if (!string.IsNullOrEmpty(path))
+                                                {
+                                            
+                                                    <a href="@path" class="fancyboxPdf downloadPdf" data-fancybox-type="iframe" target="_blank">
+                                                        <img src="/Content/Public/images/downloadPdf.png" alt="" /></a>
+                                                }
+                                                else
+                                                {
+                                                    <a href="#" class="downloadPdf" target="_blank">
+                                                        <img src="/Content/Public/images/downloadPdf.png" alt="" /></a>
+                                                }
+                                                <a href="/Systems/Enquiry" class="downloadPdf">
+                                                    <img src="/Content/Public/images/enquire.png" alt="Know more about @(item.Name)" /></a>
+                                            </div>
+                                        </div>
+                                        
+                                       
+                                    </div>
+                                    
+                                </div>
+                            </li>
+                        }
+                    </ul>
+
+                </div>
+
+            }
+
+            else
+            {
+                
+            }
+
+
+        </div>
+    }
+
+</div>
+
+
+@*@Content.Script("combained.js", Url)*@
+

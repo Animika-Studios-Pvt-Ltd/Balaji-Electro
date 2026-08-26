@@ -1,0 +1,38 @@
+﻿@model AudioPlanet.Models.Category
+@{
+    ViewBag.Title = "Create";
+}
+<h2>
+    Create</h2>
+<link href="@Url.Content("~/Content/themes/Ucms/chosen.css")" rel="stylesheet" type="text/css" />
+@Content.Script("jquery.validate.min.js", Url)
+@Content.Script("jquery.validate.unobtrusive.min.js", Url)
+@Content.Script("Ucms/chosen.jquery.js", Url)
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(false, "Category creation was unsuccessful. Please correct the errors and try again.")
+        <fieldset>
+            <legend>Category</legend>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ID, "Category")
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.CategoryName)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model=> model.CategoryUrl)
+                @Html.ValidationMessageFor(model => model.CategoryUrl)
+            </div>
+            <div class="editor-field">
+                @Html.DropDownList("ParentCategoryId", (SelectList)ViewBag.CategoryID, "",new Dictionary<string,object>{{"class","chzn-select"},{ "style", "width: 350px;" }})
+            @Html.ValidationMessageFor(model => model.ParentCategoryId)
+            </div>
+            <p class="ibuttons">
+            <input type="submit" value="Create" name="BtnSave" class="ibutton save" />
+        </p>
+        </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

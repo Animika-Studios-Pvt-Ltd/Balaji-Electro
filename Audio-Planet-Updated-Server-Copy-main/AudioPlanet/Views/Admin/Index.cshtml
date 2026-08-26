@@ -1,0 +1,113 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+<h1>
+    Welcome to the Admin Panel of Audio Planet</h1>
+@*<h3>
+    - Traffic information <span style="color: #F58033; font-weight:bold; font-size: 13px"><sup>BETA</sup></span></h3>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+    // Load the Visualization API and the piechart package.
+    google.load('visualization', '1.0', { 'packages': ['corechart'] });
+
+    // Set a callback to run when the Google Visualization API is loaded.
+    google.setOnLoadCallback(drawChart);
+
+    // Callback that creates and populates a data table, 
+    // instantiates the pie chart, passes in the data and
+    // draws it.
+    function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Country / Territory');
+        data.addColumn('number', 'Visits');
+        data.addRows([
+            ['India', 34],
+            ['United States', 8],
+            ['United Arab Emirates', 4],
+            ['Sri Lanka', 1],
+            ['Canada', 1]
+        ]);
+
+        // Set chart options
+        var options = { 'title': 'How many visitors visited Audio planet last day?',
+            'width': 500,
+            'height': 400
+        };
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+    }
+</script>
+<script type='text/javascript'>
+    google.load('visualization', '1', { 'packages': ['geochart'] });
+    google.setOnLoadCallback(drawRegionsMap);
+
+    function drawRegionsMap() {
+        var data = google.visualization.arrayToDataTable([
+            ['Country', 'Popularity'],
+            ['India', 3400],
+            ['United States', 800],
+            ['United Arab Emirates', 400],
+            ['Sri Lanka', 100],
+            ['Canada', 100]
+        ]);
+
+        var options = {};
+
+        var chart = new google.visualization.GeoChart(document.getElementById('chart_div1'));
+        chart.draw(data, options);
+    };
+</script>
+<table class="display">
+    <tr>
+        <th style="background-color: #F58033; color: #fff">
+            Visits by Traffic Type
+        </th>
+        <th style="background-color: #F58033; color: #fff">
+            Visits and Avg. Visit Duration by Country / Territory
+        </th>
+    </tr>
+    <tbody>
+        <tr>
+            <td>
+                <div id="chart_div" style="width: 500px; height: 400; text-align: left;">
+                </div>
+            </td>
+            <td>
+                <div id="chart_div1" style="width: 500px; height: 400px; text-align: left;">
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>*@
+@*<h3>
+    - Shreekumar</h3>
+<a href="mailto:shreekumar@worlditlab.com">shreekumar@worlditlab.com</a>
+<p>
+    The Universal Content Management System (UCMS) is a sample application that introduces how to use ASP.NET MVC and Visual Studio for web development.
+</p>
+<p>
+    It is a lightweight sample CMS implementation demonstrating ASP.NET MVC's productivity features and data access via Entity Framework 4</p>
+<ul>
+    <li><strong>Name: </strong>WCMS (WorldItLab, Content Management System)</li>
+    <li><strong>Framework: </strong>ASP.Net MVC 3</li>
+    <li><strong>Data access: </strong>Entity Framework 4</li>
+    <li><strong>Who this application is for? : </strong>This is for Web developers with a basic knowledge of ASP.NET and C# who want (or need) to start using the new ASP.NET MVC 3 Framework.</li>
+</ul>
+<h3>
+    Source</h3>
+<ul>
+    <li><strong>Video Tutorials: </strong><a href="http://www.pluralsight.com" target="_blank">Pluralsight.com</a></li>
+    <li><strong>JQuery Tabel Sort & Pagination : </strong><a href="http://tablesorter.com" target="_blank">Tablesorter</a>, by Christian Bach </li>
+    <li><strong>HTML WYSIWYG editor : </strong><a href="http://www.tinymce.com/" target="_blank">TinyMCE </a></li>
+</ul>
+<h3>
+    Scope</h3>
+<ul>
+    <li><strong>Video/Audio Uploads</strong></li>
+    <li><strong>Google Map</strong></li>
+    <li><strong>Google Webmaster Keywords tool</strong></li>
+</ul>*@

@@ -1,0 +1,50 @@
+﻿@model AudioPlanet.Models.Product
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Product</legend>
+
+    <div class="display-label">CategoryID</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Category.CategoryName)
+    </div>
+
+    <div class="display-label">BrandID</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Brand.BrandName)
+    </div>
+
+    <div class="display-label">Name</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">Description</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+
+    <div class="display-label">PdfLink</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PdfLink)
+    </div>
+
+    <div class="display-label">IsActive</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsActive)
+    </div>
+
+    <div class="display-label">CreatedAt</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CreatedAt)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

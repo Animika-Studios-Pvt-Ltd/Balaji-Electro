@@ -1,0 +1,15 @@
+﻿@using AudioPlanet.Helpers
+<div id="PrimaryMenu_bg">
+    <div class="Container">
+        <div id="PrimaryMenu">
+            @Html.Raw(new AudioHelper().MainMenu().ToString())
+        </div>
+    </div>
+</div>
+<div id="SecondaryMenu_bg">
+    <div class="Container">
+        <div id="SecondaryMenu">
+            @Html.Raw(new AudioHelper().Submenu().ToString())
+        </div>
+    </div>
+</div>

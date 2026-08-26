@@ -1,0 +1,308 @@
+﻿@using AudioPlanet.Helpers
+@using AudioPlanet.Models
+@model AudioPlanet.Models.Page
+@{
+    Layout = "~/Views/Shared/_Page.cshtml";
+    ViewBag.Title = Model.Title;
+    ViewBag.Keywords = Model.Keyword;
+    ViewBag.Description = Model.Description;
+    ViewBag.PageGroup = Model.PageGroup;
+    ViewBag.PageCode = Model.PageCode;
+}
+
+
+<div class="container">
+     @{
+        if (Model.PageGroup.Contains(PageGroup.Product.ToString()))
+        {
+            <h1>
+                @Model.Title</h1>
+            <div id="productInfo" style="min-width: 850px; width: auto">
+                @Html.Raw(@Model.Content)
+            </div>
+            @Html.Raw(new AudioHelper().ProductMain().ToString())
+            <div id="AmplifierDetails">
+            </div>
+        }
+        else
+        {
+            if (Model.PageCode == "Contact")
+            {
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="ContactUs">
+                            <p>Audio Planet is a one stop solution for some of the world’s best sound systems in
+                                Bangalore.
+                                To experience your favorite sound system in Bangalore, you can book an appointment or
+                                contact
+                                us at the below address.</p>
+                            <br><strong> PRODUCT DEMONSTRATIONS ARE ONLY ON AN APPOINTMENT BASIS. PLEASE CALL US ON
+                            9845019192 ,
+                            9845694986 TO FIX YOUR TIME SLOT </strong><br>
+                            <div itemscope itemtype="http://schema.org/Organization">
+	
+		<p itemprop="name"><span>Audio Planet</span></p><br> 
+		<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+			<span itemprop="streetAddress">703/A, 3rd Block<br>
+			Behind BDA Complex,</span> <span itemprop="addressLocality">Koramangala<br> Bangalore, Karnataka</span> <span itemprop="postalCode">560034</span>
+		</div>
+	
+                              
+	<p>Tel : <span itemprop="telephone">080 2552 1266</span><br> Mobile: <span itemprop="mobile">+91 98450 19192</span> / <span itemprop="mobile">+91 98456 94986</span></p>
+
+	<p>Email:<span itemprop="email">info@audioplanet.co.in</span></p>
+</div>
+
+                            @{ Html.RenderPartial("_Communication", new AudioPlanet.Areas.Enquiry.Models.Enquiry()); }
+                        
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="ContactUs_Map">
+                            <iframe width="425" height="350"
+                                    src="https://maps.google.co.in/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Audio+Planet+703%2FA,+3rd+Block+Behind+BDA+Complex,+Koramangala+Bangalore,+Karnataka+560034&amp;aq=&amp;sll=12.948406,77.614114&amp;sspn=0.094021,0.169086&amp;ie=UTF8&amp;hq=Audio+Planet+703%2FA,+3rd+Block+Behind+BDA+Complex,+Koramangala+Bangalore,+Karnataka+560034&amp;hnear=&amp;t=m&amp;ll=12.948352,77.614117&amp;spn=0.058554,0.072956&amp;z=13&amp;iwloc=A&amp;output=embed"></iframe>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            }
+            else if (Model.PageCode == "Enquiry83")
+            {
+			
+                <div class="row1">
+                <div class="inner_header">
+                    <div class="row">
+                        <h1>
+                            Enquiry</h1>
+
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="enquirepage">
+
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+
+                        <div class="InnerBredcrms">
+                            <h3>Enquiry</h3>
+                        </div>
+                         @{ Html.RenderPartial("_Communication", new AudioPlanet.Areas.Enquiry.Models.Enquiry()); }
+
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <img src="@ViewBag.FilePath" class="img-responsive" alt="image">
+                    </div>
+                    </div>
+                </div>
+                </div>
+                
+            }
+            else if (Model.PageCode == "Sitemap")
+            {
+                
+                <div class="inner_header">
+                    <div class="row">
+                        <h1>@Model.Title</h1>
+                    </div>
+                </div>
+                <div class="innerLeftPanel">
+                    <div class="col-lg-7 col-md-7 col-sm-12">
+                        <div class="InnerBredcrms">
+                            <h3>@Model.SubTitle</h3>
+                        </div>
+                        @Html.Raw(new AudioHelper().Sitemap().ToString())
+                        @*<ul id="sitemap">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="sitemap.html">Sitemap</a></li>
+                            <li><a href="Audio_Planet.html">Audio Planet</a>
+                                <ul><li><a href="Audio_Planet.html">Company Profile</a></li>
+                                    <li><a href="#">Team</a></li>
+                                    <li><a href="#">Philosophy</a></li>
+                                    <li><a href="#">Experience Centre</a></li>
+                                    <li><a href="#">Awards &amp; Recognition</a></li>
+                                    <li><a href="#">Alliances</a></li>
+                                </ul></li>
+                            <li><a href="inner_page_Scroll_new.html">Audio Consulting</a>
+                            <ul>
+                                <li><a href="inner_page_Scroll_new.html">High Fidelity (Hi-Fi) Experience</a></li>
+                                <li><a href="#">Need Analysis</a></li>
+                                <li><a href="#">Product Evaluation</a></li>
+                                <li><a href="#">Listening Room Enhancement</a></li>
+                                <li><a href="#">Performance Optimization Integration</a></li>
+                            </ul>
+                            </li>
+                            <li><a href="Product_page.html">Audio Systems</a>
+                                <ul><li><a href="Product_page.html">Speakers</a></li>
+                                    <li><a href="#">Source</a></li>
+                                    <li><a href="#">Amplifiers</a>
+                                    <li><a href="#">Aktimate Micro</a></li>
+                            <li><a href="#">Turntables</a></li>
+                                </ul></li>
+                            <li><a href="Services.html">Services</a>
+                                <ul><li><a href="#">Maintenance</a></li>
+                                    <li><a href="#">Acoustic Design</a></li>
+                                    <li><a href="#">Implementation of Design</a></li>
+                                </ul></li>
+                            <li><a href="clients.html">Clients</a></li>
+                            <li><a href="expert_Speaks.html">Expert Speaks</a></li>
+                            <li><a href="contact-us.html">Contact Us</a></li>
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Disclaimer</a></li>
+                            <li><a href="enquiry.html">Enquiry</a></li>
+                        </ul>*@
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="row1">
+                    <div class="inner_header">
+                        <div class="row">
+                            <h1>@Model.Title</h1>
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="innerLeftPanel">
+                            <div class="col-lg-7 col-md-7 col-sm-12">
+                                <div class="InnerBredcrms">
+                                    <h3>@Model.SubTitle</h3>
+                                </div>
+                                <div class="scroll_content clear_fix">
+                                    <div class="scrollbar" id="ex3">
+                                        <div class="content">
+                                            <!--<div class="content_1 content  ">-->
+                                            @Html.Raw(@Model.Content)
+                                            <!--</div>-->
+                                        </div>
+                                    </div>
+                                </div>
+                                @{
+                if (Model.PageCode == "Alliances")
+                {
+                                        <div class="ContactUsTable">
+                                            @{ Html.RenderPartial("_Communication", new AudioPlanet.Areas.Enquiry.Models.Enquiry()); }
+                                        </div>
+                }
+                                }
+                            </div>
+                        </div>
+
+                        <div class="innerRightPanel">
+                            <div class="col-lg-5 col-md-5 col-sm-12">
+                                <img src="@ViewBag.FilePath" class="img-responsive" alt="image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+    }
+</div>
+
+
+
+
+
+
+
+
+@*<div class="InnerLeftPanel" style="padding-bottom: 50px;">
+    @{
+        if (Model.PageGroup.Contains(PageGroup.Product.ToString()))
+        {
+            <h1>
+                @Model.Title</h1>
+            <div id="productInfo" style="min-width: 850px; width: auto">
+                @Html.Raw(@Model.Content)
+            </div>
+            @Html.Raw(new AudioHelper().ProductMain().ToString())
+            <div id="AmplifierDetails">
+            </div>
+        }
+        else
+        {
+            if (Model.PageCode == "Contact")
+            {
+                <div class="ContactUs">
+                    <p>
+                        <span style="font-size: 15px; font-weight: bold;">Audio Planet</span><br />
+                        703/A, 3rd Block<br />
+                        Behind BDA Complex, Koramangala<br />
+                        Bangalore, Karnataka 560034</p>
+                    <p>
+                        Tel : 080 2552 1266<br />
+                        Mobile: +91 98450 19192 / 98456 94986</p>
+                    <p>
+                        Email:info@audioplanet.co.in</p>
+                </div>
+                <div class="ContactUsTable">
+                    @{ Html.RenderPartial("ContactUs", new AudioPlanet.Areas.Enquiry.Models.Enquiry()); }
+                </div>
+            }
+            else
+            {
+                <h1>
+                    @Model.Title</h1>
+                <div class="InnerBredcrms">
+                    <h3>
+                        @Model.SubTitle</h3>
+                </div>
+                if (Model.PageCode == "Alliances")
+                {
+                    <div class="content_1 content">
+                        @Html.Raw(@Model.Content)
+                    </div>
+                    <div class="ContactUsTable">
+                        @{ Html.RenderPartial("_Communication", new AudioPlanet.Areas.Enquiry.Models.Enquiry()); }
+                    </div>
+                }
+                else if (Model.PageCode == "Sitemap")
+                {
+                    @Html.Raw(new AudioHelper().Sitemap().ToString())
+                }
+                else
+                {
+                    <div class="content_1 content">
+                        @Html.Raw(@Model.Content)
+                    </div>
+                }
+            }
+        }
+    }
+</div>
+@if (!Model.PageGroup.Contains(PageGroup.Product.ToString()))
+{
+    <div class="InnercontentRightPanel">
+        @if (Model.PageCode == "Contact")
+        {
+            <div class="ContactUs_Map">
+                <iframe width="425" height="350" src="https://maps.google.co.in/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Audio+Planet+703%2FA,+3rd+Block+Behind+BDA+Complex,+Koramangala+Bangalore,+Karnataka+560034&amp;aq=&amp;sll=12.948406,77.614114&amp;sspn=0.094021,0.169086&amp;ie=UTF8&amp;hq=Audio+Planet+703%2FA,+3rd+Block+Behind+BDA+Complex,+Koramangala+Bangalore,+Karnataka+560034&amp;hnear=&amp;t=m&amp;ll=12.948352,77.614117&amp;spn=0.058554,0.072956&amp;z=13&amp;iwloc=A&amp;output=embed">
+                </iframe>
+                <br />
+                <small><a href="https://maps.google.co.in/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Audio+Planet+703%2FA,+3rd+Block+Behind+BDA+Complex,+Koramangala+Bangalore,+Karnataka+560034&amp;aq=&amp;sll=12.948406,77.614114&amp;sspn=0.094021,0.169086&amp;ie=UTF8&amp;hq=Audio+Planet+703%2FA,+3rd+Block+Behind+BDA+Complex,+Koramangala+Bangalore,+Karnataka+560034&amp;hnear=&amp;t=m&amp;ll=12.948352,77.614117&amp;spn=0.058554,0.072956&amp;z=13&amp;iwloc=A"
+                          style="color: #040707; margin-left: 38%; text-decoration: none;">View Larger Map</a></small>
+            </div>
+        }
+        else if (Model.PageCode == "ExpertSpeaks")
+        {
+
+        }
+        else if (Model.PageCode == "Sitemap")
+        {
+
+        }
+        else
+        {
+            <img src="@ViewBag.FilePath" alt="" />
+        }
+    </div>
+}*@

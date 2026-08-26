@@ -1,0 +1,38 @@
+﻿@using AudioPlanet.Helpers
+@using AudioPlanet.Models
+@model AudioPlanet.Models.Page
+@{
+    Layout = "~/Views/Shared/_Page2.cshtml";
+    ViewBag.Title = Model.Title;
+    ViewBag.Keywords = Model.Keyword;
+    ViewBag.Description = Model.Description;
+    ViewBag.PageGroup = Model.PageGroup;
+    ViewBag.PageCode = Model.PageCode;
+}
+
+<div class="inner_header"  itemscope itemtype="http://schema.org/Product">
+    <div class="row">
+        <h1 itemprop="name">@Model.Title</h1>
+    </div>
+    <div class="row">
+        <div class="product-page">
+            <p>@Html.Raw(@Model.Content)</p>
+        </div>
+    </div>
+</div>
+
+
+
+    @{
+        if (Model.PageGroup.Contains(PageGroup.Product.ToString()))
+        {
+            @*<h1>
+                @Model.Title</h1>
+            <div id="productInfo" style="min-width: 850px; width: auto">
+                @Html.Raw(@Model.Content)
+            </div>*@
+            @Html.Raw(new AudioHelper().ProductMain().ToString())
+            <div id="AmplifierDetails">
+            </div>
+        }
+    }

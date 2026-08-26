@@ -1,0 +1,48 @@
+﻿@model AudioPlanet.Models.Category
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Category</legend>
+
+    <div class="display-label">CategoryName</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CategoryName)
+    </div>
+
+    <div class="display-label">CategoryUrl</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CategoryUrl)
+    </div>
+
+    <div class="display-label">ParentCategoryId</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ParentCategoryId)
+    </div>
+
+    <div class="display-label">IsActive</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsActive)
+    </div>
+
+    <div class="display-label">Depth</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Depth)
+    </div>
+
+    <div class="display-label">FullPath</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FullPath)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

@@ -1,0 +1,350 @@
+﻿@using AudioPlanet.Helpers
+@using AudioPlanet.Models
+@using Page = AudioPlanet.Models.Page
+@model AudioPlanet.Areas.Enquiry.Models.Enquiry
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Audio & Home Theatre Systems in Bangalore</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="/Content/fevicon.ico" type="image/ico" />
+    <meta name="description" content="Audio & Home Theater Systems in Bangalore, Audio Systems, Amplifiers, Source, Bryston, Cambridge Audio, Musical Fidelity, ATC,  Dolby atmos, Music System, Dali" />
+    <meta name="keywords" content="Audio Systems, Home Theatre Systems, Home Theatre Systems in Bangalore"/>
+    
+    <meta name="google-site-verification" content="Cqt8astmmMcw31s4kSX3qSB7FPboPTCw01YzSh8Gnnw" />
+    @*<link href="@Url.Content("css/bootstrap.min.css")" type="text/css" rel="stylesheet" />*@
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="@Url.Content("css/custom.css")" type="text/css" rel="stylesheet" />
+    <link href="@Url.Content("css/slick.css")" type="text/css" rel="stylesheet" />
+    @*<link href="@Url.Content("css/custom.min.css")" type="text/css" rel="stylesheet" />
+    <link href="@Url.Content("css/slick.min.css")" type="text/css" rel="stylesheet" />*@
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+
+    @*<link href="@Url.Content("/Content/Public/images/Default_style.css")" type="text/css" rel="stylesheet" />*@
+
+    <!--[if lt IE 9]>
+     <script src="http://ie7-js.googlecode.com/svn/version/2.0(beta3)/IE9.js" 
+     type="text/javascript">
+     </script>
+     <script src="http://ie7-js.googlecode.com/svn/version/2.0(beta3)/IE9-squish.js" 
+     type="text/javascript">
+     </script>
+    <![endif]-->
+    @*<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>*@
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+</head>
+
+<body>
+<!--========================== Header===========================-->
+<div class="outer_container clearfix">
+
+    <nav class="navbar navbar-inverse">
+
+        <div class="inner_container clearfix">
+            <div class="col-lg-3 col-md-3 col-sm-12 padding_zero">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <div class="logo_container clearfix">
+                        <a href="/"><img src="/images/AudioPlanet_Logo.png" class="img-responsive" alt="AudioPlanet"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-12 padding_zero">
+                <div class="collapse navbar-collapse navHeaderCollapse">
+                    @Html.Raw(new AudioHelper().MainMenu().ToString())
+                </div>
+            </div>
+        </div>
+        <!--</div>-->
+    </nav>
+</div>
+<!--=========================== Banner =============================-->
+
+<div class="outer_container clearfix">
+    <div class="HomeBanner_bg">
+        <div class="HomeBannerBackground">
+            <div class="inner_container clearfix">
+                <div class="container">
+                    <div class="Gallery">
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                            <div class="GaleryLeftPanel">
+                                <img id="img1" class="glry glryimg1 img-responsive" src="images/2.png" alt="Home theater systems in Bangalore"/>
+                            </div>
+                        </div>
+                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                            <div class="GalleryMiddlePanel">
+                                <img id="img2" class="glry glryimg2 img-responsive" src="images/3L.png" alt="audio systems in bangalore"/>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                            <div class="GaleryRightPanel">
+                                <img id="img3" class="glry glryimg3 img-responsive" src="images/1.png" alt="bangalore home theater dealers"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div id="myCarousel" class="feedback_container carousel slide" data-ride="carousel" data-interval="false">
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="feedback_hood clear_fix">
+                <img src="/Content/Public/images/video.png" alt="audio-planet">
+            </div>
+
+      <div class="item active feedback_form_container">
+          @*<iframe width="100%" height="250" src="https://www.youtube.com/embed/KZx0SRkQgAQ?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>*@
+        <iframe class="iframeStyle" src="https://www.youtube.com/embed/KZx0SRkQgAQ?rel=0&amp;showinfo=0"></iframe>
+      </div>
+
+      <div class="item feedback_form_container">
+        <iframe class="iframeStyle" src="https://www.youtube.com/embed/ZjeMk2joPS8?rel=0&amp;showinfo=0"></iframe>
+      </div>
+    </div>
+  </div>
+
+    @*<div id="myCarousel" class="feedback_container carousel slide clear_fix" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="feedback_hood clear_fix">
+                <img src="/Content/Public/images/video.png" alt="audio-planet">
+            </div>
+            <div class="item feedback_form_container">
+                <iframe width="100%" height="250" src="https://www.youtube.com/embed/KZx0SRkQgAQ?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="item feedback_form_container">
+		        <iframe width="100%" height="250" src="https://www.youtube.com/embed/ZjeMk2joPS8?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Next</span>
+  </a>
+    </div>*@
+
+<!--================================ Banner Ends ===========================-->
+<!--===========================================Home Middle Panel==================================-->
+
+<div class="container"></div>
+@{
+    var db = new Audio();
+<div class="outer_container clear-fix">
+    <div class="HomeTopPanel">
+        <div class="inner_container clearfix">
+            <div class="container">
+                <div class="row">
+                    @{
+                        IQueryable<Page> topPanelPages = db.Pages.Where(p => new[] { "AudioPlanet", "HighFidelityExperience", "AcousticDesign" }.Contains(p.PageCode));
+                        foreach (Page page in topPanelPages)
+                        {
+                            <div class="HomeTopPanel_menu">
+                                <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <img alt="Audio Planet home page" src="/Content/Public/images/@(page.PageCode).jpg"  class="img-responsive" />
+                                    <h4>@page.Name</h4>
+                                    @Html.Raw(@Html.Truncate(page.Content, 140))
+                                    <a href="@Html.Raw(new AudioHelper().GetUrl("Pages", page.PageCode))">
+                                    <img src="/Content/Public/images/more.jpg" alt="@page.Name" /></a>
+                                </div>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="container"></div>
+<!--===========================================Home Middle Panel==================================-->
+
+<div class="outer_container clearfix">
+    <div class="HomeMiddlePanel">
+        <div class="inner_container clearfix">
+            <div class="Container">
+
+                <div class="row">
+                    @{
+
+                        Page middlePage = db.Pages.FirstOrDefault(p => p.PageCode == "ProductsAndBrands");
+
+                        if (middlePage != null)
+                        {
+                        <div class="HomeMiddlePanel_Left">
+                            <div class="col-lg-4 col-md-4 col-sm-4">
+                                <h3>PREMIUM</h3>
+                                <h5>@middlePage.Name</h5>
+                                <img src="/Content/Public/images/AudioPlanet_Homepage11.jpg" alt="@middlePage.Name" class="img-responsive" />
+
+                                @Html.Raw(@Html.Truncate(middlePage.Content, 305))
+                                <a href="@Html.Raw(new AudioHelper().GetUrl("Pages", middlePage.PageCode))">
+                                <img src="/Content/Public/images/middlepanelmore.jpg" alt="@middlePage.Name" /></a>
+                            </div>
+                        </div>
+                        }
+
+                        middlePage = db.Pages.FirstOrDefault(p => p.PageCode == "ExperienceCentre");
+                        if (middlePage != null)
+                        {
+                        <div class="HomeMiddlePanel_Middle">
+                            <div class="col-lg-4 col-md-4 col-sm-4">
+                                <h4>EXPERIENCE CENTER</h4>
+                            <img src="/Content/Public/images/exp_center.jpg" alt="" class="img-responsive" />
+                            <a href="@Html.Raw(new AudioHelper().GetUrl("Pages", middlePage.PageCode))">
+                                <img src="/Content/Public/images/wishtoexp.png" alt="" /></a>
+                            </div>
+                        </div>
+                        }
+
+                        middlePage = db.Pages.FirstOrDefault(p => p.PageCode == "AwardsAndRecognition");
+                        if (middlePage != null)
+                        {
+                        <div class="HomeMiddlePanel_Right">
+                            <div class="col-lg-4 col-md-4 col-sm-4">
+                                <img src="/Content/Public/images/awards.jpg" alt="" class="img-responsive" />
+                                <h4>@middlePage.Name</h4>
+
+                                @Html.Raw(@Html.Truncate(middlePage.Content, 200))
+                                <a href="@Html.Raw(new AudioHelper().GetUrl("Pages", middlePage.PageCode))">
+                                <img src="/Content/Public/images/middlepanelmore.jpg" alt="" /></a>
+                            </div>
+                        </div>
+                        }
+                    }
+                
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--===========================================Home Middle Panel ends==================================-->
+
+<!--============================== HomeBottomPannel===========================-->
+<div class="outer_container clearfix">
+    <div class="HomeBottomPanel">
+        <div class="inner_container clearfix">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-8 col-sm-7 col-xs-12">
+
+                        <div class="HomeBottomPanel_Left">
+                            <div class="testimonial_container clear_fix">
+                            @{
+                                IOrderedQueryable<Testimonial> testimonials = db.Testimonials.Where(t => t.IsActive && !t.IsArchived).OrderBy(o => o.ID);
+                                foreach (Testimonial testimonial in testimonials)
+                                {
+                                <div class="each_testimonial_container">
+                                    <p>
+                                        <a href="@Html.Raw(new AudioHelper().GetUrl("Pages", "Clients"))">
+                                            <img src="images/quote1.png" alt="" />
+                                            @Html.Raw(@Html.Truncate(testimonial.Content, 200, "620px", stripParagraph: true))
+                                            <img src="images/quote2.png" alt="" />
+                                            <span>@testimonial.Name<br />
+                                            @(testimonial.Designation), @testimonial.Organization</span> </a>
+                                    </p>
+                                </div>
+                                }
+                            }
+                            </div>
+                        </div>
+                    </div>
+                    <div class="HomeBottomPanel_Right">
+                        <div class="col-lg-4 col-md-4 col-sm-5 col-xs-12 ">
+                            @{
+                                Page bottomPage = db.Pages.FirstOrDefault(p => p.PageCode == "Alliances");
+                                <a href="@Html.Raw(new AudioHelper().GetUrl("Pages", bottomPage.PageCode))"><img src="images/HomepageBottomRight1.png" class="img-responsive" alt="" /></a>
+                                if (bottomPage != null)
+                                {
+                                <h3>
+                                    @bottomPage.Title
+                                </h3>
+                                @Html.Raw(@Html.Truncate(bottomPage.Content, 90, width: "162px; padding-left:5px;"))
+                                
+                                <!--<h6>
+                                    <a href="@Html.Raw(new AudioHelper().GetUrl("Pages", bottomPage.PageCode))">Click for
+                                        more details</a></h6>-->
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--============================== HomeBottomPannel ends===========================-->
+}
+
+@Html.Partial("../Home/_Footer")
+
+
+
+<!--==================================== Floating Menu ==========================-->
+<div class="FloatingMenu">
+    <img src="/Content/Public/images/floatingMenu.png" usemap="#Map" alt="floating menu"/>
+    <map name="Map" id="Map">
+        <area shape="rect" coords="1,4,43,49" href="http://www.facebook.com/pages/Audio-Planet/422869287795501"
+                target="_blank" alt="Facebook" />
+        <area shape="rect" coords="-3,53,43,95" href="https://twitter.com/AudioPlanetHub"
+                target="_blank" alt="twitter" />
+    </map>
+</div>
+<!--==================================== Floating Menu ends ==========================-->
+
+<!--====================================== Enquiry sticky==============================-->
+@{Html.RenderPartial("ContactUs", new AudioPlanet.Areas.Enquiry.Models.Enquiry());}
+<!--====================================== Enquiry sticky ends==============================-->
+
+@*<script type="text/javascript" src="script/jquery-1.11.1.min.js"></script>*@
+@*<script src="script/bootstrap.min.js"></script>*@
+<script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js"></script>
+<!--Jquery UI CDN (Microsoft)-->
+@*<script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.3/jquery-ui.js"></script>*@
+  <script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.3/jquery-ui.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script src="script/slick.min.js"></script>
+<script src="script/custom.js"></script>
+
+ @*@Content.Script("combained.js", Url)*@
+<script src="/Content/Public/js/jquery.cycle.all.js"></script>
+@*<script src="/Content/Public/js/home.js"></script>*@
+<script src="/Content/Public/js/home.min.js"></script>
+<script type="text/javascript">
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments); }, i[r].l = 1 * new Date(); a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-116336580-1', 'audioplanet.co.in');
+    ga('send', 'pageview');
+</script>
+<script>
+    (function () {
+        var p5 = document.createElement('script'); p5.type = 'text/javascript';
+        p5.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'src.plumb5.com/audioplanet_co_in_1704.js';
+        var p5s = document.getElementsByTagName('script')[0]; p5s.parentNode.insertBefore(p5, p5s);
+    })();
+</script>
+
+</body>
+</html>

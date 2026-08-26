@@ -1,0 +1,20 @@
+﻿
+@using AudioPlanet.Helpers
+
+<link href="@Url.Content("/css/sidebar.css")" type="text/css" rel="stylesheet" />
+<link href="@Url.Content("/css/nestedsidemenu.css")" type="text/css" rel="stylesheet" />
+
+
+<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 side-bar">
+
+    <h4>Categories</h4><hr class="style7"/>
+    @*<div id="MainMenu">*@
+         @Html.Raw(new AudioSidebarHelper().Submenu().ToString())
+    @*</div>*@
+
+    <div class="brand-bar">
+        <h4>Brands</h4><hr class="style7"/>
+         @Html.Raw(new AudioSidebarHelper().BrandTag().ToString())
+    </div>
+
+ </div>

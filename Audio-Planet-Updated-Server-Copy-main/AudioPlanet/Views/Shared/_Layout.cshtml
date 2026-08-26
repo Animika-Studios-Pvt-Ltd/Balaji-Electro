@@ -1,0 +1,67 @@
+﻿@using AudioPlanet
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <style type="text/css" title="ucms">
+            @@import "@Url.Content("/Content/themes/Ucms/Site.css")";
+            @@import "@Url.Content("/Content/themes/Ucms/google-menu.css")";
+            @@import "@Url.Content("/Content/themes/Ucms/demo-table-jui.css")";
+            @@import "@Url.Content("/Content/themes/Ucms/jquery-ui-custom.css")";
+            @@import "@Url.Content("/Content/themes/Ucms/google-like-buttons.css")";
+            @@import "@Url.Content("/Content/themes/Ucms/tiptip.css")";
+            @RenderSection("css", required: false)
+        </style>
+    @Content.Script("jquery-1.5.1.min.js", Url)
+</head>
+<body>
+    <div class="menu">
+        <ul>
+            <li class="current">@Html.ActionLink("Admin Home", "Index", "Admin", new { area = "" }, null)</li>
+            <li><a href="#">CMS<span class="arrow"></span></a>
+                <ul>
+                    <li>@Html.ActionLink("Pages", "Index", "Page", new { area = "" }, null)</li>
+                    <li>@Html.ActionLink("Brands", "Index", "Brand", new { area = "" }, null)</li>
+                    <li>@Html.ActionLink("Category", "Index", "Category", new { area = "" }, null)</li>
+                    <li>@Html.ActionLink("Products", "Index", "Product", new { area = "" }, null)</li>
+                    <li>@Html.ActionLink("Articles", "Index", "Article", new { area = "" }, null)</li>
+                    <li>@Html.ActionLink("Reviews", "Index", "Review", new { area = "" }, null)</li>
+                </ul>
+            </li>
+            <li><a href="#">Utilities<span class="arrow"></span></a>
+                <ul>
+                    <li>@Html.ActionLink("Error Log", "ErrorLog", "Admin", new { area = "" }, null)</li>
+                </ul>
+            </li>
+            <li><a href="#">Features<span class="arrow"></span></a>
+                <ul>
+                    <li>@Html.ActionLink("Testimonials", "Index", "Testimonial", new { area = "" }, null)</li>
+                </ul>
+            </li>
+            <li>@Html.ActionLink("Browse Website", "Index", "Home", new { area = "" }, null)</li>
+            <li>@Html.ActionLink("Enquiry List", "Index", "Enquiry", new { area = "Enquiry" }, null)</li>
+        </ul>
+    </div>
+    <div class="page">
+        <div id="header">
+            @Html.Partial("_LogOnPartial")
+        </div>
+        <div id="section">
+            <div>
+                @RenderBody()
+            </div>
+        </div>
+        <div id="footer">
+            <span class="version">Version: @typeof(MvcApplication).Assembly.GetName().Version</span>&nbsp;|&nbsp;
+            &copy; Universal Content Management System (UCMS) @(DateTime.Now.Year)
+        </div>
+    </div>
+    @Content.Script("Ucms/jquery.google_menu.js", Url)
+    @Content.Script("Ucms/jquery.tiptip.js", Url)
+    @Content.Script("Ucms/jquery.bpopup-0.7.0.min.js", Url)
+    @Content.Script("Ucms/jquery.cycle.all.js", Url)
+    @Content.Script("Ucms/jquery.dataTables.min.js", Url)
+    @RenderSection("script", required: false)
+    @Content.Script("Ucms/admin.js", Url)
+</body>
+</html>

@@ -1,0 +1,74 @@
+﻿@using AudioPlanet.Helpers
+@using AudioPlanet.Models
+@model IEnumerable<AudioPlanet.Models.Brand>
+@{
+    ViewBag.Title = "Index";
+}
+<h2>
+    Index</h2>
+<div>
+    <a href="@Url.Action("Create")" class = "button left"><span class="icon icon68"></span>
+        <span class="label">Create</span></a>
+</div>
+<table class="display">
+    <thead>
+        <tr>
+            <th>
+                Brand ID
+            </th>
+            <th>
+                Brand Name
+            </th>
+            <th>
+                Brand Url
+            </th>
+            <th>
+                Is Active
+            </th>
+            <th>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+        <tr>
+           @* <td>
+                @Html.DisplayFor(modelItem => item.Page.Title)
+            </td>*@
+            <td>
+                @Html.DisplayFor(model => item.ID)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.BrandName)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.BrandUrl)
+            </td>
+            <td>
+                    @Utilities.DisplayBool(item.IsActive)
+                </td>
+            <td>
+                @if(item.IsActive)
+                {
+                <a href="@Url.Action("Edit", new { id=item.ID})" class="button left" title="Edit Page">
+                    <span class="icon icon145"></span>
+                </a>
+            
+                <a href="@Url.Action("Suspend", new { id = item.ID })" class = "button middle" title="Suspend Page">
+                            <span class="icon icon43"></span></a>
+                }
+                else
+                {
+                     <a href="@Url.Action("Active", new { id = item.ID })" class = "button left" title="Activate Page">
+                            <span class="icon icon58"></span></a>
+                }
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+<div>
+    <a href="@Url.Action("Create")" class = "button left"><span class="icon icon68"></span>
+        <span class="label">Create</span></a>
+</div>

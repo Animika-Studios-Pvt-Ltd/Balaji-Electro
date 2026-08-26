@@ -1,0 +1,67 @@
+﻿@using AudioPlanet.Models
+@model AudioPlanet.Models.Page
+@{
+    Layout = "~/Views/Shared/_Page.cshtml";
+    ViewBag.Title = Model.Title;
+    ViewBag.Keywords = Model.Keyword;
+    ViewBag.Description = Model.Description;
+    ViewBag.PageGroup = Model.PageGroup;
+    ViewBag.PageCode = Model.PageCode;
+}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-8">
+            <div class="ArticlesLeftPanel" style="margin-bottom:100px;">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                <h3>Articles</h3>
+                </div>
+                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                    @{ Html.RenderPartial("Widgets/SearchArticle"); }
+                </div>
+            </div>
+            <div  id="ArticlesLeftPanel"> 
+                @{
+                    Html.RenderPartial("Widgets/FeaturedArticles", (IEnumerable<Article>)ViewBag.FeaturedArticles);
+                }
+            </div>
+            </div>
+            <div style="height:100px;"></div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+            <div class="ArticlesRightPanel" id="ArticlesRightPanel" style="margin-bottom:100px;">
+                @{
+                    Html.RenderPartial("Widgets/ArticleCategories", (IEnumerable<AudioPlanet.Models.Page>)ViewBag.Categories);
+                    Html.RenderPartial("Widgets/LatestArticles", (IEnumerable<Article>)ViewBag.LatestArticles);
+                }
+            </div>
+            <div style="height:100px;"></div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+@*<div class="InnerContent" style="width: 1000px">
+    <!--List of Articles-->
+    <div id="ArticlesLeftPanel">
+        @{
+            Html.RenderPartial("Widgets/FeaturedArticles", (IEnumerable<Article>)ViewBag.FeaturedArticles);
+        }
+    </div>
+    <div id="ArticlesRightPanel">
+        @{
+            Html.RenderPartial("Widgets/SearchArticle");
+            Html.RenderPartial("Widgets/ArticleCategories", (IEnumerable<AudioPlanet.Models.Page>)ViewBag.Categories);
+            Html.RenderPartial("Widgets/LatestArticles", (IEnumerable<Article>)ViewBag.LatestArticles);
+        }
+    </div>
+</div>*@

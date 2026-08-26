@@ -1,0 +1,55 @@
+﻿@model AudioPlanet.Models.Product
+@{
+    ViewBag.Title = "Create";
+}
+<h2>
+    Create</h2>
+<link href="@Url.Content("~/Content/themes/Ucms/chosen.css")" rel="stylesheet" type="text/css" />
+@Content.Script("jquery.validate.min.js", Url)
+@Content.Script("jquery.validate.unobtrusive.min.js", Url)
+@Content.Script("Ucms/chosen.jquery.js", Url)
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(false, "Product creation was unsuccessful. Please correct the errors and try again.")
+    <fieldset>
+        <legend>Product</legend>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CategoryID,"Category")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("CategoryID", (SelectList)ViewBag.CategoryID, "",new Dictionary<string,object>{{"class","chzn-select"},{ "style", "width: 350px;" }})
+            @Html.ValidationMessageFor(model => model.CategoryID)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BrandID,"Brand")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("BrandID", (SelectList)ViewBag.BrandID, "", new Dictionary<string,object>{{"class","chzn-select"},{"style","width: 350px;"}})
+            @Html.ValidationMessageFor(model => model.BrandID)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Description)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Description)
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+        <p class="ibuttons">
+            <input type="submit" value="Create" name="BtnSave" class="ibutton save" />
+        </p>
+    </fieldset>
+}
+<script type="text/javascript">
+    $(".chzn-select").chosen();
+    $(".chzn-select-deselect").chosen({ allow_single_deselect: true }); 
+</script>
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

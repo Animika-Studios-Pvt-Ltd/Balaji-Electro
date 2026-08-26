@@ -1,0 +1,44 @@
+﻿@using AudioPlanet.Helpers
+@using AudioPlanet.Models
+
+
+@model AudioPlanet.Models.Page
+@{
+    Layout = "~/Views/Shared/_CategoryBrand.cshtml";
+    ViewBag.Title = Model.Title;
+    ViewBag.Keywords = Model.Keyword;
+    ViewBag.Description = Model.Description;
+    ViewBag.PageGroup = Model.PageGroup;
+    ViewBag.PageCode = Model.PageCode;
+}
+
+
+<div class="row toggleDivision">
+
+@{
+        var db = new Audio();
+        var prods = db.Products;
+            
+        <div id="MainMenu">
+            @Html.Partial("../Home/_sideBar")
+        </div>
+            
+    }
+ <div id="AmplifierDetailed" class="col-lg-9 col-md-9 col-sm-12 col-xs-12" itemscope itemtype="http://schema.org/Product">
+<div class="inner_header">
+    <div class="row">
+        <h1 itemprop="name">@Model.Title</h1>
+    </div>
+    <div class="row">
+        <div class="product-page hText">
+            @Html.Raw(@Model.Content)
+        </div>
+    </div>
+</div>
+    </div>
+    </div>
+
+
+   
+
+

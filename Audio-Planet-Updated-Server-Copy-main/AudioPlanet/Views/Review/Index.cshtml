@@ -1,0 +1,91 @@
+﻿@model IEnumerable<AudioPlanet.Models.Review>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>
+    Articles</h2>
+<div>
+    <a href="@Url.Action("Create")" class = "button left"><span class="icon icon68"></span>
+        <span class="label">Create</span></a>
+</div>
+<table class="display">
+    <thead>
+        <tr>
+            <th>
+                Product Name
+            </th>
+            <th>
+                Posted On
+            </th>
+            <th>
+                Category
+            </th>
+            <th>
+                Title
+            </th>
+            <th>
+                Featured ?
+            </th>
+            <th>
+                Actions
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PostedTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.categories.CategoryName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    <div class="buttons tiptip">
+                        @if (item.IsFeatured)
+                        {
+                            <a href="@Url.Action("FeaturedStatus", new { id = item.ID, featuredStatus = false })" class = "button left" title="Make it as Not Featured">
+                                <span class="icon icon101"></span></a>
+                        }
+                        else
+                        {
+                            <a href="@Url.Action("FeaturedStatus", new { id = item.ID, featuredStatus = true })" class = "button left" title="Make Featured">
+                                <span class="icon icon100"></span></a>
+
+                        }
+                    </div>
+                </td>
+                <td>
+                    <div class="buttons tiptip">
+                        @if (item.IsActive)
+                        {
+                            <a href="@Url.Action("Edit", new { id = item.ID })" class = "button left" title="Edit Article">
+                                <span class="icon icon145"></span></a>
+                            <a href="@Url.Action("Details", new { id = item.ID })" class = "button middle"  title="View Article">
+                                <span class="icon icon84"></span></a>
+                            <a href="@Url.Action("ActiveStatus", new { id = item.ID, activeStatus = false })" class = "button middle" title="Suspend Article">
+                                <span class="icon icon43"></span></a>
+                        }
+                        else
+                        {
+                            <a href="@Url.Action("ActiveStatus", new { id = item.ID, activeStatus = true })" class = "button left" title="Activate Article">
+                                <span class="icon icon58"></span></a>
+                        }
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div>
+    <a href="@Url.Action("Create")" class = "button left"><span class="icon icon68"></span>
+        <span class="label">Create</span></a>
+</div>

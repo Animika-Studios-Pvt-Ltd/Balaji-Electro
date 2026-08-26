@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "ProfileImage";
+}
+
+<h2>Change Profile Image</h2>
+@using (Html.BeginForm("ProfileImage", "Admin", FormMethod.Post, new {enctype = "multipart/form-data"}))
+{
+    <fieldset>
+        <legend>Profile Image</legend>
+        <div class="editor-field">
+            <input type="file" name="file" />
+        </div>
+        <p>
+            <input type="submit" value="Upload" class="ibutton" />
+        </p>
+    </fieldset>
+}

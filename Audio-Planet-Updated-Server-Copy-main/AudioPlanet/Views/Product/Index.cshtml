@@ -1,0 +1,98 @@
+﻿@using AudioPlanet.Helpers
+@using AudioPlanet.Models
+@model IEnumerable<AudioPlanet.Models.Product>
+@{
+    ViewBag.Title = "Index";
+}
+<h2>
+    Index</h2>
+<div>
+    <a href="@Url.Action("Create")" class = "button left"><span class="icon icon68"></span>
+        <span class="label">Create</span></a>
+</div>
+<table class="display">
+    <thead>
+        <tr>
+            <th>
+                Category
+            </th>
+            <th>
+                Brand
+            </th>
+            <th>
+                Product
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Download PDF
+            </th>
+            <th>
+                Is Active
+            </th>
+            <th>
+                Created At
+            </th>
+            <th>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                @Html.DisplayFor(modelItem => item.Category.CategoryName)
+                </td>
+                <td>
+                @Html.DisplayFor(modelItem => item.Brand.BrandName)
+                </td>
+                <td>
+                    <a href="@Url.Action("Upload", new { id = item.ID })" title="Upload Files">
+                        <img src="@Product.GetProductFiles(@item.ID, "Image")" alt="@item.Name" height="90px" width="90px"/>
+                    </a>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @if (!string.IsNullOrEmpty(Product.GetProductFiles(item.ID, "Document")))
+                    {
+                        <a href="@Product.GetProductFiles(@item.ID, "Document")" class = "button"  title="Download PDF"><span class="icon icon70">
+                        </span></a>
+                    }
+                </td>
+                <td>
+                    @Utilities.DisplayBool(item.IsActive)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedAt)
+                </td>
+                <td>
+                    @if (item.IsActive)
+                    {
+                        <a href="@Url.Action("Edit", new { id = item.ID })" class = "button left" title="Edit Page">
+                            <span class="icon icon145"></span></a>
+                        <a href="@Url.Action("Details", new { id = item.ID })" class = "button middle"  title="View Details">
+                            <span class="icon icon84"></span></a>
+                        <a href="@Url.Action("Suspend", new { id = item.ID })" class = "button middle" title="Suspend Page">
+                            <span class="icon icon43"></span></a>
+                        <a href="@Url.Action("Upload", new { id = item.ID })" class = "button middle"  title="Upload Files">
+                            <span class="icon icon189"></span></a>
+                    }
+                    else
+                    {
+                        <a href="@Url.Action("Active", new { id = item.ID })" class = "button left" title="Activate Page">
+                            <span class="icon icon58"></span></a>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div>
+    <a href="@Url.Action("Create")" class = "button left"><span class="icon icon68"></span>
+        <span class="label">Create</span></a>
+</div>

@@ -1,0 +1,25 @@
+﻿@using AudioPlanet.Helpers
+@model IEnumerable<AudioPlanet.Models.Review>
+<div class="FeaturedArticles" id="FeaturedArticles">
+    <ul>
+        @{
+            foreach (var review in Model)
+            {
+            <li>
+                <div class="FeaturedArticleText">
+                    <div class="FeaturedTitle"><h2>@review.Title</h2></div>
+                    <div class="FeaturedDetails">
+                        @Html.Raw(Html.Truncate(review.ProductReview, 425, stripParagraph: true))
+                    </div>
+
+                    <div class="Menus">
+                        <span class="Dateofposted">Posted on @(review.PostedTime.ToString("dd / MM / yyyy"))</span>
+                        @*<span class="TotalViews">Total Views (@article.TotalViews)</span>*@
+                        <span class="featuredMore"><a href="@(new AudioHelper().GetUrl("ProductReview", review.Url))">More &gt;&gt;</a></span>
+                    </div>
+                </div>
+            </li>
+            }
+        }
+    </ul>
+</div>

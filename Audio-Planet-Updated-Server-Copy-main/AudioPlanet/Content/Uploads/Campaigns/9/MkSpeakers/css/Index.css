@@ -1,0 +1,91 @@
+
+@font-face {
+    font-family: 'din_lightregular';
+    src: url('../fonts/dinot-light-webfont.eot');
+    src: url('../fonts/dinot-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/dinot-light-webfont.woff') format('woff'),
+         url('../fonts/dinot-light-webfont.ttf') format('truetype'),
+         url('../fonts/dinot-light-webfont.svg#din_lightregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'dinotbold';
+    src: url('../fonts/dinot-bold-webfont.eot');
+    src: url('../fonts/dinot-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/dinot-bold-webfont.woff') format('woff'),
+         url('../fonts/dinot-bold-webfont.ttf') format('truetype'),
+         url('../fonts/dinot-bold-webfont.svg#dinotbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'dinotmedium';
+    src: url('../fonts/dinot-medium-webfont.eot');
+    src: url('../fonts/dinot-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/dinot-medium-webfont.woff') format('woff'),
+         url('../fonts/dinot-medium-webfont.ttf') format('truetype'),
+         url('../fonts/dinot-medium-webfont.svg#dinotmedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'dinotblack';
+    src: url('../fonts/dinot-black-webfont.eot');
+    src: url('../fonts/dinot-black-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/dinot-black-webfont.woff') format('woff'),
+         url('../fonts/dinot-black-webfont.ttf') format('truetype'),
+         url('../fonts/dinot-black-webfont.svg#dinotblack') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'zurich_cn_btbold';
+    src: url('../fonts/zurich-cn-bt-bold-webfont.eot');
+    src: url('../fonts/zurich-cn-bt-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/zurich-cn-bt-bold-webfont.woff') format('woff'),
+         url('../fonts/zurich-cn-bt-bold-webfont.ttf') format('truetype'),
+         url('../fonts/zurich-cn-bt-bold-webfont.svg#zurich_cn_btbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'zurich_condensedregular';
+    src: url('../fonts/zurichbt-romancondensed-webfont.eot');
+    src: url('../fonts/zurichbt-romancondensed-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/zurichbt-romancondensed-webfont.woff') format('woff'),
+         url('../fonts/zurichbt-romancondensed-webfont.ttf') format('truetype'),
+         url('../fonts/zurichbt-romancondensed-webfont.svg#zurich_condensedregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+*{margin: 0px;padding: 0px;}
+body{background: #322e2b;}
+.wrapper{width: 1024px;margin: 0px auto;}
+h1{font-family: 'dinotmedium';font-size: 46px;color: #e7ba6b;font-weight: normal}
+h2{font-family: 'zurich_cn_btbold';color: #5a4433;font-size: 26px;}
+.highlight{font-family: 'dinotblack'}
+.wrapper h1{width: 850px;text-align: center;display: block;margin: 20px auto 0px;letter-spacing: -0.5px;line-height: 50px;}
+.wrapper p{font-family: 'din_lightregular';font-size: 24px;color: #b7b6b5;text-align: center;width: 1030px;margin-top: 10px;letter-spacing: -0.4px;}
+.wrapper p:nth-child(3){font-size: 28px;font-family: 'din_lightregular';color: #e7ba6b;width: 1020px;text-align: center;letter-spacing: -0.2px;margin-top: 20px;}
+.hurry{font-family: 'dinotbold';font-size: 36px;color: #e7ba6b;text-transform: uppercase;text-align: center;display: block;}
+.speakerContainer{width:492px;height: 330px;display: block;float: left;background: #f0c77e;border-radius: 15px;margin-left: 40px;margin-top: 15px;margin-bottom: 15px;}
+.speakerInner{background: #fdf6f3;border-radius: 10px;width: 478px;height: 316px;display: block;margin: 7px auto 0px;}
+.wrapper h2{padding: 7px 10px;}
+.price{font-family: 'zurich_cn_btbold';font-size: 34px;color: #5a4433;float: left;padding-left: 30px;margin-top: 8px;letter-spacing: -1px;}
+.speakerInner img{display: block;margin: -5px auto;}
+.enquire a{font-family:'zurich_condensedregular' ;color: #f0c77e;text-decoration: none;font-size: 20px;letter-spacing: 0px;background: url('../images/enquire.png') no-repeat;display: block;float: right;padding: 13px 23px 7px;margin-top: 11px;}
+a.more_products{background: url('../images/more_products.png') no-repeat;display: block;float: left;font-family: Arial;padding: 11px 58px;text-decoration: none;font-size: 18px;color: #f3e2c4;margin-left: 36px;width: 220px;text-align: center;}
+a.more_products:last-child{margin-right: 0px;}
+.more{float: left;margin-left: 122px;margin-bottom: 35px;margin-top: 20px;margin: 20px 0px 35px 122px;}

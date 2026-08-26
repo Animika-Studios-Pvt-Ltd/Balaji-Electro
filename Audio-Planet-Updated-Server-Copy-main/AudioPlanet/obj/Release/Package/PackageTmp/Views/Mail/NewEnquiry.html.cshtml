@@ -1,0 +1,22 @@
+﻿@model AudioPlanet.Areas.Enquiry.Models.Enquiry
+@{
+    Layout = null;
+}
+<p>
+    <strong>Dear Palani</strong><br />
+    You have a new Business Enquiry as follows.
+</p>
+<p>
+    Enquiry Details <br />
+    --------------------------------------
+</p>
+<p>
+    <strong>Name    :</strong> @Model.Name <br />
+    <strong>Email   :</strong> @Model.Email <br />
+    <strong>Mobile  :</strong> @Model.Phone <br />
+    <strong>Enquiry :</strong> @Html.Raw(@Model.Query)
+</p>
+<p>
+    Thanks and Regards,<br />
+    - Webmaster, audioplanet.co.in
+</p>

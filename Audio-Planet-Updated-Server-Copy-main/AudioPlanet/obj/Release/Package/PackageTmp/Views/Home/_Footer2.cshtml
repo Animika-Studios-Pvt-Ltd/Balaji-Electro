@@ -1,0 +1,34 @@
+﻿@using AudioPlanet.Helpers
+<div id="footer">
+    <div id="Footer_Primary">
+        <div class="Container">
+            <div id="FooterPrimaryMenu">
+                <div class="FooterPrimaryPanel">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                    </ul>
+                </div>
+               @Html.Raw(new AudioHelper().FooterMenu().ToString())
+            </div>
+        </div>
+    </div>
+    <div id="Footer_secondaryMenu">
+        <div class="Container">
+            <div id="FooterSecondary">
+                <div class="Copyright">
+                    © Copyright 1999 - 2013, Audio Planet
+                </div>
+                <div class="Policy">
+                    <ul>
+                        <li><a href="/pages/PrivacyPolicy">Privacy Policy</a></li>
+                        <li>|</li>
+                        <li><a href="/pages/Disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div class="Animika">
+                    Design: LUMOS Creative
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,101 @@
+﻿@model AudioPlanet.Models.Article
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section css{
+    @@import "@Url.Content("~/Content/themes/Ucms/chosen.css")"; @@import "@Url.Content("~/Content/themes/Ucms/tags-input.css")";
+}
+<h2>
+    Edit</h2>
+<div class="buttons">
+    <a href="@Url.Action("Index")" class = "button left"><span class="icon icon63"></span>
+        <span class="label">Articles</span></a>
+</div>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Article</legend>
+        @Html.HiddenFor(model => model.ID)
+        @Html.HiddenFor(model => model.TotalViews)
+         <div class="editor-label">
+            @Html.LabelFor(model => model.CategoryID, "Category")
+        </div>
+        <div class="editor-field" id="step1">
+            @Html.DropDownList("CategoryID", String.Empty)
+            @Html.ValidationMessageFor(model => model.CategoryID)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Title)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Title)
+            @Html.ValidationMessageFor(model => model.Title)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Content)
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.Content, new Dictionary<string, object> { { "class", "mceEditor" } })
+            @Html.ValidationMessageFor(model => model.Content)
+        </div>
+        <fieldset>
+            <legend>SEO Options</legend>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Url)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Url)
+                @Html.ValidationMessageFor(model => model.Url)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Keywords)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Keywords)
+                @Html.ValidationMessageFor(model => model.Keywords)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Description)
+            </div>
+            <div class="editor-field">
+                @Html.TextAreaFor(model => model.Description)
+                @Html.ValidationMessageFor(model => model.Description)
+            </div>
+        </fieldset>
+        <p class="ibuttons">
+            <input type="submit" value="Save" name="BtnUpdate" class="ibutton save" />
+        </p>
+    </fieldset>
+}
+<div class="buttons">
+    <a href="@Url.Action("Index")" class = "button left"><span class="icon icon63"></span>
+        <span class="label">Articles</span></a>
+</div>
+@section script
+{
+    @Content.Script("jquery.validate.min.js", Url)
+    @Content.Script("jquery.validate.unobtrusive.min.js", Url)
+    @Content.Script("Ucms/chosen.jquery.js", Url)
+    @Content.Script("tiny_mce/tiny_mce.js", Url)
+    @Content.Script("Ucms/jquery-tiny-mce.js", Url)
+    @Content.Script("Ucms/jquery.tagsinput.min.js", Url)
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#Keywords').tagsInput({
+                'defaultText': 'add a keyword',
+                'removeWithBackspace': true,
+                'height': '50px',
+                'width': '1000px'
+            });
+        });
+
+        $(document).keyup(function (e) {
+            if (e.keyCode == 27) {
+                $('.validation-summary-errors').remove();
+            }
+        });
+
+    </script>
+}

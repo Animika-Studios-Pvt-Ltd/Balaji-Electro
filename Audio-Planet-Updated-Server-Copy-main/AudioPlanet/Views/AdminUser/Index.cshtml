@@ -1,0 +1,73 @@
+﻿@using AudioPlanet.Models
+@model IEnumerable<AdminUser>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>
+    Admin Users</h2>
+<p>
+    <a href="@Url.Action("Create")" class = "button left"><span class="icon icon68"></span>
+        <span class="label">Create</span></a>
+</p>
+<table class="display">
+    <thead>
+        <tr>
+            <th>
+                Gender
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Actions
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (AdminUser item in Model)
+        {
+            <tr>
+                <td>
+                    @if (item.Gender)
+                    {
+                        <a href="#" class="button left" title="gender"><span class="icon icon191"></span>
+                        </a>
+                    }
+                    else
+                    {
+                        <a href="#" class="button left" title="gender"><span class="icon icon192"></span>
+                        </a> 
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    <div class="buttons tiptip">
+                        @if (item.IsActive)
+                        {
+                            <a href="@Url.Action("Edit", new { id = item.ID })" class = "button left" title="Edit Admin User">
+                                <span class="icon icon145"></span></a>
+                            <a href="@Url.Action("Details", new { id = item.ID })" class = "button middle"  title="View Details">
+                                <span class="icon icon84"></span></a>
+                            <a href="@Url.Action("Suspend", new { id = item.ID })" class = "button right" title="Suspend Admin User">
+                                <span class="icon icon43"></span></a>
+                        }
+                        else
+                        {
+                            <a href="@Url.Action("Active", new { id = item.ID })" class = "button right" title="Activate Admin User">
+                                <span class="icon icon58"></span></a>
+                        }
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,93 @@
+﻿@using Page = AudioPlanet.Models.Page
+@model IEnumerable<Page>
+@{
+    ViewBag.Title = "Sub Pages";
+}
+<h2>
+    Sub Pages of "@Model.First().ParentPage.Name"</h2>
+<div class="buttons">
+    <a href="@Url.Action("Index")" class = "button left"><span class="icon icon63"></span>
+        <span class="label">Primary Pages</span></a> <a href="@Url.Action("Create")" class = "button left">
+                                                         <span class="icon icon68"></span><span class="label">Create</span></a>
+</div>
+<table class="display">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Order
+            </th>
+             <th>
+                Group
+            </th>
+            <th>
+                Keywords
+            </th>
+            <th>
+                Created at
+            </th>
+            <th>
+                Actions
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Page item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                    <br /><span style="color:grey; font-size:10px; font-style: italic">@Html.DisplayFor(modelItem => item.SubTitle),@Html.DisplayFor(modelItem => item.Name)</span>
+                </td>
+                <td>
+                    @Html.TextBoxFor(modelItem => item.Order, new { @style = "text-align: center; width: 30px;" })
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PageGroup)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Keyword)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedAt)
+                </td>
+                <td>
+                    <div class="buttons tiptip">
+                        @*<a href="@Url.Action("Delete", new { id = item.ID })" class = "button middle" title="Delete Page"><span class="icon icon186"></span></a>*@
+                        @if (item.IsActive)
+                        {
+                            <a href="@Url.Action("Edit", new { id = item.ID })" class = "button left" title="Edit Page">
+                                <span class="icon icon145"></span></a>
+                            <a href="@Url.Action("Details", new { id = item.ID })" class = "button middle"  title="View Details">
+                                <span class="icon icon84"></span></a>
+                            <a href="@Url.Action("Suspend", new { id = item.ID })" class = "button middle" title="Suspend Page">
+                                <span class="icon icon43"></span></a>
+                        }
+                        else
+                        {
+                            <a href="@Url.Action("Active", new { id = item.ID })" class = "button left" title="Activate Page">
+                                <span class="icon icon58"></span></a>
+                        }
+                        @if (item.IsPublished)
+                        {
+                            <a href="@Url.Action("UnPublish", new { id = item.ID })" class = "button right" title="Un Publish Page">
+                                <span class="icon icon197"></span></a>
+                        }
+                        else
+                        {
+                            <a href="@Url.Action("Publish", new { id = item.ID })" class = "button right" title="Publish Page">
+                                <span class="icon icon35"></span></a>
+                        }
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div>
+    <a href="@Url.Action("Index")" class = "button left"><span class="icon icon63"></span>
+        <span class="label">Primary Pages</span></a> <a href="@Url.Action("Create")" class = "button left">
+                                                         <span class="icon icon68"></span><span class="label">Create</span></a>
+</div>

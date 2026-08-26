@@ -1,0 +1,67 @@
+﻿@model AudioPlanet.Models.Review
+@using AudioPlanet.Helpers
+@using AudioPlanet.Models
+@{
+    Layout = "~/Views/Shared/_Page.cshtml";
+    ViewBag.Title = Model.Title;
+    ViewBag.Keywords = Model.Keywords;
+    ViewBag.Description = Model.Description;
+    ViewBag.PageCode = "Product Reviews";
+}
+@*<div class="InnerContent" style="width: 1000px">
+    <div id="ArticlesLeftPanel">
+        <div id="ArticlesHead">
+            <div id="ArtcilesTitle">
+                <h2>@Model.Title</h2>
+                <span>Posted on @(Model.PostedTime.ToString("dd / MM / yyyy"))
+                </span><a href="#" data-src="@(new AudioHelper().GetUrl("Article", Model.Url))"  class="shareFB">
+                    <img src="/Content/Public/images/share_fb.png" alt="share on facebook" /></a>
+            </div>
+        </div>
+        <div id="ArticlesDetails">
+            @Html.Raw(Model.Content)
+        </div>
+    </div>
+    <div id="ArticlesRightPanel">
+        @{
+            Html.RenderPartial("Widgets/SearchArticle");
+            Html.RenderPartial("Widgets/ArticleCategories", (IEnumerable<AudioPlanet.Models.Page>) ViewBag.Categories);
+            Html.RenderPartial("Widgets/LatestArticles", (IEnumerable<Article>)ViewBag.LatestArticles);
+        }
+    </div>
+</div>*@
+
+
+<div class="container">
+    <div class="row1">
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-8">
+                <div class="ArticlesLeftPanel">
+                    <div  id="ArticlesLeftPanel">
+                        <div class="ArticlesHead">
+                            <div class="ArtcilesTitle">
+                                <h2>@Model.Title</h2>
+                                <span>Posted on @(Model.PostedTime.ToString("dd / MM / yyyy"))</span>
+                                <a href="#" data-src="@(new AudioHelper().GetUrl("Article", Model.Url))" class="shareFB">
+                                <img src="/Content/Public/images/share_fb.png" alt="share on facebook"></a>
+                            </div>
+                        </div>
+                        <div class="ArticlesDetails">
+                            @Html.Raw(Model.ProductReview)
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <div class="ArticlesRightPanel" id="ArticlesRightPanel" style="margin-bottom:100px;">
+                    @{
+                        Html.RenderPartial("Widgets/SearchProductReview");
+                        //Html.RenderPartial("Widgets/ArticleCategories", (IEnumerable<AudioPlanet.Models.Page>)ViewBag.productReviews);
+                        Html.RenderPartial("Widgets/LatestProductReviews", (IEnumerable<Review>)ViewBag.productReviews);
+                    }
+                </div>
+                <div style="height:100px;"></div>
+            </div>
+        </div>
+    </div>
+</div>

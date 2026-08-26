@@ -1,0 +1,107 @@
+﻿@using AudioPlanet.Helpers
+
+@using Page = AudioPlanet.Models.Page
+
+@using AudioPlanet.Models
+
+
+@model IEnumerable<Product>
+
+
+@{
+    Layout = "~/Views/Shared/_CategoryBrand.cshtml";
+}
+
+<div class="row toggleDivision">
+    @{
+        var db = new Audio();
+        var prods = db.Products;
+            
+        <div id="MainMenu">
+            @Html.Partial("../Home/_sideBar")
+        </div>
+    }
+
+    @{
+        
+        <div id="AmplifierDetail" class="col-lg-9 col-md-9 col-sm-12 col-xs-12 amplifierDetail">
+            
+                <div id="pageText">
+                    <div class="inner_header_new" itemscope itemtype="http://schema.org/Product">
+                        <div class="row">
+                            <h1 itemprop="name">@ViewBag.PgTitle</h1>
+                        </div>
+                        <div class="row">
+                            <div class="product-page">
+                                @*<span class="hText">Our disparate assortment of products with boundless options will leave little to the imagination of even an ardent sound fanatic. Our products comprise a conglomeration of Amplifiers, Source, and Systems. &nbsp;Bryston, Cambridge Audio, Musical Fidelity, ATC are some of the time-tested products Planet Audio showcases. If you are looking for an 13.2 auro 3D system or Dolby atmos 5.2.2,7.2.4 or DTS X surround sound system in Bangalore, Audio Planet is the place to visit.  We offer a consortium of brands/products based on your budget without compromising on the sound quality..</span>*@
+                                <span class="hText">We offer a consortium of brands/products based on your budget without compromising on the sound quality.</span>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <ul>
+                        @foreach (var item in Model)
+                        {
+                           
+                            <li>
+
+                                <div class="Amplifier_topDivMiddleNew" itemscope itemtype="http://schema.org/Product">
+                                    <div class="Amplifier_innerdiv">
+                                       
+                                        
+                                        <div class="AmplifierDetailsNew_img">
+                                            @{
+                                                //string[] buildurl = { item.Category.FullPath, "/", item.ProductUrl};
+                                                //var purl = string.Concat(buildurl);
+                                                <a data-fancybox-type="ajax" class="fancybox" title="@item.Name" href="@Url.Action("FetchProducts", "Home", new { url = item.ProductFullUrl })">
+                                                    <img itemprop="image" class="thumbImage" src="@(Product.GetProductFiles(item.ID, "Image"))" data-original="@(Product.GetProductFiles(item.ID, "Image"))"   alt="@item.Name"/>
+                                                </a>
+                                            }
+                                        </div>
+                                        <div>
+                                            <h2 itemprop="name">
+                                                @Html.ActionLink(@item.Name, "FetchProducts", "Home", new { url = item.ProductFullUrl }, new { @class = "fancybox" })
+                                            </h2>
+                                            <p itemprop="description">@Html.Raw(item.Description)</p>
+                                            @{
+                                                var path = Product.GetProductFiles(item.ID, "Document");
+                                            }
+
+                                            <div class="pdfImg">
+                                            @if (!string.IsNullOrEmpty(path))
+                                            {
+                                            
+                                                <a href="@path" class="fancyboxPdf downloadPdf" data-fancybox-type="iframe" target="_blank" title="@item.Name">
+                                                    <img src="/Content/Public/images/downloadPdf.png" alt="PDF" /></a>
+                                            }
+                                            else
+                                            {
+                                                <a href="#" class="downloadPdf" target="_blank" title="@item.Name">
+                                                    <img src="/Content/Public/images/downloadPdf.png" alt="PDF" /></a>
+                                            }
+                                            @*<a href="/Systems/Enquiry" class="downloadPdf" title="@item.Name">
+                                            <img src="/Content/Public/images/enquire.png" alt="Know more about @(item.Name)" /></a>*@
+												<a class="downloadPdf productEnquire" title="@item.Name">
+                                            <img src="/Content/Public/images/enquire.png" alt="Know more about @(item.Name)" /></a>
+                                            </div>
+                                        </div>
+                                        
+                                       
+                                    </div>
+                                    
+                                </div>
+                            </li>
+                        }
+                    </ul>
+
+                </div>
+
+
+        </div>
+    }
+
+</div>
+
+
+@*@Content.Script("combained.js", Url)*@
+

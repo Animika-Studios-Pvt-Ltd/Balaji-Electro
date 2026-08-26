@@ -1,0 +1,56 @@
+﻿@model AudioPlanet.Models.Testimonial
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="buttons">
+    <a href="@Url.Action("Index")" class = "button left"><span class="icon icon63"></span>
+        <span class="label">Testimonials</span></a>
+</div>
+<h2>
+    Delete Testimonial</h2>
+<h3>
+    Are you sure you want to delete?
+</h3>
+@using (Html.BeginForm())
+{
+    <input type="submit" value="Delete" class="ibutton delete" />
+}
+<fieldset>
+    <legend>Testimonial</legend>
+
+    <div class="display-label">Name</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">Designation</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Designation)
+    </div>
+
+    <div class="display-label">Organization</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Organization)
+    </div>
+
+    <div class="display-label">Content</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Content)
+    </div>
+
+    <div class="display-label">IsActive</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsActive)
+    </div>
+
+    <div class="display-label">IsArchived</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsArchived)
+    </div>
+</fieldset>
+<div class="buttons">
+    <a href="@Url.Action("Index")" class = "button left"><span class="icon icon63"></span>
+        <span class="label">Testimonials</span></a>
+</div>

@@ -1,0 +1,55 @@
+﻿@using Page = AudioPlanet.Models.Page
+@model IEnumerable<Page>
+@{
+    ViewBag.Title = "Index";
+}
+<h2>
+    Primary Pages</h2>
+<div>
+    <a href="@Url.Action("Create")" class = "button left"><span class="icon icon68"></span>
+        <span class="label">Create</span></a>
+</div>
+<table class="display">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            @*<th>
+                Parent
+            </th>*@
+            <th>
+                Browse Sub Pages
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Page item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                    <br /><span style="color:grey; font-size:10px; font-style: italic">@Html.DisplayFor(modelItem => item.SubTitle),@Html.DisplayFor(modelItem => item.Name)</span>
+                </td>
+                @*<td>
+                    @if (item.ParentPage != null)
+                    {
+                        @Html.DisplayFor(modelItem => item.ParentPage.Name)
+                    }
+                    else
+                    {
+                        <span>Root</span>
+                    }
+                </td>*@
+                <td>
+                    <a href="@Url.Action("SubPages", new { id = item.ID })" class = "button left"><span
+                        class="icon icon87"></span><span class="label">Sub Pages</span></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div>
+    <a href="@Url.Action("Create")" class = "button left"><span class="icon icon68"></span>
+        <span class="label">Create</span></a>
+</div>

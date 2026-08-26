@@ -1,0 +1,47 @@
+body { background:#322e2b; margin:0; padding:0 }
+* { margin:0; padding:0 }
+a { text-decoration:none; }
+a:hover { text-decoration:none; }
+a img { border:0px; }
+@font-face {
+font-family: DinotBold;
+src: url('../fonts/dinot-bold-webfont.ttf');
+}
+@font-face {
+ font-family: Dinot-medium;
+src: url('../fonts/dinot-medium.ttf');
+}
+ @font-face {
+ font-family: Dinot-Reglar;
+src: url('../fonts/dinot-regular-webfont.ttf');
+}
+ @font-face {
+ font-family: zurichbold;
+src: url('../fonts/zurich-cn-bt-bold.ttf');
+}
+.PageWrap { width:1024px; min-height:1124px; height:auto; margin:0 auto; clear:both; }
+.PageHeader h2, h3 { text-align:center; font-family:Dinot-medium; color:#e7ba6b; font-size:36px; font-weight:normal; }
+.PageHeader h2 span { font-family:DinotBold !important; }
+.PageHeader h3 { font-size:30px; color:#f3ddb6; font-family:Dinot-Reglar !important; }
+.PageHeader { width:100%; min-height:181px; height:auto; float:left; position:relative; }
+.PageContent { width:100%; min-height:854px; height:auto; float:left; position:relative; }
+.Products { width:493px; float:left; min-height:854px; height:auto; position:relative; background:#f0c77e; border-radius:10px; }
+.ProductsContent { width:468px; min-height:745px; height:auto; float:left; position:relative; background:#fff; border-radius:10px; margin:13px 0 0 13px; }
+.ProductsContent h2 { background:url(../images/productsHeadBg.jpg) no-repeat center top; font-family:DinotBold; color:#5a4433; font-size:30px; text-align:center; height:65px; line-height:22px; }
+.ProductsImg { width:468px; height:285px; float:left; background:#fff; }
+.ProductsContent p { width:438px; float:left; font-family:Arial, Helvetica, sans-serif; font-size:14px; color:#5a4433; text-align:center; margin:15px 0 0 15px; }
+.ProductsContent h3 { font-family:Arial, Helvetica, sans-serif; font-size:16px; color:#5a4433; font-weight:bold; text-align:left; background:url(../images/Whatugetimg.jpg) no-repeat left top; float:left; height:40px; width:100%; line-height:40px; text-indent:20px; margin-top:10px; }
+.Productsitems { width:438px; float:left; margin:15px 0 0 15px; font-family:Arial, Helvetica, sans-serif; color:#5a4433; font-size:16px; }
+.itemsList { float:left; }
+.and { float:left; font-family:Arial, Helvetica, sans-serif; font-weight:bold; color:#91725c; font-size:44px; margin:10px 0 0 23px; }
+.Extraitems { float:left; margin:15px 0 0 23px; text-align:center; }
+.Pricetag { font-family:Arial, Helvetica, sans-serif; color:#5a4443; font-size:16px; font-weight:bold; float:left; margin:10px 0 0 15px; }
+.PriceBox { width:362px; height:51px; background:#91725c; border-radius:5px; float:left; margin:10px 0 20px 50px; font-family:zurichbold; color:#FFF; font-size:28px; }
+.PriceBox span { line-height:50px; width:165px; float:left; text-indent:10px; }
+.Rupees { background:url(../images/priceboxbg.jpg) no-repeat right center; width:193px !important; height:43px; float:right !important; margin:4px 4px 0 0; text-indent:60px !important; line-height:42px !important; }
+.enquirenowbox{ margin:13px; float:left;}
+.Footer{ width:1024px; float:left; height:89px;}
+.Link1{ width:332px; background:url(../images/MoreLinkbg.jpg) no-repeat right center; height:40px; float:left; margin:18px 0 0 162px; line-height:40px; text-indent:70px;}
+.Link1 a{ font-family:Arial, Helvetica, sans-serif; font-weight:bold; font-size:16px; color:#f3e2c4;}
+.Link2{ width:332px; background:url(../images/MoreLinkbg.jpg) no-repeat right center; height:40px; float:left; margin:18px 0 0 38px; line-height:40px; text-indent:90px;}
+.Link2 a{ font-family:Arial, Helvetica, sans-serif; font-weight:bold; font-size:16px; color:#f3e2c4;}

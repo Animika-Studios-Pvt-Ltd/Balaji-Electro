@@ -1,0 +1,83 @@
+﻿@model IEnumerable<AudioPlanet.Models.Testimonial>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>
+    Testimonials</h2>
+<p>
+    <a href="@Url.Action("Create")" class = "button left"><span class="icon icon68"></span>
+        <span class="label">Create</span></a>
+</p>
+<table class="display">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Designation
+            </th>
+            <th>
+                Organization
+            </th>
+            <th>
+                Content
+            </th>
+            <th>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Designation)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Organization)
+                </td>
+                <td style="width: 500px">
+                    @Html.DisplayFor(modelItem => item.Content)
+                </td>
+                <td>
+                    <div class="buttons tiptip">
+                        @if (item.IsActive)
+                        {
+                            <a href="@Url.Action("Edit", new { id = item.ID })" class = "button left" title="Edit Testimonial">
+                                <span class="icon icon145"></span></a>
+                            <a href="@Url.Action("Details", new { id = item.ID })" class = "button middle"  title="View Testimonial">
+                                <span class="icon icon84"></span></a>
+                            <a href="@Url.Action("Suspend", new { id = item.ID })" class = "button middle" title="Suspend Testimonial">
+                                <span class="icon icon43"></span></a>
+                                if (item.IsArchived)
+                                {
+                            <a href="@Url.Action("Retrieve", new { id = item.ID })" class = "button right" title="Retrieve archived Testimonial">
+                                <span class="icon icon122"></span></a>
+                                }
+                                else
+                                {
+                            <a href="@Url.Action("Archive", new { id = item.ID })" class = "button right" title="Archive Testimonial">
+                                <span class="icon icon123"></span></a>
+                                }
+                        }
+                        else
+                        {
+                            <a href="@Url.Action("Active", new { id = item.ID })" class = "button left" title="Activate Testimonial">
+                                <span class="icon icon58"></span></a>
+
+                        }
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<p>
+    <a href="@Url.Action("Create")" class = "button left"><span class="icon icon68"></span>
+        <span class="label">Create</span></a>
+</p>

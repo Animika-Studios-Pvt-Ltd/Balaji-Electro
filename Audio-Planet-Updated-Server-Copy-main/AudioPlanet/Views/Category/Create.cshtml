@@ -1,0 +1,59 @@
+﻿@model AudioPlanet.Models.Category
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+<link href="@Url.Content("~/Content/themes/Ucms/chosen.css")" rel="stylesheet" type="text/css" />
+@Content.Script("jquery.validate.min.js", Url)
+@Content.Script("jquery.validate.unobtrusive.min.js", Url)
+@Content.Script("Ucms/chosen.jquery.js", Url)
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Category</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ParentCategoryId, "Parent Category")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("ParentCategoryId", (SelectList)ViewBag.CategoryID, " ", new Dictionary<string, object> { { "class", "chzn-select" }, { "style", "width: 400px;" }, { "tabindex", "4" } })
+            @Html.ValidationMessageFor(model => model.ParentCategoryId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CategoryName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CategoryName)
+            @Html.ValidationMessageFor(model => model.CategoryName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CategoryUrl)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CategoryUrl)
+            @Html.ValidationMessageFor(model => model.CategoryUrl)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FullPath)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FullPath)
+            @Html.ValidationMessageFor(model => model.FullPath)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

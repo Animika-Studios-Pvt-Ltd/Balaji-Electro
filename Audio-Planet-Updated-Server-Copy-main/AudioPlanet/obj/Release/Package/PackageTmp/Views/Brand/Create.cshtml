@@ -1,0 +1,41 @@
+﻿@model AudioPlanet.Models.Brand
+@{
+    ViewBag.Title = "Create";
+}
+<h2>
+    Create</h2>
+<link href="@Url.Content("~/Content/themes/Ucms/chosen.css")" rel="stylesheet" type="text/css" />
+@Content.Script("jquery.validate.min.js", Url)
+@Content.Script("jquery.validate.unobtrusive.min.js", Url)
+@Content.Script("Ucms/chosen.jquery.js", Url)
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(false, "Brand creation was unsuccessful. Please correct the errors and try again.")
+        <fieldset>
+            <legend>Brands</legend>
+            @*<div class="editor-label">
+                @Html.LabelFor(model => model.ID, "Brands")
+            </div>*@
+            @*<div class="editor-label">
+                @Html.LabelFor(model => model.ID)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model=> model.ID)
+                @Html.ValidationMessageFor(model => model.ID)
+            </div>*@
+            <div class="editor-label">
+                @Html.LabelFor(model => model.BrandName)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model=>model.BrandName)
+                @Html.ValidationMessageFor(model => model.BrandName)
+            </div>
+            <p class="ibuttons">
+            <input type="submit" value="Create" name="BtnSave" class="ibutton save" />
+        </p>
+        </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

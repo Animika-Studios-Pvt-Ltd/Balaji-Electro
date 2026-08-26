@@ -1,0 +1,40 @@
+﻿@model AudioPlanet.Models.AdminUser
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>
+    Details of the Page: "@Model.Name"</h2>
+<div class="buttons">
+    <a href="@Url.Action("Index")" class = "button left"><span class="icon icon63"></span>
+        <span class="label">Admin Users</span></a> <a href="@Url.Action("Edit", new { id = Model.ID })" class = "button left">
+            <span class="icon icon145"></span><span class="label">Edit</span></a>
+</div>
+<fieldset>
+    <legend>Admin User</legend>
+    <div class="display-label">
+        Name</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+    <div class="display-label">
+        Email</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Email)
+    </div>
+    <div class="display-label">
+        Password</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Password)
+    </div>
+    <div class="display-label">
+        IsActive</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsActive)
+    </div>
+</fieldset>
+<div class="buttons">
+    <a href="@Url.Action("Index")" class = "button left"><span class="icon icon63"></span>
+        <span class="label">Admin Users</span></a> <a href="@Url.Action("Edit", new { id = Model.ID })" class = "button left">
+            <span class="icon icon145"></span><span class="label">Edit</span></a>
+</div>

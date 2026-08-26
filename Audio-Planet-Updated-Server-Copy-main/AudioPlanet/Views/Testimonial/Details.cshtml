@@ -1,0 +1,50 @@
+﻿@model AudioPlanet.Models.Testimonial
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>
+    Details of the Testimonial by: "@Model.Name"</h2>
+<div class="buttons">
+    <a href="@Url.Action("Index")" class = "button left"><span class="icon icon63"></span>
+        <span class="label">Testimonials</span></a> <a href="@Url.Action("Edit", new { id = Model.ID })" class = "button left">
+            <span class="icon icon145"></span><span class="label">Edit</span></a>
+</div>
+<fieldset>
+    <legend>Testimonial</legend>
+    <div class="display-label">
+        Name</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+    <div class="display-label">
+        Designation</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Designation)
+    </div>
+    <div class="display-label">
+        Organization</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Organization)
+    </div>
+    <div class="display-label">
+        Content</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Content)
+    </div>
+    <div class="display-label">
+        IsActive</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsActive)
+    </div>
+    <div class="display-label">
+        IsArchived</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsArchived)
+    </div>
+</fieldset>
+<div class="buttons">
+    <a href="@Url.Action("Index")" class = "button left"><span class="icon icon63"></span>
+        <span class="label">Testimonials</span></a> <a href="@Url.Action("Edit", new { id = Model.ID })" class = "button left">
+            <span class="icon icon145"></span><span class="label">Edit</span></a>
+</div>

@@ -1,0 +1,25 @@
+﻿@using AudioPlanet.Helpers
+@model IEnumerable<AudioPlanet.Models.Article>
+<div class="FeaturedArticles" id="FeaturedArticles">
+    <ul>
+        @{
+            foreach (var article in Model)
+            {
+            <li>
+                <div class="FeaturedArticleText" itemscope itemtype="http://schema.org/Product">
+                    <div class="FeaturedTitle" itemprop="name" ><h2>@article.Title</h2></div>
+                    <div class="FeaturedDetails">
+                        @Html.Raw(Html.Truncate(article.Content, 425, stripParagraph: true))
+                    </div>
+
+                    <div class="Menus">
+                        <span class="Dateofposted">Posted on @(article.PostedTime.ToString("dd / MM / yyyy"))</span>
+                        <span class="TotalViews">Total Views (@article.TotalViews)</span>
+                        <span class="featuredMore"><a href="@(new AudioHelper().GetUrl("Article", article.Url))">More &gt;&gt;</a></span>
+                    </div>
+                </div>
+            </li>
+            }
+        }
+    </ul>
+</div>

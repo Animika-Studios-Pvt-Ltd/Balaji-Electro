@@ -1,0 +1,62 @@
+﻿@model IEnumerable<AudioPlanet.Areas.SEM.Models.LandingPage>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div>
+    <a href="@Url.Action("Create")" class = "button left"><span class="icon icon68"></span>
+        <span class="label">Create</span></a>
+</div>
+<table class="display">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Source
+            </th>
+            <th>
+                Keywords
+            </th>
+            <th>
+                Url
+            </th>
+            <th>
+                Actions
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Source)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Keywords)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Url)
+                </td>
+                <td>
+                    <div class="buttons tiptip">
+                        <a href="@Url.Action("Edit", new { id = item.ID })" class = "button left" title="Edit Landing Page">
+                            <span class="icon icon145"></span></a><a href="@Url.Action("Details", new { id = item.ID })" class = "button middle"  title="View Details">
+                                <span class="icon icon84"></span></a><a href="@Url.Action("Delete", new { id = item.ID })" class = "button middle" title="Delete Landing Page">
+                                    <span class="icon icon56"></span></a><a href="@Url.Action("Upload", new { id = item.ID })" class = "button middle" title="Delete Landing Page">
+                                        <span class="icon icon56"></span></a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div>
+    <a href="@Url.Action("Create")" class = "button left"><span class="icon icon68"></span>
+        <span class="label">Create</span></a>
+</div>

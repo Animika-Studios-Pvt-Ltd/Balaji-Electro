@@ -1,0 +1,39 @@
+﻿body {
+    background-color: #fff;
+    color: #232323;
+    font-family: Verdana, Tahoma, Arial, "Helvetica Neue", Helvetica, Sans-Serif;
+    font-size: 75%;
+}
+
+.h4 {
+    background-position: left;
+    background-repeat: no-repeat;
+    border-bottom: 1px solid #CCC;
+    color: #336699;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 35px;
+    padding-bottom: 10px;
+    padding-left: 50px;
+}
+
+.menu_header {
+    background-color: #315e88;
+    color: #FFFFFF
+}
+
+.p {
+    color: #1a4762;
+    font-size: 12px;
+}
+
+.ul {
+    color: #1a4762;
+    font-size: 12px;
+}
+
+.ul li {
+    color: #1a4762;
+    font-size: 12px;
+}

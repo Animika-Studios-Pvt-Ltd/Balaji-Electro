@@ -1,0 +1,23 @@
+﻿@model IEnumerable<AudioPlanet.Models.Page>
+<div id="Categories" class="Categories">
+    <h3>
+        Categories</h3>
+    <ul>
+        @{
+            foreach (var category in Model)
+            {
+                <li><a href="#" id="@category.ID" class="categoryLink">@category.Name</a></li>
+            }
+        }
+    </ul>
+    <div class="Navigation" id="aNavigation">
+        <div class="previous" id="aprevious">
+            <a href="#">
+                <img src="/Content/Public/images/prev.jpg" alt="" /></a></div>
+        <div class="nav" id="anav">
+        </div>
+        <div class="next" id="anext">
+            <a href="#">
+                <img src="/Content/Public/images/next.jpg" alt="" /></a></div>
+    </div>
+</div>

@@ -1,0 +1,144 @@
+D:\01 JOBS\Audio Planet\Application\AudioPlanet\AudioPlanet\bin\AudioPlanet.dll
+D:\01 JOBS\Audio Planet\Application\AudioPlanet\AudioPlanet\bin\AudioPlanet.pdb
+D:\01 JOBS\Audio Planet\Application\AudioPlanet\AudioPlanet\bin\EntityFramework.dll
+D:\01 JOBS\Audio Planet\Application\AudioPlanet\AudioPlanet\bin\Microsoft.Web.Infrastructure.dll
+D:\01 JOBS\Audio Planet\Application\AudioPlanet\AudioPlanet\bin\System.Web.Helpers.dll
+D:\01 JOBS\Audio Planet\Application\AudioPlanet\AudioPlanet\bin\System.Web.Mvc.dll
+D:\01 JOBS\Audio Planet\Application\AudioPlanet\AudioPlanet\bin\System.Web.Providers.dll
+D:\01 JOBS\Audio Planet\Application\AudioPlanet\AudioPlanet\bin\System.Web.Razor.dll
+D:\01 JOBS\Audio Planet\Application\AudioPlanet\AudioPlanet\bin\System.Web.WebPages.Deployment.dll
+D:\01 JOBS\Audio Planet\Application\AudioPlanet\AudioPlanet\bin\System.Web.WebPages.dll
+D:\01 JOBS\Audio Planet\Application\AudioPlanet\AudioPlanet\bin\System.Web.WebPages.Razor.dll
+D:\01 JOBS\Audio Planet\Application\AudioPlanet\AudioPlanet\bin\EntityFramework.xml
+D:\01 JOBS\Audio Planet\Application\AudioPlanet\AudioPlanet\bin\System.Web.Helpers.xml
+D:\01 JOBS\Audio Planet\Application\AudioPlanet\AudioPlanet\bin\System.Web.Mvc.xml
+D:\01 JOBS\Audio Planet\Application\AudioPlanet\AudioPlanet\bin\System.Web.Razor.xml
+D:\01 JOBS\Audio Planet\Application\AudioPlanet\AudioPlanet\bin\System.Web.WebPages.xml
+D:\01 JOBS\Audio Planet\Application\AudioPlanet\AudioPlanet\bin\System.Web.WebPages.Deployment.xml
+D:\01 JOBS\Audio Planet\Application\AudioPlanet\AudioPlanet\bin\System.Web.WebPages.Razor.xml
+D:\01 JOBS\Audio Planet\Application\AudioPlanet\AudioPlanet\obj\Debug\AudioPlanet.csprojResolveAssemblyReference.cache
+D:\01 JOBS\Audio Planet\Application\AudioPlanet\AudioPlanet\obj\Debug\AudioPlanet.dll
+D:\01 JOBS\Audio Planet\Application\AudioPlanet\AudioPlanet\obj\Debug\AudioPlanet.pdb
+C:\Users\witluser\Desktop\AudioPlanet\AudioPlanet\bin\AudioPlanet.dll
+C:\Users\witluser\Desktop\AudioPlanet\AudioPlanet\bin\AudioPlanet.pdb
+C:\Users\witluser\Desktop\AudioPlanet\AudioPlanet\bin\EntityFramework.dll
+C:\Users\witluser\Desktop\AudioPlanet\AudioPlanet\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\witluser\Desktop\AudioPlanet\AudioPlanet\bin\System.Web.Helpers.dll
+C:\Users\witluser\Desktop\AudioPlanet\AudioPlanet\bin\System.Web.Mvc.dll
+C:\Users\witluser\Desktop\AudioPlanet\AudioPlanet\bin\System.Web.Providers.dll
+C:\Users\witluser\Desktop\AudioPlanet\AudioPlanet\bin\System.Web.Razor.dll
+C:\Users\witluser\Desktop\AudioPlanet\AudioPlanet\bin\System.Web.WebPages.Deployment.dll
+C:\Users\witluser\Desktop\AudioPlanet\AudioPlanet\bin\System.Web.WebPages.dll
+C:\Users\witluser\Desktop\AudioPlanet\AudioPlanet\bin\System.Web.WebPages.Razor.dll
+C:\Users\witluser\Desktop\AudioPlanet\AudioPlanet\bin\EntityFramework.xml
+C:\Users\witluser\Desktop\AudioPlanet\AudioPlanet\bin\System.Web.Helpers.xml
+C:\Users\witluser\Desktop\AudioPlanet\AudioPlanet\bin\System.Web.Mvc.xml
+C:\Users\witluser\Desktop\AudioPlanet\AudioPlanet\bin\System.Web.Razor.xml
+C:\Users\witluser\Desktop\AudioPlanet\AudioPlanet\bin\System.Web.WebPages.xml
+C:\Users\witluser\Desktop\AudioPlanet\AudioPlanet\bin\System.Web.WebPages.Deployment.xml
+C:\Users\witluser\Desktop\AudioPlanet\AudioPlanet\bin\System.Web.WebPages.Razor.xml
+C:\Users\witluser\Desktop\AudioPlanet\AudioPlanet\obj\Debug\AudioPlanet.dll
+C:\Users\witluser\Desktop\AudioPlanet\AudioPlanet\obj\Debug\AudioPlanet.pdb
+C:\Users\Karthik\Desktop\Audio Planet Pavan\Audio-Final\AudioPlanet\AudioPlanet\bin\AudioPlanet.dll
+C:\Users\Karthik\Desktop\Audio Planet Pavan\Audio-Final\AudioPlanet\AudioPlanet\bin\AudioPlanet.pdb
+C:\Users\Karthik\Desktop\Audio Planet Pavan\Audio-Final\AudioPlanet\AudioPlanet\bin\EntityFramework.dll
+C:\Users\Karthik\Desktop\Audio Planet Pavan\Audio-Final\AudioPlanet\AudioPlanet\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Karthik\Desktop\Audio Planet Pavan\Audio-Final\AudioPlanet\AudioPlanet\bin\System.Web.Helpers.dll
+C:\Users\Karthik\Desktop\Audio Planet Pavan\Audio-Final\AudioPlanet\AudioPlanet\bin\System.Web.Mvc.dll
+C:\Users\Karthik\Desktop\Audio Planet Pavan\Audio-Final\AudioPlanet\AudioPlanet\bin\System.Web.Providers.dll
+C:\Users\Karthik\Desktop\Audio Planet Pavan\Audio-Final\AudioPlanet\AudioPlanet\bin\System.Web.Razor.dll
+C:\Users\Karthik\Desktop\Audio Planet Pavan\Audio-Final\AudioPlanet\AudioPlanet\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Karthik\Desktop\Audio Planet Pavan\Audio-Final\AudioPlanet\AudioPlanet\bin\System.Web.WebPages.dll
+C:\Users\Karthik\Desktop\Audio Planet Pavan\Audio-Final\AudioPlanet\AudioPlanet\bin\System.Web.WebPages.Razor.dll
+C:\Users\Karthik\Desktop\Audio Planet Pavan\Audio-Final\AudioPlanet\AudioPlanet\bin\EntityFramework.xml
+C:\Users\Karthik\Desktop\Audio Planet Pavan\Audio-Final\AudioPlanet\AudioPlanet\bin\System.Web.Helpers.xml
+C:\Users\Karthik\Desktop\Audio Planet Pavan\Audio-Final\AudioPlanet\AudioPlanet\bin\System.Web.Mvc.xml
+C:\Users\Karthik\Desktop\Audio Planet Pavan\Audio-Final\AudioPlanet\AudioPlanet\bin\System.Web.Razor.xml
+C:\Users\Karthik\Desktop\Audio Planet Pavan\Audio-Final\AudioPlanet\AudioPlanet\bin\System.Web.WebPages.xml
+C:\Users\Karthik\Desktop\Audio Planet Pavan\Audio-Final\AudioPlanet\AudioPlanet\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Karthik\Desktop\Audio Planet Pavan\Audio-Final\AudioPlanet\AudioPlanet\bin\System.Web.WebPages.Razor.xml
+C:\Users\Karthik\Desktop\Audio Planet Pavan\Audio-Final\AudioPlanet\AudioPlanet\obj\Debug\AudioPlanet.dll
+C:\Users\Karthik\Desktop\Audio Planet Pavan\Audio-Final\AudioPlanet\AudioPlanet\obj\Debug\AudioPlanet.pdb
+D:\01 JOBS\5 Audio Planet\0 Working Copy\Audio-Final\AudioPlanet\AudioPlanet\bin\AudioPlanet.dll
+D:\01 JOBS\5 Audio Planet\0 Working Copy\Audio-Final\AudioPlanet\AudioPlanet\bin\AudioPlanet.pdb
+D:\01 JOBS\5 Audio Planet\0 Working Copy\Audio-Final\AudioPlanet\AudioPlanet\bin\EntityFramework.dll
+D:\01 JOBS\5 Audio Planet\0 Working Copy\Audio-Final\AudioPlanet\AudioPlanet\bin\Microsoft.Web.Infrastructure.dll
+D:\01 JOBS\5 Audio Planet\0 Working Copy\Audio-Final\AudioPlanet\AudioPlanet\bin\System.Web.Helpers.dll
+D:\01 JOBS\5 Audio Planet\0 Working Copy\Audio-Final\AudioPlanet\AudioPlanet\bin\System.Web.Mvc.dll
+D:\01 JOBS\5 Audio Planet\0 Working Copy\Audio-Final\AudioPlanet\AudioPlanet\bin\System.Web.Providers.dll
+D:\01 JOBS\5 Audio Planet\0 Working Copy\Audio-Final\AudioPlanet\AudioPlanet\bin\System.Web.Razor.dll
+D:\01 JOBS\5 Audio Planet\0 Working Copy\Audio-Final\AudioPlanet\AudioPlanet\bin\System.Web.WebPages.Deployment.dll
+D:\01 JOBS\5 Audio Planet\0 Working Copy\Audio-Final\AudioPlanet\AudioPlanet\bin\System.Web.WebPages.dll
+D:\01 JOBS\5 Audio Planet\0 Working Copy\Audio-Final\AudioPlanet\AudioPlanet\bin\System.Web.WebPages.Razor.dll
+D:\01 JOBS\5 Audio Planet\0 Working Copy\Audio-Final\AudioPlanet\AudioPlanet\bin\EntityFramework.xml
+D:\01 JOBS\5 Audio Planet\0 Working Copy\Audio-Final\AudioPlanet\AudioPlanet\bin\System.Web.Helpers.xml
+D:\01 JOBS\5 Audio Planet\0 Working Copy\Audio-Final\AudioPlanet\AudioPlanet\bin\System.Web.Mvc.xml
+D:\01 JOBS\5 Audio Planet\0 Working Copy\Audio-Final\AudioPlanet\AudioPlanet\bin\System.Web.Razor.xml
+D:\01 JOBS\5 Audio Planet\0 Working Copy\Audio-Final\AudioPlanet\AudioPlanet\bin\System.Web.WebPages.xml
+D:\01 JOBS\5 Audio Planet\0 Working Copy\Audio-Final\AudioPlanet\AudioPlanet\bin\System.Web.WebPages.Deployment.xml
+D:\01 JOBS\5 Audio Planet\0 Working Copy\Audio-Final\AudioPlanet\AudioPlanet\bin\System.Web.WebPages.Razor.xml
+D:\01 JOBS\5 Audio Planet\0 Working Copy\Audio-Final\AudioPlanet\AudioPlanet\obj\Debug\AudioPlanet.dll
+D:\01 JOBS\5 Audio Planet\0 Working Copy\Audio-Final\AudioPlanet\AudioPlanet\obj\Debug\AudioPlanet.pdb
+D:\01 JOBS\5 Audio Planet\0 Working Copy\Audio-Final\AudioPlanet\AudioPlanet\obj\Debug\AudioPlanet.csprojResolveAssemblyReference.cache
+E:\audio\audio - w\AudioPlanet\AudioPlanet\bin\AudioPlanet.dll
+E:\audio\audio - w\AudioPlanet\AudioPlanet\bin\AudioPlanet.pdb
+E:\audio\audio - w\AudioPlanet\AudioPlanet\bin\EntityFramework.dll
+E:\audio\audio - w\AudioPlanet\AudioPlanet\bin\Microsoft.Web.Infrastructure.dll
+E:\audio\audio - w\AudioPlanet\AudioPlanet\bin\System.Web.Helpers.dll
+E:\audio\audio - w\AudioPlanet\AudioPlanet\bin\System.Web.Mvc.dll
+E:\audio\audio - w\AudioPlanet\AudioPlanet\bin\System.Web.Providers.dll
+E:\audio\audio - w\AudioPlanet\AudioPlanet\bin\System.Web.Razor.dll
+E:\audio\audio - w\AudioPlanet\AudioPlanet\bin\System.Web.WebPages.Deployment.dll
+E:\audio\audio - w\AudioPlanet\AudioPlanet\bin\System.Web.WebPages.dll
+E:\audio\audio - w\AudioPlanet\AudioPlanet\bin\System.Web.WebPages.Razor.dll
+E:\audio\audio - w\AudioPlanet\AudioPlanet\bin\EntityFramework.xml
+E:\audio\audio - w\AudioPlanet\AudioPlanet\bin\System.Web.Helpers.xml
+E:\audio\audio - w\AudioPlanet\AudioPlanet\bin\System.Web.Mvc.xml
+E:\audio\audio - w\AudioPlanet\AudioPlanet\bin\System.Web.Razor.xml
+E:\audio\audio - w\AudioPlanet\AudioPlanet\bin\System.Web.WebPages.xml
+E:\audio\audio - w\AudioPlanet\AudioPlanet\bin\System.Web.WebPages.Deployment.xml
+E:\audio\audio - w\AudioPlanet\AudioPlanet\bin\System.Web.WebPages.Razor.xml
+E:\audio\audio - w\AudioPlanet\AudioPlanet\obj\Debug\AudioPlanet.dll
+E:\audio\audio - w\AudioPlanet\AudioPlanet\obj\Debug\AudioPlanet.pdb
+E:\audio\audio - w\AudioPlanet\AudioPlanet\obj\Debug\AudioPlanet.csprojResolveAssemblyReference.cache
+E:\pavan\Projects\Working Copies\Application Files\AudioPlanet\AudioPlanet\bin\AudioPlanet.dll
+E:\pavan\Projects\Working Copies\Application Files\AudioPlanet\AudioPlanet\bin\AudioPlanet.pdb
+E:\pavan\Projects\Working Copies\Application Files\AudioPlanet\AudioPlanet\bin\EntityFramework.dll
+E:\pavan\Projects\Working Copies\Application Files\AudioPlanet\AudioPlanet\bin\Microsoft.Web.Infrastructure.dll
+E:\pavan\Projects\Working Copies\Application Files\AudioPlanet\AudioPlanet\bin\System.Web.Helpers.dll
+E:\pavan\Projects\Working Copies\Application Files\AudioPlanet\AudioPlanet\bin\System.Web.Mvc.dll
+E:\pavan\Projects\Working Copies\Application Files\AudioPlanet\AudioPlanet\bin\System.Web.Providers.dll
+E:\pavan\Projects\Working Copies\Application Files\AudioPlanet\AudioPlanet\bin\System.Web.Razor.dll
+E:\pavan\Projects\Working Copies\Application Files\AudioPlanet\AudioPlanet\bin\System.Web.WebPages.Deployment.dll
+E:\pavan\Projects\Working Copies\Application Files\AudioPlanet\AudioPlanet\bin\System.Web.WebPages.dll
+E:\pavan\Projects\Working Copies\Application Files\AudioPlanet\AudioPlanet\bin\System.Web.WebPages.Razor.dll
+E:\pavan\Projects\Working Copies\Application Files\AudioPlanet\AudioPlanet\bin\EntityFramework.xml
+E:\pavan\Projects\Working Copies\Application Files\AudioPlanet\AudioPlanet\bin\System.Web.Helpers.xml
+E:\pavan\Projects\Working Copies\Application Files\AudioPlanet\AudioPlanet\bin\System.Web.Mvc.xml
+E:\pavan\Projects\Working Copies\Application Files\AudioPlanet\AudioPlanet\bin\System.Web.Razor.xml
+E:\pavan\Projects\Working Copies\Application Files\AudioPlanet\AudioPlanet\bin\System.Web.WebPages.xml
+E:\pavan\Projects\Working Copies\Application Files\AudioPlanet\AudioPlanet\bin\System.Web.WebPages.Deployment.xml
+E:\pavan\Projects\Working Copies\Application Files\AudioPlanet\AudioPlanet\bin\System.Web.WebPages.Razor.xml
+E:\pavan\Projects\Working Copies\Application Files\AudioPlanet\AudioPlanet\obj\Debug\AudioPlanet.dll
+E:\pavan\Projects\Working Copies\Application Files\AudioPlanet\AudioPlanet\obj\Debug\AudioPlanet.pdb
+E:\Assets\MyWork\Audio Planet Updated Server Copy\AudioPlanet\bin\AudioPlanet.dll
+E:\Assets\MyWork\Audio Planet Updated Server Copy\AudioPlanet\bin\AudioPlanet.pdb
+E:\Assets\MyWork\Audio Planet Updated Server Copy\AudioPlanet\bin\EntityFramework.dll
+E:\Assets\MyWork\Audio Planet Updated Server Copy\AudioPlanet\bin\Microsoft.Web.Infrastructure.dll
+E:\Assets\MyWork\Audio Planet Updated Server Copy\AudioPlanet\bin\System.Web.Helpers.dll
+E:\Assets\MyWork\Audio Planet Updated Server Copy\AudioPlanet\bin\System.Web.Mvc.dll
+E:\Assets\MyWork\Audio Planet Updated Server Copy\AudioPlanet\bin\System.Web.Providers.dll
+E:\Assets\MyWork\Audio Planet Updated Server Copy\AudioPlanet\bin\System.Web.Razor.dll
+E:\Assets\MyWork\Audio Planet Updated Server Copy\AudioPlanet\bin\System.Web.WebPages.Deployment.dll
+E:\Assets\MyWork\Audio Planet Updated Server Copy\AudioPlanet\bin\System.Web.WebPages.dll
+E:\Assets\MyWork\Audio Planet Updated Server Copy\AudioPlanet\bin\System.Web.WebPages.Razor.dll
+E:\Assets\MyWork\Audio Planet Updated Server Copy\AudioPlanet\bin\EntityFramework.xml
+E:\Assets\MyWork\Audio Planet Updated Server Copy\AudioPlanet\bin\System.Web.Helpers.xml
+E:\Assets\MyWork\Audio Planet Updated Server Copy\AudioPlanet\bin\System.Web.Mvc.xml
+E:\Assets\MyWork\Audio Planet Updated Server Copy\AudioPlanet\bin\System.Web.Razor.xml
+E:\Assets\MyWork\Audio Planet Updated Server Copy\AudioPlanet\bin\System.Web.WebPages.xml
+E:\Assets\MyWork\Audio Planet Updated Server Copy\AudioPlanet\bin\System.Web.WebPages.Deployment.xml
+E:\Assets\MyWork\Audio Planet Updated Server Copy\AudioPlanet\bin\System.Web.WebPages.Razor.xml
+E:\Assets\MyWork\Audio Planet Updated Server Copy\AudioPlanet\obj\Debug\AudioPlanet.csprojResolveAssemblyReference.cache
+E:\Assets\MyWork\Audio Planet Updated Server Copy\AudioPlanet\obj\Debug\AudioPlanet.dll
+E:\Assets\MyWork\Audio Planet Updated Server Copy\AudioPlanet\obj\Debug\AudioPlanet.pdb

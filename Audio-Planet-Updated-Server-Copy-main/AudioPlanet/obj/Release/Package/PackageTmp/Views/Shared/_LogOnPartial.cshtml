@@ -1,0 +1,42 @@
+﻿@using AudioPlanet.Helpers
+@using AudioPlanet.Models
+<div style="float: right" class="buttons tiptip">
+    @if (Request.IsAuthenticated)
+    {
+        <div style="float: left; padding-top: 10px;">
+            Welcome <strong>@User.Identity.Name</strong>!</div>
+    }
+    <a href="@Url.Action("Index", "Admin", new { area = "" })" class="button left" title="Admin Home"><span
+        class="icon icon108"></span></a>
+    @if (Request.IsAuthenticated)
+    {
+        <a href="#" id="show8" class="button middle" title="View Profile">
+            @{
+                AdminUser user;
+                using (var db = new Audio())
+                {
+                    user = db.AdminUsers.FirstOrDefault(u => u.Email == User.Identity.Name);
+                }
+                if (user != null && user.Gender)
+                {
+                        <span class="icon icon191"></span> 
+                }
+                else
+                {
+                        <span class="icon icon192"></span>
+                }
+            }
+            <span class="label">Profile</span> </a>
+        
+        <a href="@Url.Action("LogOff", "Account")" class="button right" title="Logout"><span
+            class="icon icon151"></span></a>
+    }
+    else
+    {
+        <a href="@Url.Action("LogOn", "Account")" class="button right" title="Login"><span
+            class="icon icon116"></span></a>
+    }
+</div>
+<div id="dec_show8" class="tips">
+    @Utilities.GetProfile(User.Identity.Name)
+</div>

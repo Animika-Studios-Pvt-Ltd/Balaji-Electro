@@ -1,0 +1,1 @@
+$('.testimonial_container').slick({autoplay:!0,autoplaySpeed:3500,accessibility:!0,speed:800,vertical:!1,focusOnSelect:!0,arrows:!1});$(document).ready(function(){$("img").bind("contextmenu",function(){return!1});$(function(){$(this).ajaxStart(function(){$("#ajaxLoading").show()});$(this).ajaxStop(function(){$("#ajaxLoading").hide()})})})

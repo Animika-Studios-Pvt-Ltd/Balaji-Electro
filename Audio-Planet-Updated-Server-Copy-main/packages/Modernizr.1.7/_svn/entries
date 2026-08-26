@@ -1,0 +1,52 @@
+10
+
+dir
+0
+https://192.168.0.2/svn/MVC_Projects/audioplanet/Application/trunk/packages/Modernizr.1.7
+https://192.168.0.2/svn/MVC_Projects
+add
+
+
+
+
+
+has-props
+has-prop-mods
+
+
+
+
+
+
+
+
+
+
+
+
+a127692a-d833-fa4a-aab7-08c0c2976241
+
+Modernizr.1.7.nupkg
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+
+Modernizr.1.7.nuspec
+file
+
+
+
+add
+
+Content
+dir
+

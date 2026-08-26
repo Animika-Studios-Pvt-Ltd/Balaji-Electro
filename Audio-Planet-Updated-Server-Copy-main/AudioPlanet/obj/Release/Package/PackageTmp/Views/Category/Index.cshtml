@@ -1,0 +1,73 @@
+﻿@using AudioPlanet.Helpers
+@using AudioPlanet.Models
+@model IEnumerable<AudioPlanet.Models.Category>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+<p>
+    <a href="@Url.Action("Create")" class = "button left"><span class="icon icon68"></span>
+        <span class="label">Create</span></a>
+</p>
+<table class="display">
+    <tr>
+        <th>
+            CategoryName
+        </th>
+        <th>
+            CategoryUrl
+        </th>
+        <th>
+            Parent Category
+        </th>
+        <th>
+            Full Path
+        </th>
+        <th>
+            &nbsp;
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CategoryName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CategoryUrl)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ParentCategoryId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FullPath)
+        </td>
+        <td>
+            @if(item.IsActive)
+            {
+            <a href="@Url.Action("Edit", new { id=item.ID})" class="button left" title="Edit Page">
+                <span class="icon icon145"></span>
+            </a>
+            
+            <a href="@Url.Action("Suspend", new { id = item.ID })" class = "button middle" title="Suspend Page">
+                        <span class="icon icon43"></span></a>
+            }
+            else
+            {
+                <a href="@Url.Action("Active", new { id = item.ID })" class = "button left" title="Activate Page">
+                    <span class="icon icon58"></span></a>
+            }
+
+            @*@Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })*@
+        </td>
+    </tr>
+}
+
+</table>

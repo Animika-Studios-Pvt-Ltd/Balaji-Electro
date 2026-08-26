@@ -1,0 +1,41 @@
+D:\01 JOBS\Audio Planet\Application New2\AudioPlanet\AudioPlanet\bin\AudioPlanet.dll
+D:\01 JOBS\Audio Planet\Application New2\AudioPlanet\AudioPlanet\bin\AudioPlanet.pdb
+D:\01 JOBS\Audio Planet\Application New2\AudioPlanet\AudioPlanet\bin\EntityFramework.dll
+D:\01 JOBS\Audio Planet\Application New2\AudioPlanet\AudioPlanet\bin\Microsoft.Web.Infrastructure.dll
+D:\01 JOBS\Audio Planet\Application New2\AudioPlanet\AudioPlanet\bin\System.Web.Helpers.dll
+D:\01 JOBS\Audio Planet\Application New2\AudioPlanet\AudioPlanet\bin\System.Web.Mvc.dll
+D:\01 JOBS\Audio Planet\Application New2\AudioPlanet\AudioPlanet\bin\System.Web.Providers.dll
+D:\01 JOBS\Audio Planet\Application New2\AudioPlanet\AudioPlanet\bin\System.Web.Razor.dll
+D:\01 JOBS\Audio Planet\Application New2\AudioPlanet\AudioPlanet\bin\System.Web.WebPages.Deployment.dll
+D:\01 JOBS\Audio Planet\Application New2\AudioPlanet\AudioPlanet\bin\System.Web.WebPages.dll
+D:\01 JOBS\Audio Planet\Application New2\AudioPlanet\AudioPlanet\bin\System.Web.WebPages.Razor.dll
+D:\01 JOBS\Audio Planet\Application New2\AudioPlanet\AudioPlanet\bin\EntityFramework.xml
+D:\01 JOBS\Audio Planet\Application New2\AudioPlanet\AudioPlanet\bin\System.Web.Helpers.xml
+D:\01 JOBS\Audio Planet\Application New2\AudioPlanet\AudioPlanet\bin\System.Web.Mvc.xml
+D:\01 JOBS\Audio Planet\Application New2\AudioPlanet\AudioPlanet\bin\System.Web.Razor.xml
+D:\01 JOBS\Audio Planet\Application New2\AudioPlanet\AudioPlanet\bin\System.Web.WebPages.xml
+D:\01 JOBS\Audio Planet\Application New2\AudioPlanet\AudioPlanet\bin\System.Web.WebPages.Deployment.xml
+D:\01 JOBS\Audio Planet\Application New2\AudioPlanet\AudioPlanet\bin\System.Web.WebPages.Razor.xml
+D:\01 JOBS\Audio Planet\Application New2\AudioPlanet\AudioPlanet\obj\Release\AudioPlanet.dll
+D:\01 JOBS\Audio Planet\Application New2\AudioPlanet\AudioPlanet\obj\Release\AudioPlanet.pdb
+C:\Users\Karthik\Desktop\Audio Planet Pavan\Audio-Final\AudioPlanet\AudioPlanet\bin\AudioPlanet.dll
+C:\Users\Karthik\Desktop\Audio Planet Pavan\Audio-Final\AudioPlanet\AudioPlanet\bin\AudioPlanet.pdb
+C:\Users\Karthik\Desktop\Audio Planet Pavan\Audio-Final\AudioPlanet\AudioPlanet\bin\EntityFramework.dll
+C:\Users\Karthik\Desktop\Audio Planet Pavan\Audio-Final\AudioPlanet\AudioPlanet\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Karthik\Desktop\Audio Planet Pavan\Audio-Final\AudioPlanet\AudioPlanet\bin\System.Web.Helpers.dll
+C:\Users\Karthik\Desktop\Audio Planet Pavan\Audio-Final\AudioPlanet\AudioPlanet\bin\System.Web.Mvc.dll
+C:\Users\Karthik\Desktop\Audio Planet Pavan\Audio-Final\AudioPlanet\AudioPlanet\bin\System.Web.Providers.dll
+C:\Users\Karthik\Desktop\Audio Planet Pavan\Audio-Final\AudioPlanet\AudioPlanet\bin\System.Web.Razor.dll
+C:\Users\Karthik\Desktop\Audio Planet Pavan\Audio-Final\AudioPlanet\AudioPlanet\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Karthik\Desktop\Audio Planet Pavan\Audio-Final\AudioPlanet\AudioPlanet\bin\System.Web.WebPages.dll
+C:\Users\Karthik\Desktop\Audio Planet Pavan\Audio-Final\AudioPlanet\AudioPlanet\bin\System.Web.WebPages.Razor.dll
+C:\Users\Karthik\Desktop\Audio Planet Pavan\Audio-Final\AudioPlanet\AudioPlanet\bin\EntityFramework.xml
+C:\Users\Karthik\Desktop\Audio Planet Pavan\Audio-Final\AudioPlanet\AudioPlanet\bin\System.Web.Helpers.xml
+C:\Users\Karthik\Desktop\Audio Planet Pavan\Audio-Final\AudioPlanet\AudioPlanet\bin\System.Web.Mvc.xml
+C:\Users\Karthik\Desktop\Audio Planet Pavan\Audio-Final\AudioPlanet\AudioPlanet\bin\System.Web.Razor.xml
+C:\Users\Karthik\Desktop\Audio Planet Pavan\Audio-Final\AudioPlanet\AudioPlanet\bin\System.Web.WebPages.xml
+C:\Users\Karthik\Desktop\Audio Planet Pavan\Audio-Final\AudioPlanet\AudioPlanet\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Karthik\Desktop\Audio Planet Pavan\Audio-Final\AudioPlanet\AudioPlanet\bin\System.Web.WebPages.Razor.xml
+C:\Users\Karthik\Desktop\Audio Planet Pavan\Audio-Final\AudioPlanet\AudioPlanet\obj\Release\AudioPlanet.csprojResolveAssemblyReference.cache
+C:\Users\Karthik\Desktop\Audio Planet Pavan\Audio-Final\AudioPlanet\AudioPlanet\obj\Release\AudioPlanet.dll
+C:\Users\Karthik\Desktop\Audio Planet Pavan\Audio-Final\AudioPlanet\AudioPlanet\obj\Release\AudioPlanet.pdb

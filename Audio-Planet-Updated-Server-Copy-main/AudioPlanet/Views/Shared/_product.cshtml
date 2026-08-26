@@ -1,0 +1,53 @@
+﻿@using AudioPlanet.Models
+@model Product
+
+@{
+    Layout = "~/views/shared/_categorybrand.cshtml";
+}
+
+
+
+<div class="row popUpPruducts" itemscope itemtype="http://schema.org/Product">
+    <div class="col-lg-2 col-md-2">
+        </div>
+    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 Image">
+        <img class="thumbImg " itemprop="image" src="@(Product.GetProductFiles(Model.ID, "Image"))" width="250" height="250" alt="@Model.Name"/>
+    </div>
+    <div id="Text" class="col-lg-5 col-md-5 col-sm-12 col-xs-12 productDetails">
+        <h1 itemprop="name">@Model.Name</h1>
+       <p itemprop="description"> @Model.Description</p>
+    <div class="spanButton">
+        @{
+            var path = Product.GetProductFiles(Model.ID, "Document");
+        }
+        @if (!string.IsNullOrEmpty(path))
+        {
+            @*<a href="@path" target="_blank">
+                <img src="/Content/Public/images/downloadPdf.png" alt="" /></a>;pavan
+            
+            *@
+
+            <a  class="btn btn-warning btnColor" href="@path"  target="_blank">Download PDF</a>
+            
+            @*<a href="/Systems/Enquiry" class="downloadPdf">
+                                            <img src="/Content/Public/images/enquire.png"  /></a>;pavan
+            *@
+             @*<a  class="btn btn-warning btnColor"  style="display: block; width: 100%;" href="/Systems/Enquiry">Enquire</a>*@
+		<a  class="btn btn-warning btnColor productEnquire">Enquire</a>
+        }
+        else
+        {
+            @*<a href="#" class="downloadPdf">
+                <img src="/Content/Public/images/downloadPdf.png" alt="" /></a>;pavan
+            <a href="/Systems/Enquiry" class="downloadPdf">
+                                            <img src="/Content/Public/images/enquire.png"  /></a>*@
+            
+            <a  class="btn btn-warning btnColor" href="#">Download Pdf</a>
+
+                @*<a  class="btn btn-warning btnColor"  style="display: block; width: 100%;" href="/Systems/Enquiry">Enquire</a>*@
+		<a  class="btn btn-warning btnColor productEnquire"  style="display: block; width: 100%;">Enquire</a>
+        }
+        
+    </div>
+        </div>
+</div>

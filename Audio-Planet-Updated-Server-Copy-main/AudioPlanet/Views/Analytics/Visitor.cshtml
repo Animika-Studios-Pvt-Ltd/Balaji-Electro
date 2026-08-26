@@ -1,0 +1,168 @@
+﻿@{
+    ViewBag.Title = "Visitor";
+}
+<h2>
+    Dashboard - Visitor<span style="color: #F58033; font-weight: bold; font-size: 13px"><sup>BETA</sup></span></h2>
+<!-- Add Google Analytics authorization button -->
+<button id="authorize-button" style="visibility: hidden">
+    Authorize Analytics
+ </button>
+<!-- Div element where the Line Chart will be placed -->
+<div id="chartArea">
+    <div id='line-chart-example'>
+    </div>
+    <p>
+        Primary Dimension: <b><a id="primaryDimension" href="#">Country / Territory</a></b>
+    </p>
+    <table width="100%" style="border: 0 transparent; border-collapse: collapse">
+        <tr>
+            <td>
+                Secondary Dimension: &nbsp;&nbsp;
+                <ul id="collapser">
+                    <li>Visitors
+                        <ul>
+                            <li><a href="#" title="ga:language" class="getByVisit">Language</a></li>
+                            <li><a href="#" title="ga:region" class="getByVisit">Region</a></li>
+                            <li><a href="#" title="ga:city" class="getByVisit">City</a></li>
+                            <li><a href="#" title="ga:visitorType" class="getByVisit">visitor Type</a></li>
+                        </ul>
+                    </li>
+                    <li>Technology
+                        <ul>
+                            <li><a href="#" title="ga:browser" id="VBrowser">Browser</a></li>
+                            <li><a href="#" title="ga:browser,ga:browserVersion" class="getByVisit">Browser Version</a></li>
+                        </ul>
+                    </li>
+                    <li>Traffic Sources
+                        <ul>
+                            <li><a href="#" title="ga:source" class="getByVisit">Source</a></li>
+                            <li><a href="#" title="ga:keyword" class="getByVisit">Keyword</a></li>
+                        </ul>
+                    </li>
+                    <li>Content
+                        <ul>
+                            <li><a href="#" title="ga:hostname" class="getByVisit">Host Name</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </td>
+            <td style="vertical-align: top">
+                <div id='table-chart-example'>
+                </div>
+                <br/>
+                <br />
+                <div id="DivVregion" style="display: none">
+                    Secondary Dimension: <span id="selectedDimention" style="font-weight: bold"></span>
+                    <div id='SecondaryChart'>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+<!-- Load all Google JS libraries -->
+<script src="https://www.google.com/jsapi" type="text/javascript"></script>
+<script src="/GA/gadash-1.0.js" type="text/javascript"></script>
+<script src="https://apis.google.com/js/client.js?onload=gadashInit" type="text/javascript"></script>
+<script type="text/javascript">
+    // Configure these parameters before you start.
+    // clientId = '13776171299.apps.googleusercontent.com';
+    // apiKey = 'AIzaSyBDk20iah9rM4t_91VSwbr__AJbi8sLyv8';
+    // scopes = 'https://www.googleapis.com/auth/analytics.readonly';
+
+    var API_KEY = 'AIzaSyBDk20iah9rM4t_91VSwbr__AJbi8sLyv8';
+    var CLIENT_ID = '13776171299.apps.googleusercontent.com';
+    var TABLE_ID = 'ga:66247072';
+    // Format of table ID is ga:xxx where xxx is the profile ID.
+
+    gadash.configKeys({
+        'apiKey': API_KEY,
+        'clientId': CLIENT_ID
+    });
+
+    // Create a new Chart that queries visitors for the last 30 days and plots
+    // visualizes in a line chart.
+    var chart1 = new gadash.Chart({
+        'type': 'LineChart',
+        'divContainer': 'line-chart-example',
+        'last-n-days': 30,
+        'query': {
+            'ids': TABLE_ID,
+            'start-date': lastNDays(14),
+            'end-date': lastNDays(0),
+            'metrics': 'ga:visits, ga:percentNewVisits',
+            'dimensions': 'ga:date'
+        },
+        'chartOptions': {
+            height: 300,
+            legend: { position: 'bottom' },
+            title: 'Visits of last 30 Days',
+            hAxis: { title: 'Date' },
+            vAxis: { title: 'Visits' },
+            curveType: 'function'
+        }
+
+    }).render();
+
+
+    var chart2 = new gadash.Chart({
+        'divContainer': 'table-chart-example',
+        'last-n-days': 30,
+        'query': {
+            'ids': TABLE_ID,
+            'start-date': lastNDays(14),
+            'end-date': lastNDays(0),
+            'metrics': 'ga:pageviewsPerVisit,ga:avgTimeOnSite,ga:percentNewVisits,ga:visitBounceRate',
+            'dimensions': 'ga:country',
+            'sort': '-ga:pageviewsPerVisit',
+            'max-results': 100
+        }
+    }).render();
+
+    document.getElementById('chartArea').style.display = 'block';
+
+    function lastNDays(n) {
+        var today = new Date();
+        var before = new Date();
+        before.setDate(today.getDate() - n);
+
+        var year = before.getFullYear();
+
+        var month = before.getMonth() + 1;
+        if (month < 10) {
+            month = '0' + month;
+        }
+
+        var day = before.getDate();
+        if (day < 10) {
+            day = '0' + day;
+        }
+
+        return [year, month, day].join('-');
+    }
+
+    $('a.getByVisit').click(function () {
+        var dimen = $(this).attr('Title');
+
+        $('#DivVregion').show();
+        $('SecondaryChart').empty();
+        $('span#selectedDimention').text($(this).text());
+        var chart2 = new gadash.Chart({
+            'divContainer': 'SecondaryChart',
+            'last-n-days': 30,
+            'query': {
+                'ids': TABLE_ID,
+                'start-date': lastNDays(14),
+                'end-date': lastNDays(0),
+                'metrics': 'ga:pageviewsPerVisit,ga:avgTimeOnSite,ga:percentNewVisits,ga:visitBounceRate',
+                'dimensions': dimen,
+                'sort': '-ga:pageviewsPerVisit',
+                'max-results': 100
+            }
+        }).render();
+    });
+
+    $('a#primaryDimension').click(function () {
+        $('#DivVregion').hide();
+    });
+</script>

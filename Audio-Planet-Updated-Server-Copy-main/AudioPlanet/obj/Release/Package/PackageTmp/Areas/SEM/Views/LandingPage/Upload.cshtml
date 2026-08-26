@@ -1,0 +1,20 @@
+﻿@model AudioPlanet.Areas.SEM.Models.LandingPage
+@{
+    ViewBag.Title = "Upload Files";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>
+    Upload new Landing Page (The ZIP Archive)</h2>
+@using (Html.BeginForm("Upload", "LandingPage", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <fieldset>
+        <legend>Upload File</legend>
+        <div class="editor-field">
+            <input type="file" name="file" />
+        </div>
+        <p>
+            <input type="submit" value="Upload" class="ibutton" />
+        </p>
+        <input type="hidden" value="@ViewBag.LandingPageID" name="LandingPageID"/>
+    </fieldset>
+}

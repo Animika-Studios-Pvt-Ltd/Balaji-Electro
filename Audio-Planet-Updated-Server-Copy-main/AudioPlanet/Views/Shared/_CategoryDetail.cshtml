@@ -1,0 +1,101 @@
+﻿@using AudioPlanet.Models
+@model IEnumerable<Product> 
+@{
+            <div id="AmplifierDetail" class="col-lg-9 col-md-9 col-sm-12 col-xs-12 marginleft">
+                <ul>
+                    @foreach (var item in Model)
+                    {
+                        <li>
+                            <div class="Amplifier_topDivMiddleNew">
+                                <div class="Amplifier_innerdiv">
+                                    <div class="AmplifierDetailsNew_img">
+                                        @{
+                                            <a style="color: #333333" data-fancybox-type="ajax" class="fancybox" title="@item.Name" href="/Home/ProductDeatils/@item.ID">
+                                                <img class="lazy" src="/Content/Public/images/grey.gif" data-original="@(Product.GetProductFiles(item.ID, "Image"))" width="150px" height="150px" alt="@item.Name"/>
+                                            </a>
+                                        }
+                                    </div>
+                                    <div>
+                                        <h2>
+                                            <a style="color: #333333" title="@item.Name" data-fancybox-type="ajax" class="fancybox" href="/Home/ProductDeatils/@item.ID">@item.Name</a>
+                                        </h2>
+                                        <p>@Html.Raw(item.Description)</p>
+                                        @{
+                        var path = Product.GetProductFiles(item.ID, "Document");
+                                        }
+
+                                        <div class="pdfImg">
+                                        @if (!string.IsNullOrEmpty(path))
+                                        {
+                                            
+                                            <a href="@path" class="fancyboxPdf downloadPdf" data-fancybox-type="iframe">
+                                                <img src="/Content/Public/images/downloadPdf.png" alt="" /></a>
+                                        }
+                                        else
+                                        {
+                                            <a href="#" class="downloadPdf">
+                                                <img src="/Content/Public/images/downloadPdf.png" alt="" /></a>
+                                        }
+                                        <a href="/Systems/Enquiry" class="downloadPdf">
+                                            <img src="/Content/Public/images/enquire.png" alt="Know more about @(item.Name)" /></a>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    }
+                </ul>
+            </div>
+        }
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        if ($(".fancyboxPdf").length > 0) {
+            $(".fancyboxPdf").fancybox({
+                openEffect: 'elastic',
+                closeEffect: 'elastic',
+                openEasing: 'swing'
+            });
+        }
+        if ($(".fancybox").length > 0) {
+            $(".fancybox").fancybox({
+                maxWidth: 800,
+                maxHeight: 600,
+                fitToView: false,
+                width: '500px',
+                height: 'auto',
+                autoSize: false,
+                closeClick: false,
+                openEffect: 'elastic',
+                closeEffect: 'elastic',
+                openEasing: 'swing',
+                beforeShow: function () {
+                    if (this.title) {
+                        // New line
+                        this.title += '<br />';
+
+                        // Add tweet button
+                        this.title += '<a href="https://twitter.com/share" class="twitter-share-button" data-count="none" data-url="' + this.href + '">Tweet</a> ';
+
+                        // Add FaceBook like button
+                        this.title += '<iframe src="//www.facebook.com/plugins/like.php?href=' + this.href + '&amp;layout=button_count&amp;show_faces=true&amp;width=500&amp;action=like&amp;font&amp;colorscheme=light&amp;height=23" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:110px; height:23px;" allowTransparency="true"></iframe>';
+                    }
+                },
+                afterShow: function () {
+                    // Render tweet button
+                    twttr.widgets.load();
+                },
+                helpers: {
+                    title: {
+                        type: 'outside'
+                    },
+                    overlay: {
+                        css: {
+                            'background': 'rgba(238,238,238,0.85)'
+                        }
+                    }
+                }
+            });
+        }
+    });
+</script>

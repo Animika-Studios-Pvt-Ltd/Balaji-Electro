@@ -1,0 +1,71 @@
+﻿@using AudioPlanet.Areas.Enquiry.Models
+@model IEnumerable<Enquiry>
+@{
+    ViewBag.Title = "Enquiry List";
+    Layout = "../../../../Views/Shared/_Layout.cshtml";
+}
+<h2>
+    Enquiry List</h2>
+<table class="display">
+    <thead>
+        <tr>
+            <th class="menu_header">
+                Name
+            </th>
+            <th class="menu_header">
+                Email
+            </th>
+            <th class="menu_header">
+                Phone
+            </th>
+            <th class="menu_header">
+                Query
+            </th>
+            <th class="menu_header">
+                Traffic Type
+            </th>
+            <th class="menu_header">
+                Date
+            </th>
+            <th class="menu_header">
+            </th>
+            <th class="menu_header">
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Enquiry item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    @item.Email
+                </td>
+                <td>
+                    @item.Phone
+                </td>
+                <td>
+                    @item.Query
+                </td>
+                <td>
+                    @item.TrafficType
+                </td>
+                <td>
+                    @item.Date
+                </td>
+                <td>
+                    <a href="@Url.Action("Edit", new { id = item.ID })" class = "button left" title="Edit Page">
+                        <span class="icon icon145"></span></a>
+                </td>
+                <td>
+                    @using (Html.BeginForm("Delete", "Enquiry", new { id = item.ID }))
+                    {
+                        <input type="submit" value="Delete" class="ibutton delete" />
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
